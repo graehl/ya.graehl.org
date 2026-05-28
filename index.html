@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-apME09wSuNg8Vtj8VIzzgUd0OWxrWUnJZzdB/K8A5BM='; style-src 'self' 'unsafe-inline'; connect-src 'self' ws: wss: http: https:; img-src 'self' data: blob:; font-src 'self'; media-src 'self' blob:; object-src 'none'; form-action 'self'; base-uri 'self'">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content, viewport-fit=cover" />
     <title>Yep Anywhere - Remote</title>
@@ -26,9 +27,10 @@
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
+    <script type="module" crossorigin src="/assets/main-BygT7hPk.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-nIyex-HK.css">
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/remote-main.tsx"></script>
   </body>
 </html>
