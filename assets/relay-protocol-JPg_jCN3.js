@@ -1,0 +1,2 @@
+const t="app",o="speech";function r(e){return typeof e=="object"&&e!==null&&e.type==="client_connected"}function a(e){return typeof e=="object"&&e!==null&&e.type==="client_error"&&(e.reason==="server_offline"||e.reason==="unknown_username")}const n=/^[a-z0-9][a-z0-9-]{1,30}[a-z0-9]$/;function c(e){return n.test(e)}export{t as D,o as S,r as a,a as b,c as i};
+//# sourceMappingURL=relay-protocol-JPg_jCN3.js.map
