@@ -1,0 +1,2 @@
+import{j as o,N as r}from"./main-TX2VZ8tx.js";import{u as e}from"./useRemoteBasePath-B6JD06Ij.js";import"./RemoteConnectionContext-DUuY832D.js";import"./client-DnmRsQcz.js";import"./activityBus-IS9dWLXl.js";import"./events-d4xsxMXu.js";import"./SecureConnection-CqOktT6R.js";import"./relay-protocol-JPg_jCN3.js";import"./remoteRoutePaths-fKl_TdYa.js";function x(){const t=e();return o.jsx(r,{to:`${t}/sessions`,replace:!0})}export{x as ProjectSessionsRedirect};
+//# sourceMappingURL=ProjectSessionsRedirect-CL11RhV_.js.map
