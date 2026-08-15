@@ -1,0 +1,2 @@
+import{j as r}from"./main-Dr1MsAHR.js";function d({className:a="",variant:n="short"}){return n==="full"?r.jsxs("span",{className:`brand-wordmark brand-wordmark--full ${a}`.trim(),children:[r.jsx("span",{className:"brand-wordmark__yep",children:"yep"}),r.jsx("span",{className:"brand-wordmark__anywhere",children:"anywhere"})]}):r.jsx("span",{className:`brand-wordmark brand-wordmark--short ${a}`.trim(),children:"yep"})}export{d as B};
+//# sourceMappingURL=BrandWordmark-b00onKDL.js.map
