@@ -1,0 +1,2 @@
+const t=["live-tail","remember-place","manual-follow","no-memory"],i="live-tail";function l(o){return t.includes(o)?o:i}function n(o){return o!=="no-memory"}function S({mode:o,snapshot:r,topTolerancePx:e}){return!r||o==="no-memory"?"skip":o==="live-tail"&&r.atBottom?"follow-bottom":!r.atBottom&&r.scrollTop<=e?"skip":r.anchor?"restore-position":r.atBottom?"follow-bottom":"restore-position"}export{i as D,t as S,S as d,l as p,n as s};
+//# sourceMappingURL=sessionScrollBehavior-D2AU744c.js.map
