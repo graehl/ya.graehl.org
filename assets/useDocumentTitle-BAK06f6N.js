@@ -1,0 +1,2 @@
+import"./events-Dz85EPeA.js";import{s as o}from"./ViewerCountIndicator-CY_AQFyN.js";import{r as a}from"./main-Jpik_YtW.js";const c="Yep Anywhere";function u(t,e){return t.length<=e?t:`${t.slice(0,e-1)}…`}function S(t,e,r=!0){a.useEffect(()=>{if(!r)return;let n=c;if(t){const i=o(t);if(e){const s=o(e),f=u(i,10),l=u(s,20);n=`${f} - ${l}`}else n=i}return document.title=n,()=>{document.title=c}},[r,t,e])}export{S as u};
+//# sourceMappingURL=useDocumentTitle-BAK06f6N.js.map
