@@ -1,0 +1,2 @@
+function s(r,e,t,n){return`${r.replace(/\/$/,"")}/projects/${e}/sessions/${t}/agents/${encodeURIComponent(n)}`}function c(r,e){return r.title||r.agentType||e}function u(...r){for(const e of r)if(e)return e;return[]}function a(r,e,t=Date.now()){return e!=="in-turn"?0:r.filter(n=>{const o=Date.parse(n.updatedAt);return!Number.isNaN(o)&&t-o<18e4}).length}const i=1600,f=`${i}px 0px`;function l(r,e=i){return r.scrollHeight-r.scrollTop-r.clientHeight<=e}export{f as P,s as a,a as c,u as f,l as i,c as p};
+//# sourceMappingURL=predictiveScroll-C6OK_g39.js.map
