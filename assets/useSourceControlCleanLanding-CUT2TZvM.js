@@ -1,0 +1,2 @@
+import{r,e as t,U as a}from"./main-B6oZVq2T.js";const s=["working-tree","latest-commit"],o="working-tree";function c(n){return s.includes(n)?n:void 0}const e=t(a.sourceControlCleanLanding,o,c);e.read;e.set;function l(){return{sourceControlCleanLanding:r.useSyncExternalStore(e.subscribe,e.read,()=>o),setSourceControlCleanLanding:e.set}}export{l as u};
+//# sourceMappingURL=useSourceControlCleanLanding-CUT2TZvM.js.map
