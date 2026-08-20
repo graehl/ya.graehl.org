@@ -1,0 +1,2 @@
+import{j as o,N as r}from"./main-moykronv.js";import{u as e}from"./useRemoteBasePath-d9TDpD2X.js";import"./react-runtime-D-UPQ57m.js";import"./RemoteConnectionContext-FqpWniyb.js";import"./client-92S_aSQu.js";import"./events-D4jiXOfz.js";import"./activityBus-D6xQ2vSR.js";import"./sourceIdentity-Db3X3NgB.js";import"./relay-protocol-JPg_jCN3.js";import"./remoteRoutePaths-XzHUsB33.js";function f(){const t=e();return o.jsx(r,{to:`${t}/sessions`,replace:!0})}export{f as ProjectSessionsRedirect};
+//# sourceMappingURL=ProjectSessionsRedirect-B5-ox-A3.js.map
