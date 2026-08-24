@@ -1,0 +1,2 @@
+import{d as o,j as r,N as a}from"./main-D6fVXdUi.js";import{g as i}from"./remoteRoutePaths-DTaLI84J.js";import"./react-runtime-D-UPQ57m.js";import"./events-CVRFA0wn.js";import"./relay-protocol-JPg_jCN3.js";function g(){const t=o(),e=i(t);return r.jsx(a,{to:e??"/projects",replace:!0})}export{g as LegacyRelayRouteRedirect};
+//# sourceMappingURL=LegacyRelayRouteRedirect-BgEzOfzX.js.map
