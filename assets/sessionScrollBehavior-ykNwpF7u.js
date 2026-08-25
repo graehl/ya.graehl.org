@@ -1,0 +1,2 @@
+const t=["live-tail","remember-place","no-memory"],i="live-tail";function l(o){return o==="manual-follow"?"remember-place":t.includes(o)?o:i}function n(o){return o!=="no-memory"}function m({mode:o,snapshot:r,topTolerancePx:e}){return!r||o==="no-memory"?"skip":o==="live-tail"&&(r.following??r.atBottom)?"follow-bottom":!r.atBottom&&r.scrollTop<=e?"skip":r.anchor?"restore-position":r.atBottom?"follow-bottom":"restore-position"}export{i as D,t as S,m as d,l as p,n as s};
+//# sourceMappingURL=sessionScrollBehavior-ykNwpF7u.js.map
