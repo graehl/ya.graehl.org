@@ -1,0 +1,2 @@
+import{r as a,e as s,U as o}from"./main-C3N0FW2y.js";const r={enabled:!1,activityPulseEnabled:!1},e=s(o.projectCodeNamesEnabled,r.enabled),t=s(o.projectCodeNameActivityPulseEnabled,r.activityPulseEnabled);function d(){const c=a.useSyncExternalStore(e.subscribe,e.read,e.read),n=a.useSyncExternalStore(t.subscribe,t.read,t.read);return{projectCodeNamesEnabled:c,setProjectCodeNamesEnabled:e.set,projectCodeNameActivityPulseEnabled:n,setProjectCodeNameActivityPulseEnabled:t.set}}export{d as u};
+//# sourceMappingURL=useProjectCodeNamePreferences-BlMM2j79.js.map
