@@ -1,0 +1,2 @@
+import{r,e as n,U as a}from"./main-DyeveKGX.js";const e=n(a.sessionLoadingProgress,!0);e.set;function i(){return{sessionLoadingProgressEnabled:r.useSyncExternalStore(e.subscribe,e.read,e.read),setSessionLoadingProgressEnabled:e.set}}e.read;const s=n(a.streamingEnabled,!0),d=s.subscribe;function g(){return{streamingEnabled:r.useSyncExternalStore(s.subscribe,s.read,s.read),setStreamingEnabled:s.set}}const b=s.read;export{i as a,b as g,d as s,g as u};
+//# sourceMappingURL=useStreamingEnabled-hJoWrHoY.js.map
