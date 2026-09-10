@@ -1,0 +1,2 @@
+import{j as u}from"./main-Da6hhBHa.js";import{f as g,c as $}from"./client-C6j-lIqR.js";function x({timestampMs:e,nowMs:c,className:r,prefix:n,suffix:o,formatLabel:t}){if(e==null)return null;const l=new Date(e),s=g(e,c),a=$(e),i=(t==null?void 0:t(s))??`${n?`${n} `:""}${s}${o?` ${o}`:""}`;return u.jsx("time",{className:r??"message-age",dateTime:l.toISOString(),title:a,children:i})}export{x as M};
+//# sourceMappingURL=MessageAge-DGvq_gTL.js.map
