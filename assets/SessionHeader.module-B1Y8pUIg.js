@@ -1,0 +1,2 @@
+import{u as s,j as e}from"./main-DUFUVGt9.js";import{u as r}from"./HostIdentityContext-k0x9IS9C.js";function c(){const{icon:t}=r(),{t:o}=s();if(!t)return null;const n=o("hostIdentityMarkerAria",{icon:t});return e.jsx("span",{className:"host-identity-marker",role:"img","aria-label":n,title:n,children:t})}const a="_noLeadingControl_q4f94_11",d={noLeadingControl:a};export{c as H,d as s};
+//# sourceMappingURL=SessionHeader.module-B1Y8pUIg.js.map
