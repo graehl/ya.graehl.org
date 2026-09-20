@@ -1,0 +1,2 @@
+const _=5e3,o=5e5,N=1e3;function r(n){if(!(n===void 0||n==="off"||n==="auto"))return n.startsWith("on:")?n.slice(3):n}function f(n){var T;const{provider:t,settings:e}=n;if(!t||((T=e==null?void 0:e.providers)==null?void 0:T[t])!==!0||r(n.currentThinking)===r(n.nextThinking)||n.contextTokens===void 0||n.contextTokens<=0)return!1;const s=e.thresholdTokens??5e3;return!(n.contextTokens<s)}export{_ as D,N as L,o as a,r as e,f as s};
+//# sourceMappingURL=long-context-effort-warning-BGls6uvf.js.map
