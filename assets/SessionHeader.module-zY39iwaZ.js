@@ -1,0 +1,2 @@
+import{u as o,j as s}from"./main-C_BBkquK.js";import{u as i}from"./HostIdentityContext-BL668J1w.js";function c(){const{icon:t}=i(),{t:n}=o();if(!t)return null;const e=n("hostIdentityMarkerAria",{icon:t});return s.jsx("span",{className:"host-identity-marker",role:"img","aria-label":e,title:e,children:t})}const r="_noLeadingControl_10eg5_11",a="_titleWithBadge_10eg5_17",g={noLeadingControl:r,titleWithBadge:a};export{c as H,g as s};
+//# sourceMappingURL=SessionHeader.module-zY39iwaZ.js.map
