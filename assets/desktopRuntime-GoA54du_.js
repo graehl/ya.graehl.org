@@ -1,0 +1,2 @@
+function e(n){if(typeof n!="string")return;const t=n.trim();return t&&t!=="unknown"?t:void 0}function i(){if(typeof window>"u")return null;const n=window.__YEP_DESKTOP_RUNTIME__;if(!n||typeof n!="object")return null;const t=n,o=e(t.desktopVersion);return o?{desktopVersion:o,bundledYaVersion:e(t.bundledYaVersion),commit:e(t.commit)}:null}function r(n){const t=n.trim();return/^v\d+\.\d+\.\d+/.test(t)?t:/^\d+\.\d+\.\d+/.test(t)?`v${t}`:t}export{r as f,i as g};
+//# sourceMappingURL=desktopRuntime-GoA54du_.js.map
