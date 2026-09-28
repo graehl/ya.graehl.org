@@ -1,0 +1,3 @@
+import{_ as e,l as s,G as n,d as i}from"./mermaid.core-BR-ZQ1eU.js";import{p}from"./cynefin-OW5HDTMX-DmELEHoH.js";import"./main-CcDDgSd_.js";import"./project-service-BiekbLW5.js";import"./react-runtime-D-UPQ57m.js";var g={parse:e(async r=>{const a=await p("info",r);s.debug(a)},"parse")},d={version:"11.17.2"},v=e(()=>d.version,"getVersion"),m={getVersion:v},c=e((r,a,o)=>{s.debug(`rendering info diagram
+`+r);const t=n(a);i(t,100,400,!0),t.append("g").append("text").attr("x",100).attr("y",40).attr("class","version").attr("font-size",32).style("text-anchor","middle").text(`v${o}`)},"draw"),l={draw:c},y={parser:g,db:m,renderer:l};export{y as diagram};
+//# sourceMappingURL=infoDiagram-27XIBGKW-CU0X6_P9.js.map
