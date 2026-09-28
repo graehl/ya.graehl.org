@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-pKoGOfILVrhM19IKkzIFcwm2G9o3bhH/1BpCEjZk/8E=' 'sha256-gkOCan+oVHVjR0iquPKVduOaKVohST71zOm4MuFHwuY='; style-src 'self' 'unsafe-inline'; connect-src 'self' ws: wss: http: https:; img-src 'self' data: blob:; font-src 'self' blob:; media-src 'self' blob:; object-src 'none'; frame-src 'self' blob: http: https:; form-action 'self'; base-uri 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-pKoGOfILVrhM19IKkzIFcwm2G9o3bhH/1BpCEjZk/8E=' 'sha256-sFykGXno6jCmTkX6IYwEk84irvZP0sNZtyfjIMggtWs='; style-src 'self' 'unsafe-inline'; connect-src 'self' ws: wss: http: https:; img-src 'self' data: blob:; font-src 'self' blob:; media-src 'self' blob:; object-src 'none'; frame-src 'self' blob: http: https:; form-action 'self'; base-uri 'self'">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content, viewport-fit=cover" />
     <title>Yep Anywhere - Remote</title>
@@ -32,8 +32,8 @@
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
-    <script type="module" crossorigin src="/assets/main-CyxQ_JQt.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/project-service-mKLy74bz.js">
+    <script type="module" crossorigin src="/assets/main-Ci14EVns.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/project-service-DVCGtvrp.js">
     <link rel="modulepreload" crossorigin href="/assets/react-runtime-D-UPQ57m.js">
     <link rel="stylesheet" crossorigin href="/assets/main-BbGImZav.css">
   </head>
@@ -121,12 +121,27 @@
     event.preventDefault();
   });
 
+  // A reload before the app adopts this field (a development source-version
+  // check, applied browser defaults) must not cost what was typed: keep it
+  // in the tab's session storage, where prebootComposer.ts also stashes it.
+  var stashKey = "yep-preboot-composer-text";
+  try {
+    textarea.value = sessionStorage.getItem(stashKey) || "";
+  } catch {}
+  textarea.addEventListener("input", () => {
+    try {
+      if (textarea.value) sessionStorage.setItem(stashKey, textarea.value);
+      else sessionStorage.removeItem(stashKey);
+    } catch {}
+  });
+
   column.append(textarea, status);
   overlay.append(column);
   document.head.append(style);
   document.documentElement.setAttribute("data-preboot-composer", "");
   document.body.append(overlay);
   textarea.focus();
+  textarea.setSelectionRange(textarea.value.length, textarea.value.length);
 })();
     </script>
   </body>
