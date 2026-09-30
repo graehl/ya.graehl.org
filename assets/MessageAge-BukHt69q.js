@@ -1,0 +1,2 @@
+import{j as u}from"./main-BKR6V8eo.js";import{f as g,b as $}from"./client-BlO-rrbt.js";function x({timestampMs:e,nowMs:r,className:c,prefix:n,suffix:o,formatLabel:t}){if(e==null)return null;const l=new Date(e),s=g(e,r),a=$(e),i=(t==null?void 0:t(s))??`${n?`${n} `:""}${s}${o?` ${o}`:""}`;return u.jsx("time",{className:c??"message-age",dateTime:l.toISOString(),title:a,children:i})}export{x as M};
+//# sourceMappingURL=MessageAge-BukHt69q.js.map
