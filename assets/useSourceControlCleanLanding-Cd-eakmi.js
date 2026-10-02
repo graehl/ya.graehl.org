@@ -1,0 +1,2 @@
+import{r,s as t,U as a}from"./main-26ozQ5-G.js";const s=["working-tree","latest-commit"],o="working-tree";function c(e){return s.includes(e)?e:void 0}const n=t(a.sourceControlCleanLanding,o,c);n.read;n.set;function l(){return{sourceControlCleanLanding:r.useSyncExternalStore(n.subscribe,n.read,()=>o),setSourceControlCleanLanding:n.set}}export{l as u};
+//# sourceMappingURL=useSourceControlCleanLanding-Cd-eakmi.js.map
