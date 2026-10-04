@@ -1,0 +1,2 @@
+import{m as n,n as o,o as c}from"./main-CuMdYl9g.js";import"./project-service-DhS1tfRf.js";import"./client-B2uJgemz.js";function u(r){return c(`server:${r}`)}function S(r){return r.serverInstanceId?u(r.serverInstanceId):n(r.id)}function y(r){return o(a(r))}function a(r){const e=r.trim();try{const t=new URL(e);return t.hash="",t.toString()}catch{return e}}export{y as a,S as r};
+//# sourceMappingURL=sourceIdentity-B28GtgOe.js.map
