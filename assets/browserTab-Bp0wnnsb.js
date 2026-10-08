@@ -1,0 +1,2 @@
+import{t as r}from"./main-B-YAtdiX.js";const n="ya:browser-debug-tab-id";let s;function o(){try{const t=sessionStorage.getItem(n);if(t)return t;const e=r();return sessionStorage.setItem(n,e),e}catch{return s??(s=r()),s}}function a(){const t=navigator.userAgent;return/iPhone/.test(t)?"iPhone":/iPad/.test(t)?"iPad":/Android/.test(t)?"Android":/Mac/.test(t)?"Mac":/Windows/.test(t)?"Windows":/Linux/.test(t)?"Linux":"Browser"}export{o as a,a as b};
+//# sourceMappingURL=browserTab-Bp0wnnsb.js.map
