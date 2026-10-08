@@ -1,0 +1,2 @@
+import{u as s,d as t}from"./main-C-NLq7q1.js";function i(e){return{signInRequired:e}}function r(){const{t:e}=s(),n=t().state;switch(n==null?void 0:n.signInRequired){case"auth_failed":return e("hostOfflineMessageResumeRejected");case"resume_incompatible":return e("hostOfflineMessageResumeIncompatible");default:return null}}export{i as s,r as u};
+//# sourceMappingURL=useSignInRequiredNotice-CjV_UImx.js.map
