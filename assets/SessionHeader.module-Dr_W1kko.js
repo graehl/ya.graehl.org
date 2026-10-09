@@ -1,0 +1,2 @@
+import{u as n,j as r}from"./main-DgP8kFqa.js";import{u as s}from"./HostIdentityContext-DBn2Sk_t.js";function d(){const{icon:t}=s(),{t:e}=n();if(!t)return null;const o=e("hostIdentityMarkerAria",{icon:t});return r.jsx("span",{className:"host-identity-marker",role:"img","aria-label":o,title:o,children:t})}const a="_noLeadingControl_135a4_11",i="_titleWithBadge_135a4_17",c="_routerAccount_135a4_34",_={noLeadingControl:a,titleWithBadge:i,routerAccount:c};export{d as H,_ as s};
+//# sourceMappingURL=SessionHeader.module-Dr_W1kko.js.map
