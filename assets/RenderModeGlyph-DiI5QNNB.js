@@ -1,0 +1,2 @@
+import{j as t}from"./main-DDJBJdXM.js";const e="_host_n1tgc_4",n={host:e},s='<svg class="render-mode-glyph" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><text x="8" y="8.1" text-anchor="middle" dominant-baseline="central" font-family="KaTeX_Main, Times New Roman, serif" font-size="12.5" font-weight="500" fill="currentColor">Σ</text></svg>',o={__html:s};function i(){return t.jsx("span",{className:n.host,dangerouslySetInnerHTML:o})}export{s as R,i as a};
+//# sourceMappingURL=RenderModeGlyph-DiI5QNNB.js.map
