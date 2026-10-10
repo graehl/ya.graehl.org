@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-pKoGOfILVrhM19IKkzIFcwm2G9o3bhH/1BpCEjZk/8E=' 'sha256-GZ2ra+Sslp5fyxUdd+3VpD+4Y+MyTc0ElcgpUmmSKzA='; style-src 'self' 'unsafe-inline'; connect-src 'self' ws: wss: http: https:; img-src 'self' data: blob:; font-src 'self' blob:; media-src 'self' blob:; object-src 'none'; frame-src 'self' blob: http: https:; form-action 'self'; base-uri 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-pKoGOfILVrhM19IKkzIFcwm2G9o3bhH/1BpCEjZk/8E=' 'sha256-xrtsB50xsAzkmvqmzW8nL7ICwptzUvxcjtqmw6lHUmQ='; style-src 'self' 'unsafe-inline'; connect-src 'self' ws: wss: http: https:; img-src 'self' data: blob:; font-src 'self' blob:; media-src 'self' blob:; object-src 'none'; frame-src 'self' blob: http: https:; form-action 'self'; base-uri 'self'">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, interactive-widget=resizes-content, viewport-fit=cover" />
     <title>Yep Anywhere - Remote</title>
@@ -32,154 +32,15 @@
         document.documentElement.setAttribute('data-theme', theme);
       })();
     </script>
-    <script type="module" crossorigin src="/assets/main-DgP8kFqa.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/project-service-BvfRAYa_.js">
+    <script type="module" crossorigin src="/assets/main-BRTdr1JJ.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/en-BSiNkH3y.js">
     <link rel="modulepreload" crossorigin href="/assets/react-runtime-D-UPQ57m.js">
-    <link rel="stylesheet" crossorigin href="/assets/main-Cdvuos67.css">
+    <link rel="stylesheet" crossorigin href="/assets/main-CuDA0v1q.css">
   </head>
   <body>
     <div id="root"></div>
     <script>
-// Pre-boot new-session composer — see topics/early-typing-handoff.md.
-//
-// Inlined into the app HTML right after #root by
-// vite-plugin-preboot-composer.ts, so it runs during parse, before any module
-// is fetched. A tab opened on /new-session can be typed into as soon as the
-// document arrives instead of after the app has loaded; NewSessionForm adopts
-// the text and caret (src/lib/prebootComposer.ts). Keep it dependency-free
-// and small: every byte here delays first paint of every page.
-(() => {
-  if (!/(?:^|\/)new-session\/?$/.test(location.pathname)) return;
-  // A prefill arrives with the app; typing ahead of it has no field to go to.
-  if (/[?&]prefillToken=/.test(location.search)) return;
-
-  // The same value initializeContentMaxWidth applies once the app loads.
-  var contentWidth = Number.parseInt(
-    localStorage.getItem("yep-anywhere-content-max-width") || "",
-    10,
-  );
-  if (Number.isFinite(contentWidth)) {
-    document.documentElement.style.setProperty(
-      "--content-max-width",
-      `${Math.min(4000, Math.max(480, contentWidth))}px`,
-    );
-  }
-
-  // Match NavigationLayout's saved desktop mode and width. Reserving that
-  // space keeps the field steady without hiding the reader's sidebar.
-  var sidebarWidth = Number.parseInt(
-    localStorage.getItem("yep-anywhere-sidebar-width") || "280",
-    10,
-  );
-  sidebarWidth = Number.isFinite(sidebarWidth)
-    ? Math.min(560, Math.max(280, sidebarWidth))
-    : 280;
-  var expanded =
-    new URLSearchParams(location.search).get("sidebar") === "expanded" ||
-    localStorage.getItem("yep-anywhere-sidebar-expanded") !== "false";
-  var minimized =
-    !expanded &&
-    localStorage.getItem("yep-anywhere-sidebar-minimized") === "true";
-  document.documentElement.style.setProperty(
-    "--preboot-sidebar-width",
-    `${minimized ? 0 : expanded && innerWidth >= sidebarWidth + 600 ? sidebarWidth : 56}px`,
-  );
-
-  // Page padding and the project-column gap use rem units. Match the saved
-  // UI scale before the app initializes its fonts (default 115%).
-  var storedFontScale = localStorage.getItem("yep-anywhere-font-size");
-  var legacyFontScales = { small: 85, default: 100, large: 115, larger: 130 };
-  var fontScale =
-    storedFontScale === null
-      ? 115
-      : Object.hasOwn(legacyFontScales, storedFontScale)
-        ? legacyFontScales[storedFontScale]
-        : Number(storedFontScale);
-  fontScale = Number.isFinite(fontScale)
-    ? Math.min(300, Math.max(50, fontScale))
-    : 115;
-  document.documentElement.style.setProperty(
-    "--preboot-page-padding",
-    `${(16 * fontScale) / 100}px`,
-  );
-
-  var style = document.createElement("style");
-  style.textContent =
-    // Above page chrome, below the app's modals (1000+), so a blocking
-    // dialog raised at this URL (host offline) still shows over it.
-    "#yep-preboot-composer{position:fixed;inset:0;z-index:500;display:flex;" +
-    // Roughly where NewSessionForm puts its textarea, so the handoff does not
-    // visibly move the text: below the header and prompt label, beside the
-    // project panel on wide screens.
-    // The page reserves a scrollbar gutter wherever scrollbars take room.
-    "align-items:flex-start;padding:95px 18px 18px;overflow-y:auto;" +
-    "scrollbar-gutter:stable;" +
-    "box-sizing:border-box;background:inherit;color:#e6e6e6;" +
-    "font-family:system-ui,-apple-system,sans-serif}" +
-    "html[data-theme=light] #yep-preboot-composer{color:#1f1f1f}" +
-    "@media (prefers-color-scheme:light){html[data-theme=auto] " +
-    "#yep-preboot-composer{color:#1f1f1f}}" +
-    "#yep-preboot-composer>div{width:100%}" +
-    "@media (min-width:900px){#yep-preboot-composer>div{" +
-    "width:calc(100% - 296px)}}" +
-    // Wide screens center the page at the reader's content width.
-    "@media (min-width:1100px){#yep-preboot-composer{" +
-    "left:var(--preboot-sidebar-width);justify-content:center;padding-left:0;padding-right:0}" +
-    "#yep-preboot-composer>div{box-sizing:border-box;padding:0 var(--preboot-page-padding);" +
-    "width:min(100%,var(--content-max-width,830px))}" +
-    "#yep-preboot-composer>div>*{max-width:calc(100% - 280px - var(--preboot-page-padding))}}" +
-    "#yep-preboot-composer textarea{display:block;width:100%;" +
-    "box-sizing:border-box;padding:.6rem .7rem;border-radius:8px;resize:none;" +
-    "font:inherit;font-size:15px;line-height:1.35;color:inherit;" +
-    "background:rgba(127,127,127,.08);border:1px solid rgba(127,127,127,.35);" +
-    "outline:none}" +
-    "#yep-preboot-composer textarea:focus{border-color:#d97757;" +
-    "box-shadow:0 0 0 2px rgba(217,119,87,.15)}" +
-    "#yep-preboot-composer p{margin:.4rem .1rem 0;font-size:12px;opacity:.6}";
-
-  var overlay = document.createElement("div");
-  overlay.id = "yep-preboot-composer";
-  var column = document.createElement("div");
-  var textarea = document.createElement("textarea");
-  textarea.rows = 6;
-  textarea.placeholder = "Describe what you'd like help with...";
-  textarea.setAttribute("aria-label", "New session prompt");
-  var status = document.createElement("p");
-  status.setAttribute("role", "status");
-  status.textContent = "Loading…";
-
-  // On a fine pointer Enter sends in the app. Nothing can be sent yet, and
-  // turning the keystroke into a newline would change the text instead.
-  var coarse = matchMedia("(pointer: coarse)").matches;
-  textarea.addEventListener("keydown", (event) => {
-    if (coarse || event.key !== "Enter" || event.isComposing) return;
-    if (event.shiftKey || event.ctrlKey || event.metaKey || event.altKey) {
-      return;
-    }
-    event.preventDefault();
-  });
-
-  // A reload before the app adopts this field (a development source-version
-  // check, applied browser defaults) must not cost what was typed: keep it
-  // in the tab's session storage, where prebootComposer.ts also stashes it.
-  var stashKey = "yep-preboot-composer-text";
-  try {
-    textarea.value = sessionStorage.getItem(stashKey) || "";
-  } catch {}
-  textarea.addEventListener("input", () => {
-    try {
-      if (textarea.value) sessionStorage.setItem(stashKey, textarea.value);
-      else sessionStorage.removeItem(stashKey);
-    } catch {}
-  });
-
-  column.append(textarea, status);
-  overlay.append(column);
-  document.head.append(style);
-  document.body.append(overlay);
-  textarea.focus();
-  textarea.setSelectionRange(textarea.value.length, textarea.value.length);
-})();
+"use strict";(()=>{function b(e,t){return t?`draft-account:${encodeURIComponent(t)}:${e}`:e}function m(e){return e!==null&&typeof e=="object"&&!Array.isArray(e)}function a(e){return typeof e=="string"&&e.trim()?e:null}function f(e){return typeof e=="number"&&Number.isFinite(e)?e:void 0}function w(e){if(!m(e))return null;let t=a(e.id),n=a(e.batchId),r=a(e.originalName),i=a(e.name),c=a(e.mimeType),s=a(e.createdAt),p=a(e.updatedAt),l=f(e.size);if(!t||!n||!r||!i||!c||!s||!p||l===void 0)return null;let u=f(e.width),o=f(e.height);return{id:t,batchId:n,originalName:r,name:i,size:l,mimeType:c,...u!==void 0?{width:u}:{},...o!==void 0?{height:o}:{},createdAt:s,updatedAt:p}}function D(e){if(!m(e))return null;let t=a(e.batchId),n=a(e.updatedAt);if(!t||!n||!Array.isArray(e.refs))return null;let r=e.refs.map(w).filter(i=>i!==null);return r.length===0?null:{batchId:t,refs:r,updatedAt:n}}function I(e){if(!m(e)||e.version!==1||typeof e.text!="string")return null;let t=D(e.attachments),n=f(e.pendingSendAt);return{version:1,text:e.text,...t?{attachments:t}:{},...n!==void 0?{pendingSendAt:n}:{}}}function N(e){return/^\s*\{\s*"version"\s*:/.test(e)}function T(e){if(!e)return{envelope:null,legacy:!1,invalidEnvelope:!1};try{let t=JSON.parse(e),n=I(t);if(n)return{envelope:n,legacy:!1,invalidEnvelope:!1};if(m(t)&&"version"in t)return{envelope:null,legacy:!1,invalidEnvelope:!0}}catch{if(N(e))return{envelope:null,legacy:!1,invalidEnvelope:!0}}return{envelope:{version:1,text:e},legacy:!0,invalidEnvelope:!1}}function x(e){return T(e).envelope?.text??""}var h="yep-preboot-composer-text",y="yep-preboot-composer-context";function v(e,t){try{let n=t&&/^\/new-session\/?$/.test(location.pathname)?b("draft-new-session:local",localStorage.getItem("draft-owner:local")):void 0,r=R();r&&(!r.draftKey||r.draftKey===n)?(e.value=r.text,r.draftKey&&(e.dataset.draftKey=r.draftKey),e.dataset.prebootEdited=String(r.edited)):n&&(e.value=x(localStorage.getItem(n)),e.dataset.draftKey=n)}catch{}S(E(e)),e.addEventListener("input",()=>{e.dataset.prebootEdited="true",S(E(e))})}function E(e){return{text:e.value,selectionStart:e.selectionStart,selectionEnd:e.selectionEnd,draftKey:e.dataset.draftKey,edited:e.dataset.prebootEdited==="true"}}function S(e){try{sessionStorage.setItem(h,e.text),sessionStorage.setItem(y,JSON.stringify({draftKey:e.draftKey,edited:e.edited}))}catch{}}function R(){try{let e=sessionStorage.getItem(h),t=sessionStorage.getItem(y);sessionStorage.removeItem(h),sessionStorage.removeItem(y);let n=t?JSON.parse(t):null,r=typeof n?.draftKey=="string"?n.draftKey:void 0,i=n?.edited!==!1;return e===null?null:{text:e,selectionStart:e.length,selectionEnd:e.length,draftKey:r,edited:i}}catch{return null}}(()=>{if(/(?:^|\/)new-session\/?$/.test(location.pathname)&&!/[?&]prefillToken=/.test(location.search)){var e=Number.parseInt(localStorage.getItem("yep-anywhere-content-max-width")||"",10);Number.isFinite(e)&&document.documentElement.style.setProperty("--content-max-width",`${Math.min(4e3,Math.max(480,e))}px`);var t=Number.parseInt(localStorage.getItem("yep-anywhere-sidebar-width")||"280",10);t=Number.isFinite(t)?Math.min(560,Math.max(280,t)):280;var n=new URLSearchParams(location.search).get("sidebar")==="expanded"||localStorage.getItem("yep-anywhere-sidebar-expanded")!=="false",r=!n&&localStorage.getItem("yep-anywhere-sidebar-minimized")==="true";document.documentElement.style.setProperty("--preboot-sidebar-width",`${r?0:n&&innerWidth>=t+600?t:56}px`);var i=localStorage.getItem("yep-anywhere-font-size"),c={small:85,default:100,large:115,larger:130},s=i===null?115:Object.hasOwn(c,i)?c[i]:Number(i);s=Number.isFinite(s)?Math.min(300,Math.max(50,s)):115,document.documentElement.style.setProperty("--preboot-page-padding",`${16*s/100}px`);var p=document.createElement("style");p.textContent="#yep-preboot-composer{position:fixed;inset:0;z-index:500;display:flex;align-items:flex-start;padding:95px 18px 18px;overflow-y:auto;scrollbar-gutter:stable;box-sizing:border-box;background:inherit;color:#e6e6e6;font-family:system-ui,-apple-system,sans-serif}html[data-theme=light] #yep-preboot-composer{color:#1f1f1f}@media (prefers-color-scheme:light){html[data-theme=auto] #yep-preboot-composer{color:#1f1f1f}}#yep-preboot-composer>div{width:100%}@media (min-width:900px){#yep-preboot-composer>div{width:calc(100% - 296px)}}@media (min-width:1100px){#yep-preboot-composer{left:var(--preboot-sidebar-width);justify-content:center;padding-left:0;padding-right:0}#yep-preboot-composer>div{box-sizing:border-box;padding:0 var(--preboot-page-padding);width:min(100%,var(--content-max-width,830px))}#yep-preboot-composer>div>*{max-width:calc(100% - 280px - var(--preboot-page-padding))}}#yep-preboot-composer textarea{display:block;width:100%;box-sizing:border-box;padding:.6rem .7rem;border-radius:8px;resize:none;font:inherit;font-size:15px;line-height:1.35;color:inherit;background:rgba(127,127,127,.08);border:1px solid rgba(127,127,127,.35);outline:none}#yep-preboot-composer textarea:focus{border-color:#d97757;box-shadow:0 0 0 2px rgba(217,119,87,.15)}#yep-preboot-composer p{margin:.4rem .1rem 0;font-size:12px;opacity:.6}";var l=document.createElement("div");l.id="yep-preboot-composer";var u=document.createElement("div"),o=document.createElement("textarea");o.rows=6,o.placeholder="Describe what you'd like help with...",o.setAttribute("aria-label","New session prompt");var g=document.createElement("p");g.setAttribute("role","status"),g.textContent="Loading\u2026";var A=matchMedia("(pointer: coarse)").matches;o.addEventListener("keydown",d=>{A||d.key!=="Enter"||d.isComposing||d.shiftKey||d.ctrlKey||d.metaKey||d.altKey||d.preventDefault()}),v(o,!1),u.append(o,g),l.append(u),document.head.append(p),document.body.append(l),o.focus(),o.setSelectionRange(o.value.length,o.value.length)}})();})();
     </script>
   </body>
 </html>

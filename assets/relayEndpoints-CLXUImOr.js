@@ -1,0 +1,2 @@
+import{n as a}from"./relay-url-j3kYm5KO.js";function h(o){let n;try{n=a(o)}catch{return null}const t=new URL(n);if(!t.pathname.endsWith("/ws"))return null;const e=t.pathname.slice(0,-3),l=new URL(t);l.pathname=`${e}/mux`;const r=new URL(t);return r.protocol=t.protocol==="wss:"?"https:":"http:",r.pathname=`${e}/`,{healthUrl:new URL("health",r).toString(),httpBaseUrl:r.toString(),key:`${t.protocol}//${t.host}${e}`,muxUrl:l.toString(),relayUrl:n,statsUrl:new URL("stats",r).toString()}}export{h as r};
+//# sourceMappingURL=relayEndpoints-CLXUImOr.js.map
