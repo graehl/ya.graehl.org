@@ -1,0 +1,2 @@
+import{m as o,n,o as c}from"./main-Dnmu9PbY.js";import"./client-CEeTHH9_.js";import{b as u}from"./hostStorage-CEeM5oQI.js";function a(e){return n(`server:${e}`)}function y(e){return e.serverInstanceId?a(e.serverInstanceId):o(e.id)}function l(e){return c(s(e))}function s(e){const r=e.trim();try{const t=new URL(r);return t.hash="",t.toString()}catch{return r}}function v(e){return n(`remote:${u(e)}`)}export{v as a,l as b,y as r};
+//# sourceMappingURL=sourceIdentity-C9XF4vHA.js.map
