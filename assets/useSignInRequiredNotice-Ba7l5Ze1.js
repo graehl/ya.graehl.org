@@ -1,0 +1,2 @@
+import{u as s,f as t}from"./main-D7LdAmGM.js";function i(e){return{signInRequired:e}}function r(){const{t:e}=s(),n=t().state;switch(n==null?void 0:n.signInRequired){case"auth_failed":return e("hostOfflineMessageResumeRejected");case"resume_incompatible":return e("hostOfflineMessageResumeIncompatible");default:return null}}export{i as s,r as u};
+//# sourceMappingURL=useSignInRequiredNotice-Ba7l5Ze1.js.map
