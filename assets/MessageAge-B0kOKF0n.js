@@ -1,0 +1,2 @@
+import{M as g,P as i,j as $}from"./main-Bd8itkRl.js";function j({timestampMs:e,nowMs:c,className:l,prefix:n,suffix:o,formatLabel:t}){if(e==null)return null;const a=new Date(e),s=g(e,c),r=i(e),u=(t==null?void 0:t(s))??`${n?`${n} `:""}${s}${o?` ${o}`:""}`;return $.jsx("time",{className:l??"message-age",dateTime:a.toISOString(),title:r,children:u})}export{j as M};
+//# sourceMappingURL=MessageAge-B0kOKF0n.js.map
