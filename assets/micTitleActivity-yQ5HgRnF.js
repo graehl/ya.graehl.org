@@ -1,0 +1,2 @@
+const s="data-ya-mic-phase",i=new Map;function c(t,e){e?i.set(t,e):i.delete(t);const n=document.querySelector("title");if(!n)return;const r=[...i.values()].includes("capturing")?"capturing":i.size>0?"starting":null;r?n.setAttribute(s,r):n.removeAttribute(s)}function u(){var e;const t=(e=document.querySelector("title"))==null?void 0:e.getAttribute(s);return t==="capturing"?"🎙 ":t==="starting"?"◷🎙 ":""}export{s as M,u as g,c as s};
+//# sourceMappingURL=micTitleActivity-yQ5HgRnF.js.map
