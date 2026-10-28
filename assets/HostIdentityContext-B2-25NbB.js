@@ -1,0 +1,2 @@
+import{r as o,j as u}from"./main-c72TPNCM.js";import{c}from"./SourceRuntimeContext-hqG7PaRY.js";const r=o.createContext({icon:null});function d({children:s}){var e;const{settings:t}=c(),i=o.useMemo(()=>{var n;return{icon:((n=t==null?void 0:t.hostIdentity)==null?void 0:n.icon)??null}},[(e=t==null?void 0:t.hostIdentity)==null?void 0:e.icon]);return u.jsx(r.Provider,{value:i,children:s})}function m(){return o.useContext(r)}export{d as H,m as u};
+//# sourceMappingURL=HostIdentityContext-B2-25NbB.js.map
