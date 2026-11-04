@@ -1,0 +1,2 @@
+import{D as o,E as n,F as c,G as u}from"./main-CDBr4GHt.js";function a(e){return n(`server:${e}`)}function S(e){return e.serverInstanceId?a(e.serverInstanceId):o(e.id)}function m(e){return u(s(e))}function s(e){const r=e.trim();try{const t=new URL(r);return t.hash="",t.toString()}catch{return r}}function y(e){return n(`remote:${c(e)}`)}export{y as a,m as b,S as r};
+//# sourceMappingURL=sourceIdentity-C66D8x3U.js.map
