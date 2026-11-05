@@ -1,0 +1,2 @@
+import{r as o,j as u}from"./main-DYMYZ51g.js";import{c}from"./SourceRuntimeContext-Cdjl5s-Y.js";const r=o.createContext({icon:null});function d({children:s}){var e;const{settings:t}=c(),i=o.useMemo(()=>{var n;return{icon:((n=t==null?void 0:t.hostIdentity)==null?void 0:n.icon)??null}},[(e=t==null?void 0:t.hostIdentity)==null?void 0:e.icon]);return u.jsx(r.Provider,{value:i,children:s})}function m(){return o.useContext(r)}export{d as H,m as u};
+//# sourceMappingURL=HostIdentityContext-Bnqo2zQ7.js.map
