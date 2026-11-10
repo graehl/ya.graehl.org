@@ -1,0 +1,2 @@
+import{a6 as o,a7 as n,l as i}from"./main-WvbC4cbJ.js";const c="ya.savedHosts";function u(){const e=o();if(!e)return()=>{};const s=()=>{e.storage.local.set({[c]:i().hosts}).catch(()=>{})};return s(),n(s)}function l(e,s){const r=e.filter(t=>t.mode==="relay"&&t.relayUsername&&t.relayUrl);return s.activeHostIds===null?r:r.filter(t=>{var a;return(a=s.activeHostIds)==null?void 0:a.includes(t.id)})}function f(e,s){const r=l(e,s);return r.find(t=>t.id===s.defaultHostId)??r[0]}export{l as a,f as d,u as i};
+//# sourceMappingURL=savedHosts-Cfb-iM2b.js.map

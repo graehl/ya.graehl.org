@@ -1,0 +1,2 @@
+import{a4 as g,a5 as i,j as $}from"./main-WvbC4cbJ.js";function j({timestampMs:e,nowMs:a,className:c,prefix:n,suffix:o,formatLabel:t}){if(e==null)return null;const l=new Date(e),s=g(e,a),r=i(e),u=(t==null?void 0:t(s))??`${n?`${n} `:""}${s}${o?` ${o}`:""}`;return $.jsx("time",{className:c??"message-age",dateTime:l.toISOString(),title:r,children:u})}export{j as M};
+//# sourceMappingURL=MessageAge-Su67M6Ha.js.map
