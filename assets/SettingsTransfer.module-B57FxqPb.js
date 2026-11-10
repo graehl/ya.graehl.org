@@ -1,0 +1,2 @@
+const n="_section_lkunn_2",t="_title_lkunn_11",s="_buttons_lkunn_17",e="_status_lkunn_27",c="_changes_lkunn_33",_="_change_lkunn_33",a="_changeKey_lkunn_52",u="_changeValues_lkunn_58",l={section:n,title:t,buttons:s,status:e,changes:c,change:_,changeKey:a,changeValues:u};export{s as buttons,_ as change,a as changeKey,u as changeValues,c as changes,l as default,n as section,e as status,t as title};
+//# sourceMappingURL=SettingsTransfer.module-B57FxqPb.js.map

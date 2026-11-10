@@ -1,0 +1,53 @@
+const n=`.inventory {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+.inventory p {
+  margin: 0;
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+.heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 12px;
+}
+.heading h3 {
+  margin: 0;
+  font-size: 16px;
+}
+.heading > :first-child {
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.row {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.deleteActions {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.table {
+  --settings-first-column-width: 22%;
+}
+.table th:nth-child(2) {
+  width: 33%;
+}
+.table th:nth-child(3) {
+  width: 23%;
+}
+.row > button {
+  justify-self: start;
+}
+`;export{n as default};
+//# sourceMappingURL=ProjectAppInventorySection.module-DCf3EmQ3.js.map

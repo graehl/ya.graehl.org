@@ -1,0 +1,116 @@
+const n=`.viewer {
+  container-type: inline-size;
+  container-name: file-viewer;
+}
+
+.header {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.identityRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+}
+
+.context {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-height: 32px;
+}
+
+.context:empty {
+  display: none;
+}
+
+.info {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.path {
+  display: block;
+  min-height: 32px;
+  box-sizing: border-box;
+  padding-block: 6px;
+  color: var(--link-color);
+  font-family: var(--font-mono);
+  font-size: var(--fixed-font-size-base);
+  line-height: 20px;
+  overflow-wrap: anywhere;
+}
+
+.measurement {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.pathMeasure {
+  visibility: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  min-width: 0;
+  margin-top: 4px;
+}
+
+.body {
+  position: relative;
+}
+
+.backButton {
+  flex: 0 0 auto;
+}
+
+.htmlPreviewFrame {
+  width: 100%;
+  height: 100%;
+  min-height: min(68vh, 720px);
+  border: 0;
+  background: var(--bg-surface);
+}
+
+.diffBody {
+  min-height: 100%;
+  background: var(--bg-code);
+}
+
+.provenanceRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.375rem;
+  width: max-content;
+  min-height: 22px;
+  white-space: nowrap;
+}
+
+.quoteReplySurface:hover :global(.text-block-quote),
+.quoteReplySurface:focus-within :global(.text-block-quote) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.windowActions {
+  display: flex;
+  flex: 0 0 auto;
+  padding-top: 1px;
+}
+
+.fullscreenButton {
+  flex: 0 0 auto;
+}
+`;export{n as default};
+//# sourceMappingURL=FileViewer.module-BJ96R66s.js.map

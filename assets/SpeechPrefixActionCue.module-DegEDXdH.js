@@ -1,0 +1,18 @@
+const e=`.cue {
+  position: absolute;
+  inset-block-end: 0.1rem;
+  inset-inline-start: 0.13rem;
+  max-width: calc(100% - 0.26rem);
+  overflow: hidden;
+  color: currentColor;
+  font-size: 0.42rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1;
+  opacity: 0.82;
+  pointer-events: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+`;export{e as default};
+//# sourceMappingURL=SpeechPrefixActionCue.module-DegEDXdH.js.map

@@ -1,0 +1,2 @@
+const t="_list_1t0t7_1",o="_row_1t0t7_12",s="_stale_1t0t7_18",e="_location_1t0t7_23",_="_staleLabel_1t0t7_28",n="_movedLabel_1t0t7_29",a="_rowText_1t0t7_43",l="_destination_1t0t7_48",i="_newSession_1t0t7_57",c={list:t,row:o,stale:s,location:e,staleLabel:_,movedLabel:n,rowText:a,destination:l,newSession:i};export{c as default,l as destination,t as list,e as location,n as movedLabel,i as newSession,o as row,a as rowText,s as stale,_ as staleLabel};
+//# sourceMappingURL=ReviewSubmitModal.module-N-8rUddl.js.map

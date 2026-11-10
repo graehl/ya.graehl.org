@@ -1,0 +1,26 @@
+const n=`.plain {
+  tab-size: var(--tab-size);
+}
+
+.plain pre {
+  min-width: 100%;
+  width: max-content;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  color: var(--text-primary);
+  background: var(--bg-code);
+  border-radius: 4px;
+}
+
+.plain code {
+  font-family: var(--font-mono, monospace);
+  font-size: var(--source-code-font-size);
+  line-height: var(--source-code-line-height);
+  white-space: pre;
+}
+
+.hunkHeader {
+  color: var(--text-muted);
+}
+`;export{n as default};
+//# sourceMappingURL=UnifiedDiff.module-C6z7b5ou.js.map

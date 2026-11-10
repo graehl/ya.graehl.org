@@ -1,0 +1,23 @@
+const n=`/* The status dot breathes while the relay connects or registers. */
+.pending {
+  animation: remote-access-pending 1.5s ease-in-out infinite;
+}
+
+@keyframes remote-access-pending {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pending {
+    animation: none;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=RemoteAccessSetup.module-4i-ZYjTr.js.map

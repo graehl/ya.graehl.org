@@ -1,0 +1,45 @@
+const n=`.preview {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 240px;
+  overflow: hidden;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  font-size: 13px;
+}
+
+.frame {
+  flex: 1;
+  width: 100%;
+  min-height: 200px;
+  border: 0;
+  background: white;
+}
+
+.status {
+  padding: var(--space-3);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.message {
+  margin: var(--space-3);
+}
+
+.openLink {
+  display: inline-block;
+  padding-block: var(--space-2);
+  color: var(--link-color);
+}
+`;export{n as default};
+//# sourceMappingURL=ArtifactPreview.module-Dhllgxrh.js.map

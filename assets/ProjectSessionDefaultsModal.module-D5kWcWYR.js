@@ -1,0 +1,44 @@
+const n=`.sectionTitle {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+.section h3,
+.section p {
+  margin: 0;
+}
+
+.section {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+}
+
+/* Project sharing: one row per limited user, its level beside the name. */
+.sharingList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sharingRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 12rem);
+  gap: var(--space-1) var(--space-2);
+  align-items: center;
+}
+
+.sharingNote {
+  grid-column: 1 / -1;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+`;export{n as default};
+//# sourceMappingURL=ProjectSessionDefaultsModal.module-D5kWcWYR.js.map

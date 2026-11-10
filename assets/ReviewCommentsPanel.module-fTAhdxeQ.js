@@ -1,0 +1,92 @@
+const n=`/* Pending-review list (the comments mode). */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3, 12px);
+  max-width: 900px;
+}
+
+.empty {
+  padding: var(--space-3, 12px);
+  color: var(--text-secondary, #8b949e);
+}
+
+.hint {
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+}
+
+.row {
+  padding: var(--space-2, 8px);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle, #21262d);
+  border-radius: var(--radius-md, 8px);
+}
+
+.rowHead {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2, 8px);
+  min-width: 0;
+}
+
+.location {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  color: var(--link-color);
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.location:hover {
+  text-decoration: underline;
+}
+
+.revision {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.rowActions {
+  display: flex;
+  gap: var(--space-1, 4px);
+  margin-left: auto;
+}
+
+.text {
+  margin-top: 4px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--text-primary, #e6edf3);
+}
+
+.editor {
+  display: grid;
+  gap: var(--space-2, 8px);
+  margin-top: var(--space-2, 8px);
+}
+
+.editorActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2, 8px);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+`;export{n as default};
+//# sourceMappingURL=ReviewCommentsPanel.module-fTAhdxeQ.js.map

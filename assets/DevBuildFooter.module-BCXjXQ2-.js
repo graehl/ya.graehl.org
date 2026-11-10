@@ -1,0 +1,26 @@
+const n=`.footer {
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 8px 12px;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+.status {
+  flex: 1 1 100px;
+  min-width: 0;
+  margin-right: auto;
+  color: var(--text-muted);
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.action {
+  flex-shrink: 0;
+}
+`;export{n as default};
+//# sourceMappingURL=DevBuildFooter.module-BCXjXQ2-.js.map

@@ -1,0 +1,107 @@
+const n=`.outline {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.group {
+  min-width: 0;
+  list-style: none;
+}
+
+.groupButton {
+  width: 100%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 8px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  text-align: left;
+  border-radius: 6px;
+}
+
+.groupButton:hover,
+.groupButton:focus-visible {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+.disclosure {
+  width: 12px;
+  flex: 0 0 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.groupLabel {
+  min-width: 0;
+  overflow: hidden;
+  flex: 1;
+  font-family: var(--font-mono);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.groupStatuses {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 3px;
+  align-items: center;
+}
+
+.groupCount {
+  flex: 0 0 auto;
+}
+
+.children {
+  margin: 0 0 0 0.95rem;
+  padding: 0 0 0 0.45rem;
+  list-style: none;
+  border-left: 1px solid var(--border-subtle);
+}
+
+.sectionDivider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 8px 6px;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.sectionDivider::before,
+.sectionDivider::after {
+  height: 1px;
+  flex: 1;
+  content: "";
+  background: var(--border-subtle);
+}
+
+.sectionDivider::before {
+  flex: 0 0 12px;
+}
+
+.sectionDividerButton {
+  width: calc(100% - 16px);
+  font: inherit;
+}
+
+.sectionDividerButton:hover,
+.sectionDividerButton:focus-visible {
+  color: var(--text-primary);
+}
+
+.sectionDisclosure {
+  width: 10px;
+  flex: 0 0 10px;
+  font-size: 0.78rem;
+  text-align: center;
+}
+`;export{n as default};
+//# sourceMappingURL=SourceFileOutline.module-BFDy9Edc.js.map

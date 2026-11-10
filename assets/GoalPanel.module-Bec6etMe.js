@@ -1,0 +1,2 @@
+const t="_overlay_131va_1",e="_panel_131va_8",_="_header_131va_25",a="_title_131va_35",o="_status_131va_40",s="_headerActions_131va_44",c="_copied_131va_50",n="_body_131va_54",i="_objective_131va_60",v="_hint_131va_67",d="_actions_131va_73",l={overlay:t,panel:e,header:_,title:a,status:o,headerActions:s,copied:c,body:n,objective:i,hint:v,actions:d};export{d as actions,n as body,c as copied,l as default,_ as header,s as headerActions,v as hint,i as objective,t as overlay,e as panel,o as status,a as title};
+//# sourceMappingURL=GoalPanel.module-Bec6etMe.js.map

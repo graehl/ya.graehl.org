@@ -1,0 +1,184 @@
+const n=`.managerLayout {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: clamp(190px, 25%, 210px) minmax(0, 1fr);
+}
+
+.managerSidebar,
+.managerMain,
+.filterGroup {
+  display: grid;
+  gap: 8px;
+}
+
+.managerSidebar {
+  align-content: start;
+  border-right: 1px solid var(--border-color);
+  padding-right: 14px;
+}
+
+.managerMain {
+  align-content: start;
+  min-width: 0;
+}
+
+.filterGroup {
+  font-size: 0.78rem;
+}
+
+.filterGroup > span {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.filterButton {
+  align-items: center;
+  background: var(--bg-code);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  gap: 7px;
+  min-height: 30px;
+  min-width: 0;
+  padding: 3px 6px;
+  text-align: left;
+}
+
+/* The trailing columns hold small icon buttons, which widen on coarse
+   pointers; auto columns follow them. */
+.filterRow {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  min-width: 0;
+}
+
+.filterRowNoCreate {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.filterRowWithFreeze {
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+}
+
+.filterRowNoCreate.filterRowWithFreeze {
+  grid-template-columns: minmax(0, 1fr) auto auto;
+}
+
+.addButton,
+.freezeTypeButton,
+.revokeTypeButton {
+  align-self: stretch;
+}
+
+/* Scope options stack in the first column on the parent's rows (subgrid),
+   so each revoke button sits beside its option. */
+.scopeGroup {
+  column-gap: 4px;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.scopeGroup > span {
+  grid-column: 1 / -1;
+}
+
+.filterGroup .scopeOptions {
+  display: grid;
+  grid-column: 1;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  row-gap: normal;
+}
+
+.scopeGroup .revokeTypeButton {
+  grid-column: 2;
+}
+
+.filterButton:hover:not(:disabled) {
+  background: var(--bg-hover);
+}
+
+.filterButtonActive {
+  background: color-mix(in srgb, var(--app-yep-green) 14%, var(--bg-code));
+  border-color: var(--app-yep-green);
+  font-weight: 600;
+}
+
+.filterIcon {
+  align-items: center;
+  background: #273449;
+  border-radius: 7px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.28),
+    0 1px 3px rgba(0, 0, 0, 0.26);
+  color: #fff;
+  display: inline-flex;
+  flex: 0 0 26px;
+  height: 26px;
+  justify-content: center;
+  transition:
+    background 0.15s,
+    box-shadow 0.15s;
+}
+
+.filterIcon svg {
+  height: 17px;
+  width: 17px;
+}
+
+.filterButtonActive .filterIcon,
+.scopeOptions [aria-checked="true"] .filterIcon {
+  background: color-mix(in srgb, var(--app-yep-green) 68%, #111827);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, #fff 28%, var(--app-yep-green)),
+    0 1px 3px rgba(0, 0, 0, 0.26);
+}
+
+:global([data-theme="light"]) .filterIcon {
+  background: #475569;
+}
+
+@media (prefers-color-scheme: light) {
+  :global([data-theme="auto"]) .filterIcon {
+    background: #475569;
+  }
+}
+
+.filterButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+@media (width <= 600px) {
+  .managerLayout {
+    gap: 10px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .managerSidebar {
+    border-bottom: 1px solid var(--border-color);
+    border-right: 0;
+    padding-bottom: 10px;
+    padding-right: 0;
+  }
+
+  .filterButton {
+    font-size: 0.72rem;
+    gap: 5px;
+    padding: 3px;
+  }
+
+  .filterIcon {
+    flex-basis: 24px;
+    height: 24px;
+  }
+
+  .filterIcon svg {
+    height: 15px;
+    width: 15px;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SessionShareModal.module-CNxFmAiZ.js.map

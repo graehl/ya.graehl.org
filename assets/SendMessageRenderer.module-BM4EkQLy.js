@@ -1,0 +1,2 @@
+const e="_envelope_g9un2_1",_="_header_g9un2_7",n="_label_g9un2_14",o="_recipient_g9un2_18",s="_summary_g9un2_27",r="_body_g9un2_33",t="_message_g9un2_38",g="_toggle_g9un2_44",a="_error_g9un2_48",l={envelope:e,header:_,label:n,recipient:o,summary:s,body:r,message:t,toggle:g,error:a};export{r as body,l as default,e as envelope,a as error,_ as header,n as label,t as message,o as recipient,s as summary,g as toggle};
+//# sourceMappingURL=SendMessageRenderer.module-BM4EkQLy.js.map

@@ -1,0 +1,29 @@
+const n=`.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  align-items: start;
+  gap: var(--space-4);
+  padding: var(--space-3);
+  background: var(--bg-code);
+  border-radius: var(--radius-md);
+}
+.controls {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+  max-width: 38rem;
+}
+.controls details {
+  overflow-wrap: anywhere;
+}
+.controls p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.providers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+`;export{n as default};
+//# sourceMappingURL=InstructionRestorationControl.module-DnwAMzzZ.js.map

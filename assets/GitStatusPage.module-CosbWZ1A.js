@@ -1,0 +1,82 @@
+const n=`/* Source Control keeps project/branch identity, repository operations, and mode
+   navigation in one wrapping header. Operations use the title row only when
+   their measured intrinsic demand fits; otherwise they take a full row below
+   identity and mode navigation. */
+.sourceHeader :global(.session-header-inner) {
+  flex-wrap: wrap;
+  column-gap: var(--space-2);
+  row-gap: var(--space-1);
+}
+
+.sourceHeader :global(.session-header-left) {
+  min-width: 0;
+  max-width: 100%;
+  flex: 0 1 auto;
+}
+
+.sourceHeader :global(.session-header-actions) {
+  display: contents;
+}
+
+.actionGroup {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 4px;
+}
+
+.headerControls {
+  min-width: 0;
+  flex: 0 0 auto;
+}
+
+.headerControls.titleRow {
+  order: 1;
+}
+
+.headerTabs {
+  min-width: 0;
+  max-width: 100%;
+  flex: 0 0 auto;
+  order: 2;
+  margin-left: auto;
+}
+
+.headerControls.fallbackRow {
+  flex: 1 0 100%;
+  order: 2;
+}
+
+.headerControls.fallbackRow + .headerTabs {
+  order: 1;
+}
+
+.headerControls.fallbackRow .actionGroup {
+  width: 100%;
+}
+
+@media (width < 760px) {
+  .headerTabs {
+    width: 100%;
+    flex-basis: 100%;
+    margin-left: 0;
+  }
+
+  .headerControls.fallbackRow .checkRemote,
+  .headerControls.fallbackRow .checkRemote .actionLabel {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* Content of the integration options help Popover. */
+.integrationHelp {
+  width: min(320px, calc(100dvw - 2rem));
+  margin: 0;
+  padding: var(--space-1) var(--space-2);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+`;export{n as default};
+//# sourceMappingURL=GitStatusPage.module-CosbWZ1A.js.map

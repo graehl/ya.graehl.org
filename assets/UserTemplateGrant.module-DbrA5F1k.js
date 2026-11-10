@@ -1,0 +1,29 @@
+const n=`.grant {
+  margin: var(--space-2) 0;
+  padding: var(--space-3);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  min-width: 0;
+}
+.option {
+  padding-block: var(--space-2);
+}
+.template {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.template img {
+  flex: none;
+}
+.choices {
+  display: flex;
+  flex-direction: column;
+  margin-inline-start: var(--space-3);
+}
+.grant p {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+`;export{n as default};
+//# sourceMappingURL=UserTemplateGrant.module-DbrA5F1k.js.map

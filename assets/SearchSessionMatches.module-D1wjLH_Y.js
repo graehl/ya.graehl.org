@@ -1,0 +1,29 @@
+const n=`:global(.modal-overlay):has(.matches) {
+  padding: 12px;
+}
+:global(.modal):has(.matches) {
+  width: calc(100dvw - 24px);
+  max-width: none;
+  height: calc(100dvh - 24px);
+  max-height: none;
+}
+.matches {
+  min-width: 0;
+}
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-bottom: 16px;
+  overflow-wrap: anywhere;
+}
+.turns {
+  margin-left: 44px;
+}
+.more {
+  margin-top: 12px;
+}
+`;export{n as default};
+//# sourceMappingURL=SearchSessionMatches.module-D1wjLH_Y.js.map

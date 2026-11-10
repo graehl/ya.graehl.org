@@ -1,0 +1,129 @@
+const n=`/*
+ * Reload notice: the fixed bottom-right stack, the placement of the shared
+ * Banner inside it (the Banner owns the box, tone and dismiss button), its
+ * message and warning text, and the layout of its reload / safe-restart
+ * buttons, which are shared Buttons that own their look.
+ *
+ * Two literals stay on the elements alongside these module classes:
+ *
+ * - \`reload-banner\` on the banner root is an interop hook. The global
+ *   \`body.session-transcript-selection-active\` rule in \`styles/index.css\`
+ *   names it to suppress text selection behind the transcript-selection
+ *   shield, and \`scripts/transcript-artifact-smoke.mjs\` hides it to keep
+ *   transcript captures stable. That rule stays global and unchanged.
+ *
+ * - \`reload-banner-stack\` on the stack is a geometry hook.
+ *   \`ReloadBannerStack\` measures the stack against \`.session-input\`, and
+ *   the focused test stubs those rects by class.
+ *
+ * \`--reload-banner-stack-lift\` is an inline custom property written by
+ * that placement effect; custom properties are not scoped by CSS Modules,
+ * so the name is shared with the component verbatim.
+ */
+
+.stack {
+  position: fixed;
+  right: max(12px, env(safe-area-inset-right, 0px));
+  bottom: calc(
+    max(12px, env(safe-area-inset-bottom, 0px)) +
+    var(--reload-banner-stack-lift, 0px)
+  );
+  z-index: 200;
+  display: flex;
+  max-width: min(720px, calc(100dvw - 24px));
+  align-items: flex-end;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.banner {
+  position: relative;
+  width: max-content;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.content {
+  display: inline-flex;
+  align-items: center;
+  flex: 1 1 auto;
+  gap: var(--space-2);
+  min-width: 0;
+  max-width: 100%;
+}
+
+.message {
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.warningText {
+  min-width: 0;
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.warningDetail {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(50%);
+}
+
+.button {
+  flex: 0 0 auto;
+}
+
+.buttonLabel {
+  display: inline-block;
+  transform: translateY(1px);
+}
+
+/* Mobile adjustments */
+@media (width <= 600px) {
+  .stack {
+    top: max(8px, env(safe-area-inset-top, 0px));
+    right: 8px;
+    bottom: auto;
+    left: 8px;
+    max-width: none;
+    align-items: stretch;
+  }
+
+  .banner {
+    width: 100%;
+    max-width: none;
+  }
+
+  .content {
+    width: 100%;
+    justify-content: flex-start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .warningText {
+    flex: 1 1 auto;
+  }
+
+  .button {
+    min-width: 56px;
+  }
+
+  .buttonPrimary {
+    min-width: 62px;
+  }
+
+  .buttonSafe {
+    min-width: 78px;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=ReloadBanner.module-DQ_mk_-5.js.map

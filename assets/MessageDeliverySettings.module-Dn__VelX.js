@@ -1,0 +1,6 @@
+const e=`/* A short duration ("5m", "90s") beside its slider, as wide as the unit boxes. */
+.duration {
+  width: 4.5rem;
+}
+`;export{e as default};
+//# sourceMappingURL=MessageDeliverySettings.module-Dn__VelX.js.map

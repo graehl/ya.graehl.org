@@ -1,0 +1,44 @@
+const n=`.path {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+  color: var(--text-primary);
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pathWithMatch {
+  display: flex;
+  text-overflow: clip;
+}
+
+@media (width <= 600px) {
+  .path {
+    display: -webkit-box;
+    overflow-wrap: anywhere;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .pathWithMatch {
+    display: flex;
+  }
+}
+
+.reviewStates {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 3px;
+  align-items: center;
+}
+
+/* The labelled wrapper of a file's one-letter git status Badge. */
+.status {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+`;export{n as default};
+//# sourceMappingURL=SourceFileRow.module-DuBWsuWB.js.map

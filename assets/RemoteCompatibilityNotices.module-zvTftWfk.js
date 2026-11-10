@@ -1,0 +1,76 @@
+const n=`.floating {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 4px);
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  z-index: 195;
+  width: min(920px, calc(100dvw - 24px));
+}
+
+.belowHeader {
+  /* Keep the navigation header reachable while the notice is visible. */
+  top: calc(env(safe-area-inset-top, 0px) + 48px);
+}
+
+.inline {
+  width: 100%;
+}
+
+.headline {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.meta {
+  min-width: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  font-weight: 400;
+}
+
+.line {
+  margin: 2px 0 0;
+}
+
+.commandField {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-1);
+  width: min(100%, 640px);
+  max-width: 100%;
+  margin-top: var(--space-1);
+}
+
+.commandInput {
+  flex: 1;
+}
+
+/* A read-only command: fixed at its rows, which the compound selector lets
+   win over the shared textarea's minimum height. */
+.commandField .commandInputMulti {
+  min-height: 0;
+  resize: none;
+}
+
+.copyButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  border: 1px solid color-mix(in srgb, var(--border-color) 70%, transparent);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bg-hover) 70%, transparent);
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.copyButton:hover,
+.copyButton.copied {
+  background: var(--border-color);
+}
+`;export{n as default};
+//# sourceMappingURL=RemoteCompatibilityNotices.module-zvTftWfk.js.map

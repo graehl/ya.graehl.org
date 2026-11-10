@@ -1,0 +1,2 @@
+const o="_view_1k1ye_2",e="_scroller_1k1ye_12",_="_document_1k1ye_22",l="_page_1k1ye_33",s="_zoomControls_1k1ye_40",t="_zoomLevel_1k1ye_52",c="_zoomValue_1k1ye_56",n={view:o,scroller:e,document:_,page:l,zoomControls:s,zoomLevel:t,zoomValue:c};export{n as default,_ as document,l as page,e as scroller,o as view,s as zoomControls,t as zoomLevel,c as zoomValue};
+//# sourceMappingURL=PdfjsDocumentView.module-BmJPFnRc.js.map

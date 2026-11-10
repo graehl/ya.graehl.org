@@ -1,0 +1,57 @@
+const n=`.root {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+  min-width: min(22rem, 100%);
+}
+
+.control {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.selectShell {
+  position: relative;
+  width: 100%;
+}
+
+.selectIcon {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 0.55rem;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.selectShell[data-disabled="true"] .selectIcon {
+  opacity: 0.5;
+}
+
+/* As wide as the custom-prefix box below it. */
+.select {
+  width: 100%;
+}
+
+/* Room for the microphone icon drawn over the select's leading edge; the
+   compound selector outranks the control's own padding. */
+.selectShell .selectWithIcon {
+  padding-left: 1.9rem;
+}
+
+.preview {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+}
+
+.hint {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+}
+`;export{n as default};
+//# sourceMappingURL=SpeechMessagePrefixControls.module-Dy0iTWWg.js.map

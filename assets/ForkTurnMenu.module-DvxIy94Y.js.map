@@ -1,0 +1,1 @@
+{"version":3,"file":"ForkTurnMenu.module-DvxIy94Y.js","sources":["../../src/components/blocks/ForkTurnMenu.module.css?raw"],"sourcesContent":["export default \".wrapper {\\n  display: inline-flex;\\n}\\n\""],"names":["ForkTurnMenu_module"],"mappings":"AAAA,MAAAA,EAAe;AAAA;AAAA;"}

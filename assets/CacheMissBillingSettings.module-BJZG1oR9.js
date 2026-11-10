@@ -1,0 +1,125 @@
+const n=`/* Cache-billing pane controls and evidence layout. Shared settings primitives
+   stay global; this module owns only this pane's vocabulary. */
+
+.evidence {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.recencyControl,
+.chartPanel {
+  padding: var(--space-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-code);
+}
+
+.recencyHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.recencyHeader h3,
+.chartPanel h3,
+.eventTableSection h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+  font-weight: 650;
+}
+
+.recencyHeader p,
+.chartPanel > p,
+.eventTableSection > p {
+  margin: var(--space-1) 0 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.recencyHeader > span {
+  flex: 0 0 auto;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.recencyInputs {
+  display: flex;
+  align-items: end;
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.expectedExpiryToggle {
+  margin-top: var(--space-3);
+}
+
+.sliderStack {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.slider {
+  width: 100%;
+  accent-color: var(--accent-color);
+}
+
+.sliderLabels {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.recencyTextInput {
+  flex: 0 0 auto;
+}
+
+.chartGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.chartPanel {
+  min-width: 0;
+}
+
+.chartPanel:first-child {
+  grid-column: 1 / -1;
+}
+
+.eventTableSection > p {
+  margin-bottom: var(--space-2);
+}
+
+@container (max-width: 48rem) {
+  .chartGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .chartPanel:first-child {
+    grid-column: auto;
+  }
+
+  .recencyHeader,
+  .recencyInputs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .recencyHeader > span {
+    align-self: flex-start;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=CacheMissBillingSettings.module-BJZG1oR9.js.map

@@ -1,0 +1,25 @@
+const n=`.container {
+  padding: 16px 0;
+  border-top: 1px solid var(--border-color);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 640px;
+  min-width: 0;
+}
+
+.hint {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.save {
+  align-self: flex-start;
+}
+`;export{n as default};
+//# sourceMappingURL=ProjectQueueReadinessSettings.module-D_SekYv_.js.map

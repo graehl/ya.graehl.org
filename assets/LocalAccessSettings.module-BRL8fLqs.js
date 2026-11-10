@@ -1,0 +1,104 @@
+const n=`.agentApiPreview {
+  min-width: 0;
+  max-width: 100%;
+  margin-block: var(--space-2);
+}
+
+.agentApiPreview pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.customFoldersControls {
+  display: flex;
+  flex: 1 1 20rem;
+  align-items: flex-end;
+  gap: var(--space-2);
+  width: 100%;
+  min-width: min(100%, 18rem);
+  max-width: 28rem;
+}
+
+.customFoldersInput {
+  flex: 1 1 auto;
+}
+
+/* A text field beside its row's description (.settings-item-inline-field). */
+.inlineField {
+  flex: 1 1 20rem;
+  width: auto;
+  min-width: min(100%, 18rem);
+  max-width: 28rem;
+}
+
+.port {
+  width: 96px;
+  flex-shrink: 0;
+}
+
+.customFoldersButton {
+  flex: 0 0 7rem;
+}
+
+/* The password choice nested under Require Password (a .settings-subsection). */
+.passwordBlock {
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+}
+
+.passwordState {
+  margin: var(--space-2) 0;
+}
+
+.passwordHint {
+  margin: var(--space-2) 0 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.passwordActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 2.25rem;
+  margin-top: var(--space-2);
+}
+
+.passwordFeedback {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.passwordFeedbackGood {
+  color: var(--success-color);
+}
+
+.passwordFeedbackBad {
+  color: var(--error-color);
+}
+
+.passwordApply {
+  flex: 0 0 auto;
+}
+
+@media (width < 700px) {
+  .passwordActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .customFoldersControls {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: none;
+  }
+
+  .customFoldersButton {
+    flex-basis: auto;
+    width: 100%;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=LocalAccessSettings.module-BRL8fLqs.js.map

@@ -1,0 +1,60 @@
+const n=`.panel {
+  display: grid;
+  gap: 12px;
+  padding: 16px 0;
+  min-width: 0;
+}
+
+.panel h3,
+.panel p {
+  margin: 0;
+}
+
+.panel p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.hours {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  align-items: center;
+  gap: 8px;
+}
+
+.slider {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin: 0;
+  min-height: 32px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.exploration {
+  min-width: 0;
+  padding: 8px 16px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+}
+
+.viewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.viewHeader h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+`;export{n as default};
+//# sourceMappingURL=SpeechVocabularyControls.module-BIaO0OJH.js.map

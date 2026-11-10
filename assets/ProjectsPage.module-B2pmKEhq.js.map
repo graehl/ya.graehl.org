@@ -1,0 +1,1 @@
+{"version":3,"file":"ProjectsPage.module-B2pmKEhq.js","sources":["../../src/pages/ProjectsPage.module.css?raw"],"sourcesContent":["export default \".loadError {\\n  margin-bottom: var(--space-3);\\n}\\n\""],"names":["ProjectsPage_module"],"mappings":"AAAA,MAAAA,EAAe;AAAA;AAAA;"}

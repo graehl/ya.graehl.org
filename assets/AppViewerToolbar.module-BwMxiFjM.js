@@ -1,0 +1,46 @@
+const n=`.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 2px;
+  padding: 0 2px;
+  min-width: 0;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  touch-action: pan-y;
+}
+.content:not([hidden]) {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.floating {
+  position: absolute;
+  top: env(safe-area-inset-top, 0px);
+  right: env(safe-area-inset-right, 0px);
+  z-index: 3;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm, 4px);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 30%);
+}
+.floating[data-corner="left"] {
+  right: auto;
+  left: env(safe-area-inset-left, 0px);
+}
+/* Below the toolbar at whatever height its controls give it (44 px on
+   touch). The header is the containing block in both states. */
+.failure {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 4;
+  max-width: 100%;
+}
+`;export{n as default};
+//# sourceMappingURL=AppViewerToolbar.module-BwMxiFjM.js.map

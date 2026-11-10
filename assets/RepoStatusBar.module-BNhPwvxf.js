@@ -1,0 +1,171 @@
+const n=`/* Persistent repo/branch status header. */
+.bar {
+  position: static;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2, 8px);
+  padding: var(--space-2, 8px) var(--space-3, 12px);
+  margin-bottom: var(--space-3, 12px);
+  font-size: 0.85rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle, #21262d);
+  border-radius: var(--radius-md, 8px);
+}
+
+.bar.warn {
+  border-color: var(--warning-color);
+  box-shadow: inset 3px 0 0 var(--warning-color);
+}
+
+.bar.inline {
+  min-width: 0;
+  flex: 1 1 auto;
+  flex-wrap: nowrap;
+  gap: 6px;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.branch {
+  display: inline-flex;
+  min-width: 0;
+  flex: 0 1 auto;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-secondary, #8b949e);
+}
+
+.branchName {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-primary, #e6edf3);
+  font-family: var(--font-mono, monospace);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* The branch name is navigation to its tip commit; the adjacent icon copies. */
+.branchLink {
+  color: var(--text-primary, #e6edf3);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.branchLink:hover,
+.branchLink:focus-visible {
+  text-decoration: underline;
+}
+
+.upstream,
+.sync {
+  color: var(--text-secondary, #8b949e);
+  font-family: var(--font-mono, monospace);
+}
+
+.bar.inline.warn .branch,
+.bar.inline.warn .sync {
+  color: var(--warning-color);
+}
+
+.upstream {
+  flex: 0 1 auto;
+  max-width: 9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.badge {
+  margin-left: auto;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+.bar.inline .badge {
+  margin-left: 0;
+  flex-shrink: 0;
+}
+
+.badge.dirty {
+  color: var(--warning-color);
+  background: color-mix(in srgb, var(--warning-color) 16%, transparent);
+}
+
+.state {
+  flex-shrink: 0;
+}
+
+.badgeAction:hover {
+  background: color-mix(in srgb, var(--warning-color) 24%, transparent);
+}
+
+.upstreamButton {
+  font-size: inherit;
+}
+
+.upstreamButton:hover,
+.upstreamButton:focus-visible {
+  color: var(--text-primary, #e6edf3);
+  text-decoration: underline;
+}
+
+.incomingState,
+.incomingTruncated {
+  color: var(--text-secondary, #8b949e);
+}
+
+.incomingList {
+  display: grid;
+  gap: var(--space-2, 8px);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.incomingCommit {
+  display: grid;
+  gap: 3px;
+  padding: var(--space-2, 8px);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle, #21262d);
+  border-radius: var(--radius-sm, 6px);
+}
+
+.incomingCommitHeader {
+  display: flex;
+  min-width: 0;
+  align-items: baseline;
+  gap: var(--space-2, 8px);
+}
+
+.incomingCommitHeader code {
+  flex-shrink: 0;
+  color: var(--text-secondary, #8b949e);
+}
+
+.incomingSubject {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.incomingMeta {
+  color: var(--text-secondary, #8b949e);
+  font-size: 0.8rem;
+}
+
+@media (width <= 600px) {
+  .incomingCommitHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=RepoStatusBar.module-BNhPwvxf.js.map

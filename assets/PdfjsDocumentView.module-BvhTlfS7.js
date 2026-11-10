@@ -1,0 +1,60 @@
+const n=`/* Same box as the browser-viewer PDF frame it replaces. */
+.view {
+  position: relative;
+  height: 100%;
+  min-height: min(68vh, 720px);
+}
+
+:global(.file-viewer-fullscreen) .view {
+  height: calc(100dvh - 50px);
+}
+
+.scroller {
+  position: absolute;
+  inset: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  /* The view owns pinch; one-finger panning stays native. */
+  touch-action: pan-x pan-y;
+  background: var(--bg-tertiary);
+}
+
+.document {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  box-sizing: border-box;
+  width: max-content;
+  min-width: 100%;
+  padding: 12px;
+}
+
+.page {
+  display: block;
+  flex: none;
+  background: #fff;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
+}
+
+.zoomControls {
+  position: absolute;
+  top: 0.5rem;
+  right: 1.25rem;
+  display: flex;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.25);
+}
+
+.zoomControls .zoomLevel {
+  min-width: 4.5rem;
+}
+
+.zoomValue {
+  font-variant-numeric: tabular-nums;
+}
+`;export{n as default};
+//# sourceMappingURL=PdfjsDocumentView.module-BvhTlfS7.js.map

@@ -1,0 +1,77 @@
+const n=`.panel {
+  margin: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+.surface {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+  padding: 18px;
+  color: var(--text-primary);
+  text-align: center;
+}
+.surface:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: -3px;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.heading time {
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+}
+.preview {
+  text-align: left;
+  max-height: 100px;
+  overflow: auto;
+  line-height: 1.5;
+}
+.waveform {
+  height: 72px;
+  display: flex;
+  align-items: stretch;
+}
+.waveform > * {
+  width: 100%;
+  height: 100%;
+}
+.detail {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+.options {
+  padding: 0 18px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+/* A finger-sized row on touch; compounded to outrank the checkbox's own
+   coarse-pointer row height. */
+@media (pointer: coarse) {
+  .options .transcript {
+    min-height: 44px;
+  }
+}
+.actions {
+  display: flex;
+  gap: 12px;
+  padding: 12px 18px;
+  border-top: 1px solid var(--border-color);
+}
+.action {
+  flex: 1;
+}
+.failure {
+  margin: 0 18px 12px;
+}
+`;export{n as default};
+//# sourceMappingURL=AudioMemoPanel.module-z5YlBnMS.js.map

@@ -1,0 +1,267 @@
+const n=`/* Settings → Users: topics/limited-users.md § Delivery v1. Ordinary settings
+   list-and-editor shape; nothing here is sidebar-sized. */
+
+/* One wrapped row of usernames; the pressed one's editor opens below it. */
+.userBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-2);
+}
+
+/* A disabled account stays listed, visibly out of service. Compounded so
+   it outranks the Button variant's color regardless of stylesheet order. */
+.userChipDisabled.userChipDisabled {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.userMeta {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* Title and status on one line; account actions wrap beneath on a phone. */
+.editorHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.editorHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.userActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.editorTitle {
+  margin: 0;
+  font-size: var(--font-size-base);
+}
+
+.account {
+  margin-bottom: var(--space-2);
+}
+.account summary {
+  cursor: pointer;
+  min-height: 40px;
+  align-content: center;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+.accountFields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+}
+
+.editorActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.inputRow {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.grow {
+  flex: 1;
+}
+
+.inputRow > button {
+  flex: none;
+  white-space: nowrap;
+}
+
+.subhead {
+  margin: var(--space-2) 0 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  max-height: 40vh;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+/* One column for the name, one for its control, so every access select shares
+   a left edge instead of stepping with the project name's width. */
+.projectRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 12rem;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.projectName {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Path, level and remove on one line; the path takes the slack. */
+.directoryRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 12rem auto;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+@media (width <= 600px) {
+  .directoryRow {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+  .directoryPath {
+    grid-column: 1 / -1;
+  }
+}
+
+.projectExpand {
+  align-self: flex-start;
+}
+
+/* Three lock selects side by side where there is room, stacked on a phone. */
+.lockRow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: var(--space-2);
+}
+
+.grants {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--space-1) var(--space-3);
+  margin: 0 0 var(--space-3);
+}
+
+.grants dt {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.grants dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+@media (width <= 600px) {
+  .projectRow {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Usage: one row per principal, one column per window. */
+.usage {
+  margin-top: var(--space-4, 1rem);
+}
+
+/* Wide tables scroll inside their own box on a narrow screen. */
+.usageScroll {
+  overflow-x: auto;
+  margin-top: var(--space-3);
+}
+
+.usageTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.usageCaption {
+  caption-side: top;
+  padding-bottom: var(--space-2);
+  color: var(--text-primary);
+  font-weight: 600;
+  text-align: start;
+}
+
+/* Figures align on their right edge so rows compare at a glance. */
+.usageTable .usageNumber {
+  padding-inline: var(--space-3) 0;
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (width < 700px) {
+  .usageTable .usageNumber {
+    padding-inline-start: var(--space-2);
+  }
+
+  .usageTable {
+    font-size: var(--font-size-xs);
+  }
+}
+
+.usageWindow {
+  margin: var(--space-2) 0 0;
+}
+
+.usageWindowLegend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.usageTable th,
+.usageTable td {
+  padding: var(--space-2) var(--space-2) var(--space-2) 0;
+  text-align: start;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.usageTable thead th {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Names wrap at their hyphens, never mid-word; the table scrolls instead. */
+.usageUser {
+  overflow-wrap: normal;
+}
+
+/* A switch with its muted help line under it. */
+.switchWithHint {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.switchWithHint > p {
+  margin: 0;
+}
+`;export{n as default};
+//# sourceMappingURL=UsersSettings.module-82F86VV1.js.map

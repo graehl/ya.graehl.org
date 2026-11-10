@@ -1,0 +1,19 @@
+const n=`/* ==========================================================================
+   Device Stream Component Styles
+
+   Only the vocabulary produced by EmulatorStream remains global here.
+   EmulatorPage owns its rules in \`pages/EmulatorPage.module.css\` and
+   EmulatorNavButtons owns its rules in
+   \`components/EmulatorNavButtons.module.css\`.
+   ========================================================================== */
+
+.emulator-video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+`;export{n as default};
+//# sourceMappingURL=emulator-DZ1KHjHA.js.map

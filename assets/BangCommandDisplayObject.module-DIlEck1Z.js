@@ -1,0 +1,97 @@
+const n=`.root {
+  margin: var(--space-2) 0;
+  padding: var(--space-1) var(--space-2) var(--space-2);
+  border: 1px solid
+    color-mix(in srgb, var(--accent-primary) 35%, var(--border-color));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--accent-primary) 6%, var(--bg-code));
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+.error,
+.killed {
+  border-color: color-mix(in srgb, var(--error-color) 45%, var(--border-color));
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.glyph {
+  color: var(--accent-primary);
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.line {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+}
+
+.meta {
+  display: inline-flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-left: auto;
+  white-space: nowrap;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.running {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.exitNonzero {
+  color: var(--error-color);
+  font-weight: 600;
+}
+
+.error[role="alert"] {
+  color: var(--error-color);
+}
+
+.preview {
+  margin: var(--space-1) 0 0;
+  padding: var(--space-1) var(--space-2);
+  max-height: 320px;
+  overflow: auto;
+  border-radius: var(--radius-sm);
+  background: var(--bg-code);
+  font-family: var(--font-mono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.output {
+  margin-top: var(--space-1);
+}
+
+.stderr summary {
+  cursor: pointer;
+  color: var(--text-muted);
+  margin-top: var(--space-1);
+}
+
+.truncated {
+  margin-top: var(--space-1);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-top: var(--space-1);
+}
+`;export{n as default};
+//# sourceMappingURL=BangCommandDisplayObject.module-DIlEck1Z.js.map

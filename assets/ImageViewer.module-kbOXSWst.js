@@ -1,0 +1,197 @@
+const n=`.viewer {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+
+.viewer.hasNavigation {
+  grid-template-rows: auto minmax(0, 1fr) 1.75rem;
+}
+
+.viewer.toolbarPortaled {
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.viewer.hasNavigation.toolbarPortaled {
+  grid-template-rows: minmax(0, 1fr) 1.75rem;
+}
+
+.toolbar {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.375rem 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+
+.headerToolbar {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.zoomLevel {
+  min-width: 3.25rem;
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  text-align: center;
+}
+
+.download {
+  margin-left: auto;
+}
+
+.stageShell {
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.stage {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: var(--bg-surface);
+  container-type: size;
+  touch-action: none;
+}
+
+.navigation {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 140ms ease;
+}
+
+.navigationButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+
+/* Over the image the arrows keep their round, translucent, shadowed shape
+   (census mapping); compounded so the override does not depend on
+   stylesheet order. */
+.navigationButton.navigationButton {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+}
+
+.navigation.visible {
+  opacity: 1;
+}
+
+.navigation.hidden {
+  opacity: 0;
+}
+
+.navigation.hidden .navigationButton {
+  pointer-events: none;
+}
+
+.navigationIcon {
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.navigationButton.previous {
+  left: 0.75rem;
+}
+
+.navigationButton.next {
+  right: 0.75rem;
+}
+
+.position {
+  display: grid;
+  min-width: 0;
+  min-height: 1.75rem;
+  place-items: center;
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 140ms ease;
+}
+
+.position.visible {
+  opacity: 1;
+}
+
+.position.hidden {
+  opacity: 0;
+}
+
+.canvas {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  place-items: center;
+  padding: 1rem;
+}
+
+.surface {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  line-height: 0;
+}
+
+.surface.zoom {
+  max-width: none;
+  max-height: none;
+}
+
+.image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  user-select: none;
+  border-radius: var(--radius-sm);
+}
+
+.surface.fit .image {
+  max-width: calc(100cqw - 2rem);
+  max-height: calc(100cqh - 2rem);
+}
+
+/* A raster fit is bounded by its natural size; a vector has none to be bounded
+   by, so fitting one means taking the whole stage and letting object-fit keep
+   the aspect ratio. */
+.surface.fit .image.vector {
+  width: calc(100cqw - 2rem);
+  height: calc(100cqh - 2rem);
+}
+
+.surface.zoom .image {
+  max-width: none;
+  max-height: none;
+}
+`;export{n as default};
+//# sourceMappingURL=ImageViewer.module-kbOXSWst.js.map

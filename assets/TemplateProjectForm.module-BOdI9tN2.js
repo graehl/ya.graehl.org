@@ -1,0 +1,45 @@
+const n=`.form {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+}
+.attachment {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px;
+  margin: 6px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+}
+.palette {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+.legend {
+  font-weight: 600;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+.preview {
+  width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+}
+.path {
+  overflow-wrap: anywhere;
+  color: var(--text-secondary);
+}
+
+.expansion {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+`;export{n as default};
+//# sourceMappingURL=TemplateProjectForm.module-BOdI9tN2.js.map

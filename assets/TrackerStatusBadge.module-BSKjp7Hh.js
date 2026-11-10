@@ -1,0 +1,12 @@
+const e=`.badge {
+  flex-shrink: 0;
+}
+
+/* GitHub's merged purple, which no Badge tone carries; compounded so it
+   outranks the Badge's own tone class. White text keeps it above 4.5:1. */
+.badge.merged {
+  --badge-color: #8250df;
+  --badge-on: #fff;
+}
+`;export{e as default};
+//# sourceMappingURL=TrackerStatusBadge.module-BSKjp7Hh.js.map

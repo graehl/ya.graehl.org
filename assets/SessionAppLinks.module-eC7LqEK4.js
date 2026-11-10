@@ -1,0 +1,15 @@
+const n=`.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--accent-color);
+  overflow-wrap: anywhere;
+}
+`;export{n as default};
+//# sourceMappingURL=SessionAppLinks.module-eC7LqEK4.js.map

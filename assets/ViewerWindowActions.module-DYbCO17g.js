@@ -1,0 +1,51 @@
+const n=`.actions {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  gap: 0;
+}
+/* ComposerMicAction's raw button keeps its legacy look until the composer
+   pass; shared controls always carry a class, so this cannot reach them. */
+.actions > button:not([class]) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm, 4px);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  cursor: pointer;
+  box-sizing: border-box;
+}
+.actions > button:not([class]):hover {
+  background: var(--bg-hover);
+}
+/* Waiting to reload once on the next change. */
+.actions > .reloadArmed.reloadArmed,
+.actions > .reloadArmed.reloadArmed:hover {
+  color: var(--accent-color);
+  border-style: dashed;
+  border-color: var(--accent-color);
+}
+/* Reloads on every change. */
+.actions > .reloadAuto.reloadAuto,
+.actions > .reloadAuto.reloadAuto:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: inset 0 0 0 1px var(--accent-color);
+}
+.actions svg {
+  display: block;
+  flex: none;
+  margin: 0;
+}
+@media (pointer: coarse) {
+  .actions > button:not([class]) {
+    min-height: 32px;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=ViewerWindowActions.module-DYbCO17g.js.map

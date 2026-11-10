@@ -1,0 +1,63 @@
+const n=`.settings {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+.providerCard {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+.providerCard summary {
+  cursor: pointer;
+  min-height: 44px;
+  display: list-item;
+  align-content: center;
+}
+.providerCard details[open] > summary {
+  margin-bottom: 16px;
+}
+/* Zero-specificity, so Field hints and errors keep their own look. */
+:where(.settings) p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+.fields {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.settings button {
+  justify-self: start;
+}
+.emailRow {
+  display: flex;
+  gap: 8px;
+}
+.redundantHint {
+  color: var(--error-color, #c44343);
+}
+.logEntries {
+  display: grid;
+  gap: 8px;
+}
+.logEntry {
+  display: grid;
+  gap: 4px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 8px 0;
+  overflow-wrap: anywhere;
+}
+.logEntry time {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+`;export{n as default};
+//# sourceMappingURL=VhostOauthSettings.module-CiOE9hQT.js.map

@@ -1,0 +1,62 @@
+const n=`.fileIdentity {
+  align-items: center;
+  background: var(--bg-code);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  gap: 8px;
+  min-width: 0;
+  padding: 9px 10px;
+}
+
+.fileIdentity > svg {
+  flex: 0 0 auto;
+  height: 18px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+  width: 18px;
+}
+
+.fileIdentity > span:nth-child(2) {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.liveBadge {
+  flex: 0 0 auto;
+}
+
+.description {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.linkIcon {
+  height: 17px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+  width: 17px;
+}
+
+.inventory {
+  display: grid;
+  gap: 8px;
+}
+
+.inventoryHeading {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inventoryHeading strong {
+  font-size: 0.83rem;
+}
+`;export{n as default};
+//# sourceMappingURL=PublicFileShareModal.module-BRgBeHyB.js.map

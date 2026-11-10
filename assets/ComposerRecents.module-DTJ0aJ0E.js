@@ -1,0 +1,2 @@
+const s="_recents_mprrs_1",e="_heading_mprrs_15",r="_gallery_mprrs_26",_="_tiles_mprrs_33",t="_file_mprrs_46",o="_close_mprrs_60",c="_disclosure_mprrs_68",n="_actions_mprrs_81",a="_memo_mprrs_95",l="_metadata_mprrs_98",m="_preview_mprrs_107",i={recents:s,heading:e,gallery:r,tiles:_,file:t,close:o,disclosure:c,actions:n,memo:a,metadata:l,preview:m};export{n as actions,o as close,i as default,c as disclosure,t as file,r as gallery,e as heading,a as memo,l as metadata,m as preview,s as recents,_ as tiles};
+//# sourceMappingURL=ComposerRecents.module-DTJ0aJ0E.js.map

@@ -1,0 +1,49 @@
+const n=`.toolUse {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pattern {
+  font-family: "SF Mono", Monaco, monospace;
+  font-size: var(--font-size-lg);
+  color: var(--link-color);
+}
+
+.path {
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.count {
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+}
+
+.error {
+  color: var(--error-color);
+  padding: 0.5rem;
+  background: var(--bg-error);
+  border-radius: 4px;
+}
+
+.empty {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: var(--font-size-lg);
+}
+`;export{n as default};
+//# sourceMappingURL=GlobRenderer.module-BWMs6zzE.js.map

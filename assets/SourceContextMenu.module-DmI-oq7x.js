@@ -1,0 +1,32 @@
+const e=`.rowSurface {
+  position: relative;
+}
+
+.trigger {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  align-self: stretch;
+  opacity: 0;
+}
+
+/* The row supplies the hover/focus surface by opting in with \`rowSurface\`; the
+   menu owns the reveal. Row owners used to reach in by class name instead, so
+   every new list of rows had to remember to restyle a control it does not own. */
+.rowSurface:hover > .trigger,
+.rowSurface:focus-within > .trigger,
+.trigger:focus-visible {
+  opacity: 1;
+}
+
+/* Touch rows have no hover, so the trigger stays visible and grows its target. */
+@media (width <= 600px) {
+  .trigger {
+    position: static;
+    width: auto;
+    flex: 0 0 36px;
+    opacity: 1;
+  }
+}
+`;export{e as default};
+//# sourceMappingURL=SourceContextMenu.module-DmI-oq7x.js.map

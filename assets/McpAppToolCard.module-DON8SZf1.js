@@ -1,0 +1,20 @@
+const n=`.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1, 4px);
+  margin-top: var(--space-1, 4px);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1, 4px);
+}
+
+.note {
+  margin: var(--space-1, 4px) 0 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+`;export{n as default};
+//# sourceMappingURL=McpAppToolCard.module-DON8SZf1.js.map

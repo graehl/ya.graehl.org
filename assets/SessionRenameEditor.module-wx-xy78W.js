@@ -1,0 +1,51 @@
+const n=`.inline,
+.dialog {
+  min-width: 0;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.inline {
+  flex: 1;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dialog {
+  flex-direction: column;
+}
+
+.label {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.inline .label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.input {
+  flex: 1;
+}
+
+.inline .input {
+  width: auto;
+  min-width: min(12rem, 100%);
+}
+
+.actions {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.failure {
+  flex-basis: 100%;
+}
+`;export{n as default};
+//# sourceMappingURL=SessionRenameEditor.module-wx-xy78W.js.map

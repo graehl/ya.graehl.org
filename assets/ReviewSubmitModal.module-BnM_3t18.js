@@ -1,0 +1,69 @@
+const n=`.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+  max-height: 50vh;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+  list-style: none;
+}
+
+.row {
+  padding: var(--space-2, 8px);
+  border: 1px solid var(--border-subtle, #21262d);
+  border-radius: var(--radius-sm, 4px);
+}
+
+.stale {
+  opacity: 0.75;
+  border-color: var(--warning-color);
+}
+
+.location {
+  font-family: var(--font-mono, monospace);
+  font-size: var(--font-size-sm, 0.85em);
+}
+
+.staleLabel,
+.movedLabel {
+  margin-left: var(--space-2, 8px);
+}
+
+.staleLabel {
+  color: var(--warning-color);
+  font-size: var(--font-size-sm, 0.8em);
+}
+
+.movedLabel {
+  color: var(--text-muted, #8b949e);
+  font-size: var(--font-size-sm, 0.8em);
+}
+
+.rowText {
+  margin-top: var(--space-1, 4px);
+  white-space: pre-wrap;
+}
+
+.destination {
+  display: grid;
+  gap: var(--space-2, 8px);
+  padding: var(--space-3, 12px);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle, #21262d);
+  border-radius: var(--radius-md, 8px);
+}
+
+.newSession {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2, 8px);
+}
+
+@media (width <= 600px) {
+  .newSession {
+    grid-template-columns: 1fr;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=ReviewSubmitModal.module-BnM_3t18.js.map

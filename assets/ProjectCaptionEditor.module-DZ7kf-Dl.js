@@ -1,0 +1,59 @@
+const n=`.slot {
+  display: grid;
+  justify-items: start;
+  min-width: 0;
+  margin-top: var(--space-1);
+}
+
+.caption {
+  max-width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+  text-align: left;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.editableSlot {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-1);
+}
+
+/* Long press edits, so the OS text-selection callout must not claim it. */
+.pressable {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.editButton {
+  flex: none;
+}
+
+.editor {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  gap: 3px;
+}
+
+.input {
+  flex: 1;
+  min-width: 8ch;
+}
+
+.failure {
+  max-width: 28rem;
+  margin-top: 2px;
+}
+`;export{n as default};
+//# sourceMappingURL=ProjectCaptionEditor.module-DZ7kf-Dl.js.map

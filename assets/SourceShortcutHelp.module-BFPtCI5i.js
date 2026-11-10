@@ -1,0 +1,69 @@
+const n=`.root {
+  position: absolute;
+  z-index: 5;
+  top: 4px;
+  right: 6px;
+}
+
+.trigger {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle, #21262d);
+  border-radius: 50%;
+  cursor: help;
+}
+
+.trigger:hover,
+.trigger:focus-visible,
+.trigger[aria-expanded="true"] {
+  color: var(--text-primary, #e6edf3);
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+/* The shared Popover owns the surface; this lays out the shortcut table. */
+.popover {
+  display: grid;
+  width: max-content;
+  min-width: 210px;
+}
+
+.popoverTitle {
+  margin: 0 4px 5px;
+  color: var(--text-primary, #e6edf3);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 4px;
+  color: var(--text-secondary, #8b949e);
+  font-size: 0.75rem;
+}
+
+.row kbd {
+  color: var(--text-primary, #e6edf3);
+  font: inherit;
+  font-family: var(--font-mono, monospace);
+  text-align: right;
+}
+
+/* The narrow commit layout hides this disclosure entirely; the sibling
+   \`.source-search-shortcut\` kbd hint keeps its own rule in renderers.css. */
+@media (width <= 600px) {
+  .root {
+    display: none;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SourceShortcutHelp.module-BFPtCI5i.js.map

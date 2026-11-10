@@ -1,0 +1,285 @@
+const n=`/*
+ * Inbox content: the page root, the tier sections and their headers, and
+ * the pending Project Queue rows. Rules move here from \`styles/index.css\`
+ * in their original cascade order, since the tier and empty-section
+ * headers override the shared header rule by descendant specificity and
+ * the mobile header override depends on source order.
+ *
+ * Several inbox-prefixed literals stay global and unchanged because other
+ * components produce them:
+ *   - \`inbox-toolbar\` is also rendered by \`pages/ProjectsPage.tsx\` and
+ *     \`pages/GlobalSessionsPage.tsx\`.
+ *   - \`inbox-empty\` is also rendered by both of those pages.
+ * The refresh button is a shared Button showing its \`busy\` spinner.
+ */
+
+.root {
+  padding-top: var(--space-2);
+}
+
+.toolbar {
+  flex-wrap: wrap;
+}
+
+.tiers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.section {
+  margin-bottom: var(--space-2);
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  margin: 0 0 var(--space-3);
+  padding-left: var(--space-2);
+  border-left: 3px solid var(--border-color);
+}
+
+/* Tier-specific header colors */
+.tierAttention .sectionHeader {
+  border-left-color: var(--attention-color);
+  color: var(--attention-color);
+}
+
+.tierActive .sectionHeader {
+  border-left-color: var(--thinking-color);
+  color: var(--thinking-color);
+}
+
+.tierRecent .sectionHeader {
+  border-left-color: var(--success-color);
+  color: var(--success-color);
+}
+
+.tierBackground .sectionHeader {
+  border-left-color: var(--text-dimmed);
+  color: var(--text-muted);
+}
+
+.tierUnread8h .sectionHeader {
+  border-left-color: var(--link-color);
+  color: var(--link-color);
+}
+
+.tierUnread24h .sectionHeader {
+  border-left-color: var(--text-dimmed);
+  color: var(--text-muted);
+}
+
+.tierReviews .sectionHeader {
+  color: var(--accent-color);
+  border-left-color: var(--accent-color);
+}
+
+.reviewOutcomeList {
+  display: grid;
+  gap: var(--space-2);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.reviewOutcomeCard {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 8px;
+}
+
+.reviewOutcomeHead,
+.reviewOutcomeMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.reviewOutcomeHead {
+  color: var(--accent-color);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.reviewOutcomeHead a,
+.reviewOutcomeMeta a {
+  color: var(--link-color);
+}
+
+.reviewOutcomeText {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.reviewOutcomeMeta {
+  justify-content: flex-start;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* The count Badge takes its tier's color; compounded so it outranks the
+   Badge's tone class. */
+.sectionHeader .sectionCount {
+  --badge-color: currentColor;
+}
+
+/* Inherits the tier color, like the count. */
+.sectionHelp {
+  color: inherit;
+}
+
+/* A circled "?", so the control reads as help rather than stray text. */
+.sectionHelpMark {
+  display: inline-grid;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.sectionHelpContent {
+  width: min(320px, calc(100dvw - 32px));
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+/* Empty section styling */
+.sectionEmpty .sectionHeader {
+  opacity: 0.6;
+}
+
+.sectionEmptyMessage {
+  margin: 0;
+  padding: var(--space-3);
+  color: var(--text-dimmed);
+  font-size: var(--font-size-sm);
+  font-style: italic;
+}
+
+.queueItem {
+  list-style: none;
+}
+
+.queueItemLink {
+  display: block;
+  padding: 0.85rem 1rem;
+  border-left: 3px solid var(--project-queue-action-bg);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  color: inherit;
+  text-decoration: none;
+}
+
+.queueItemLink:hover {
+  background: var(--bg-hover);
+}
+
+.queueItemFailed .queueItemLink {
+  border-left-color: var(--error-color);
+}
+
+.queueItemTitleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.queueItemTitle {
+  display: -webkit-box;
+  flex: 1;
+  overflow: hidden;
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.queueItemBadge {
+  flex-shrink: 0;
+}
+
+.queueItemPreview {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: var(--space-1);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.queueItemMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.queueItemProject {
+  overflow: hidden;
+  max-width: 160px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.queueItemProject::after {
+  content: "\\00B7";
+  margin-left: var(--space-2);
+}
+
+.queueItemStatus {
+  flex-shrink: 0;
+  padding: 0.125rem 0.375rem;
+  border: 1px solid
+    color-mix(in srgb, var(--project-queue-action-bg) 32%, transparent);
+  border-radius: 999px;
+  color: var(--project-queue-action-bg);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.queueItemStatusFailed {
+  border-color: color-mix(in srgb, var(--error-color) 32%, transparent);
+  color: var(--error-color);
+}
+
+.queueItemStatusDispatching {
+  background: color-mix(
+    in srgb,
+    var(--project-queue-action-bg) 12%,
+    transparent
+  );
+}
+
+/* Mobile adjustments */
+@media (width <= 600px) {
+  .sectionHeader {
+    font-size: var(--font-size-sm);
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=InboxContent.module-BshsEyo1.js.map

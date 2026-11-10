@@ -1,0 +1,17 @@
+const n=`/* A detail panel filling the session right pane instead of covering the page. */
+.panePanel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.panePanel[hidden] {
+  display: none;
+}
+`;export{n as default};
+//# sourceMappingURL=SessionManagedViewer.module-CCqYFz_v.js.map

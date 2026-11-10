@@ -1,0 +1,16 @@
+const n=`.section {
+  min-width: 0;
+}
+
+.leftAlignedTrigger {
+  text-align: left;
+}
+
+.caption {
+  margin: var(--space-2) 0 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+}
+`;export{n as default};
+//# sourceMappingURL=RouterClaudeAiConnectorsSelection.module-BAObAKe5.js.map

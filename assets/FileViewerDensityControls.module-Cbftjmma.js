@@ -1,0 +1,28 @@
+const n=`.controls {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+}
+
+.operator {
+  color: var(--text-primary);
+  font:
+    600 18px / 1 system-ui,
+    sans-serif;
+}
+
+.smallLetter,
+.largeLetter {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1;
+}
+
+.smallLetter {
+  font-size: 14px;
+}
+
+.largeLetter {
+  font-size: 18px;
+}
+`;export{n as default};
+//# sourceMappingURL=FileViewerDensityControls.module-Cbftjmma.js.map

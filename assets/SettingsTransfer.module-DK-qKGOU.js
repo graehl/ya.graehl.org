@@ -1,0 +1,66 @@
+const n=`/* Browser-settings transfer sections beneath the Settings category list. */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.title {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.buttons > * {
+  width: 100%;
+}
+
+.status {
+  min-height: 1.2em;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.changes {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 14rem;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  list-style: none;
+  font-size: var(--font-size-xs);
+}
+
+.change {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  padding: 2px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.changeKey {
+  color: var(--text-secondary);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.changeValues {
+  overflow: hidden;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+`;export{n as default};
+//# sourceMappingURL=SettingsTransfer.module-DK-qKGOU.js.map

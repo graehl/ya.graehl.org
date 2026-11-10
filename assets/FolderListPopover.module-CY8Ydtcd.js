@@ -1,0 +1,134 @@
+const n=`/* Layout inside the shared popover panel, which supplies frame and padding. */
+.popover {
+  display: flex;
+  flex-direction: column;
+  width: min(360px, calc(100dvw - 16px));
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 0 0 var(--space-1) 6px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.title {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  line-height: 20px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.count {
+  flex: 1;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  white-space: nowrap;
+}
+
+.stepper {
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.rows {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: 340px;
+  margin: 0;
+  padding: var(--space-1) 0 0;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  min-height: 30px;
+  padding: 2px 6px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  text-align: left;
+  text-decoration: none;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.row:hover:not(:disabled),
+.row:focus-visible {
+  background: var(--bg-hover);
+}
+
+/* A link row would otherwise take the browser's heavy link focus ring. */
+.row:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: -2px;
+}
+
+.row:disabled {
+  color: var(--text-muted);
+  cursor: default;
+}
+
+.row[aria-current="page"] {
+  background: var(--bg-hover);
+  box-shadow: inset 2px 0 0 var(--accent-color);
+  font-weight: 600;
+}
+
+.glyph {
+  flex: 0 0 auto;
+  color: var(--text-muted);
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: var(--fixed-font-size-base);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.size,
+.age {
+  flex: 0 0 auto;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  text-align: right;
+}
+
+.size {
+  width: 4.5em;
+}
+
+.age {
+  width: 2.5em;
+}
+
+.status {
+  padding: 6px 8px;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+@media (pointer: coarse) {
+  .row {
+    min-height: 40px;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=FolderListPopover.module-CY8Ydtcd.js.map

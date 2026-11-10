@@ -1,0 +1,48 @@
+const n=`/* Sits inline on the project card's title line, beside the project name. */
+.slot {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  flex-shrink: 0;
+}
+
+.codeName {
+  max-width: 12ch;
+  padding: 0 5px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+button.codeName {
+  cursor: text;
+}
+
+button.codeName:hover {
+  color: var(--text-secondary);
+  border-color: var(--text-muted);
+}
+
+.editor {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+  gap: 3px;
+}
+
+.input {
+  width: 14ch;
+  max-width: calc(100% - 1.5rem);
+  min-width: 5ch;
+}
+`;export{n as default};
+//# sourceMappingURL=ProjectCodeNameEditor.module-bThtlqvF.js.map

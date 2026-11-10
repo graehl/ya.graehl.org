@@ -1,0 +1,44 @@
+const n=`.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.codeRow {
+  align-self: stretch;
+}
+
+.userCode {
+  font-family: var(--font-mono);
+  font-size: 1.1em;
+  letter-spacing: 0.08em;
+  user-select: all;
+}
+
+.codeInput {
+  flex: 1 1 16rem;
+}
+
+.output {
+  max-width: 100%;
+  max-height: 10rem;
+  margin: 0;
+  padding: var(--space-2);
+  overflow: auto;
+  font-size: 0.85em;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: var(--bg-secondary);
+  border-radius: 6px;
+}
+`;export{n as default};
+//# sourceMappingURL=ProviderSignIn.module-uTXNgzrw.js.map

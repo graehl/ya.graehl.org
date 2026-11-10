@@ -1,0 +1,132 @@
+const n=`.workspace {
+  position: fixed;
+  inset: 0;
+  /* Above the composer's floating viewer controller (10002): the editor
+     covers everything, and a parked-viewer chip must not show through it. */
+  z-index: 10003;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+.header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+.identity {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 4px;
+}
+.identity span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.status {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+.message {
+  margin: 4px 12px;
+}
+.rebuildControls {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+}
+.buildLog {
+  padding: 4px 12px;
+  font-size: 12px;
+}
+.buildLog pre {
+  max-height: 40vh;
+  overflow: auto;
+  margin: 4px 0 0;
+  padding: 8px;
+  background: var(--bg-code, var(--bg-secondary));
+  white-space: pre-wrap;
+}
+.panes {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+.sourcePane,
+.previewPane {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+/* The code textarea is chromeless: the pane draws the frame. */
+.code {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  box-sizing: border-box;
+  resize: none;
+  border: 0;
+  padding: 12px;
+  color: var(--text-primary);
+  background: var(--bg-surface);
+  font: 14px / 24px monospace;
+  tab-size: 2;
+}
+.previewPane {
+  border-left: 1px solid var(--border-color);
+}
+.previewPane iframe {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  border: 0;
+  background: white;
+}
+.previewTools {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px 8px 0;
+  font-size: 13px;
+}
+.targetPicker {
+  padding: 8px;
+}
+.views {
+  display: none;
+}
+@media (width <= 650px) {
+  .header {
+    flex-wrap: wrap;
+  }
+  .identity {
+    flex-basis: 100%;
+  }
+  .views {
+    display: flex;
+    padding: 6px 12px;
+  }
+  .panes[data-preview="true"] .sourcePane {
+    display: none;
+  }
+  .panes[data-preview="false"] .previewPane {
+    display: none;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SourceEditor.module-CEOBLqx0.js.map

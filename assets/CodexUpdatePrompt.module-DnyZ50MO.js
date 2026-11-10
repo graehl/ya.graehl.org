@@ -1,0 +1,2 @@
+const t="_releaseLink_1xrm4_1",o="_commandBlock_1xrm4_6",u="_command_1xrm4_6",m="_outputBlock_1xrm4_24",_="_outputHeader_1xrm4_30",e="_outputTitle_1xrm4_37",c="_outputCommand_1xrm4_42",n="_output_1xrm4_24",a={releaseLink:t,commandBlock:o,command:u,outputBlock:m,outputHeader:_,outputTitle:e,outputCommand:c,output:n};export{u as command,o as commandBlock,a as default,n as output,m as outputBlock,c as outputCommand,_ as outputHeader,e as outputTitle,t as releaseLink};
+//# sourceMappingURL=CodexUpdatePrompt.module-DnyZ50MO.js.map

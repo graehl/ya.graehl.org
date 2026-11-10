@@ -1,0 +1,2 @@
+import{u as s}from"./index-CBCjJwwH.js";import{e as t}from"./main-CGAgjPEE.js";function r(e){return{signInRequired:e}}function o(){const{t:e}=s(),n=t().state;switch(n==null?void 0:n.signInRequired){case"auth_failed":return e("hostOfflineMessageResumeRejected");case"resume_incompatible":return e("hostOfflineMessageResumeIncompatible");default:return null}}export{r as s,o as u};
+//# sourceMappingURL=useSignInRequiredNotice-BG0Z15zF.js.map

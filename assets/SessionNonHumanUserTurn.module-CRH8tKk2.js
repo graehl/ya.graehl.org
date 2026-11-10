@@ -1,0 +1,26 @@
+const n=`.flag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-hover);
+  vertical-align: middle;
+}
+
+.flag:hover,
+.flag:focus-visible {
+  color: var(--accent-color);
+}
+
+@media (pointer: coarse), (width <= 600px) {
+  .flag {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SessionNonHumanUserTurn.module-CRH8tKk2.js.map

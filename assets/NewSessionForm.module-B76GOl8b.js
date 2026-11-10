@@ -1,0 +1,534 @@
+const n=`/* A muted composer holds a draft the launch will not send — a fork copies the
+   provider transcript instead. It stays readable so it can still inform the
+   choice, but reads as inert and gives its height back to the options below. */
+.mutedComposer textarea {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.mutedComposer textarea:focus {
+  outline: none;
+}
+
+.fullPaneToggle[aria-pressed="true"] {
+  color: var(--app-yep-green);
+  border-color: color-mix(
+    in srgb,
+    var(--app-yep-green) 62%,
+    var(--border-input)
+  );
+  background: color-mix(in srgb, var(--app-yep-green) 10%, transparent);
+}
+
+.projectControlsSlot,
+.secondaryOptions {
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.secondaryOptions {
+  grid-area: secondary;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.secondaryOptions[hidden] {
+  display: none;
+}
+
+.advancedSection {
+  grid-area: advanced;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.65rem;
+}
+
+.advancedSummary {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.35;
+}
+
+.selectedChoice {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  text-align: left;
+}
+
+.leftAlignedTrigger {
+  text-align: left;
+}
+
+.selectedChoice :global(.mode-option-dot),
+.selectedChoice :global(.model-switch-indicator-dot) {
+  width: 10px;
+  height: 10px;
+}
+
+.selectedChoiceText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.selectedChoiceText > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.choiceStatus {
+  color: var(--warning-color);
+  font-size: var(--font-size-xs);
+  line-height: 1.2;
+}
+
+.effortSection {
+  grid-column: auto;
+}
+
+.optionPlaceholder {
+  visibility: hidden;
+}
+
+/* Authentication state occupies a second line without resizing this control. */
+.providerTrigger {
+  min-block-size: calc(2lh + 2 * var(--space-2) + 2px);
+}
+
+.optionLayout :global(.new-session-provider-slot) {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.optionLayout :global(.new-session-provider-slot) .compactProviderSection {
+  grid-column: auto;
+}
+
+.secondaryOptions > * {
+  min-width: 0;
+}
+
+.secondaryOptions > :global(.new-session-helper-section),
+.secondaryOptions > :global(.new-session-mode-section) {
+  margin-bottom: 0;
+}
+
+.secondaryOptionsHidden {
+  visibility: hidden;
+}
+
+.templateProjectSlot {
+  grid-area: template;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+}
+.templateProjectSlot[hidden] {
+  display: none;
+}
+
+.projectSearchAnchor {
+  position: relative;
+}
+.newProject {
+  grid-area: newproject;
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+}
+/* The row spans the page; a path field that wide would be hard to scan. */
+.newProjectField,
+.newProjectTarget {
+  max-width: 36rem;
+}
+.newProjectField {
+  display: grid;
+  gap: 4px;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+.newProjectField input {
+  min-width: 0;
+  min-height: 40px;
+  padding: 8px 10px;
+  color: var(--text-primary);
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-family: var(--font-mono);
+}
+.newProjectTarget {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+.newProjectGit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+.newProjectPlan {
+  margin: 0;
+  padding-left: 8px;
+  border-left: 2px solid var(--border-color);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+@media (width < 900px) {
+  .optionLayout.optionLayout {
+    grid-template-areas:
+      "main"
+      "project"
+      "newproject"
+      "template"
+      "provider"
+      "advanced"
+      "secondary";
+  }
+
+  .optionLayoutWithoutProvider.optionLayoutWithoutProvider {
+    grid-template-areas:
+      "main"
+      "project"
+      "newproject"
+      "template"
+      "advanced"
+      "secondary";
+  }
+
+  .secondaryOptions {
+    grid-area: secondary;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  }
+}
+
+@media (width <= 600px) {
+  .optionLayout :global(.new-session-provider-slot) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .secondaryOptions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .optionLayout.optionLayout {
+    grid-template-areas:
+      "main project"
+      "newproject newproject"
+      "template template"
+      "provider provider"
+      "advanced advanced"
+      "secondary secondary";
+  }
+
+  .optionLayoutWithoutProject.optionLayoutWithoutProject {
+    grid-template-areas:
+      "main main"
+      "provider provider"
+      "advanced advanced"
+      "secondary secondary";
+  }
+
+  /* A limited user's fixed launch can leave no provider picker in this slot. */
+  .optionLayoutWithoutProvider.optionLayoutWithoutProvider {
+    grid-template-areas:
+      "main project"
+      "newproject newproject"
+      "template template"
+      "advanced advanced"
+      "secondary secondary";
+  }
+
+  .optionLayoutWithoutProject.optionLayoutWithoutProvider {
+    grid-template-areas:
+      "main main"
+      "advanced advanced"
+      "secondary secondary";
+  }
+}
+
+.captionToggle {
+  margin-inline-start: auto;
+}
+
+.optionCaption {
+  margin: var(--space-2) 0 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+/* A risk the selected option carries; shown whether or not captions are. */
+.optionWarning {
+  margin-top: var(--space-2);
+}
+
+.captionedRecapDuration {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.captionedRecapDuration :global(.recap-after-seconds-label) {
+  white-space: normal;
+}
+
+/* The page or modal header remains visible. Everything below it yields to the
+   editing surface until this mode is restored. */
+:global(.page-scroll-container):has(.fullPane) {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+:global(.page-content-inner):has(.fullPane) {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  min-height: 0;
+  width: 100%;
+}
+
+/* Doubled so it outranks Dialog's size and phone card rules. */
+:global(.modal):has(.fullPane.fullPane) {
+  height: calc(100dvh - 1.5rem);
+  max-height: calc(100dvh - 1.5rem);
+}
+
+:global(.modal):has(.fullPane.fullPaneWide) {
+  width: min(1200px, 100%);
+  max-width: min(1200px, 100%);
+}
+
+/* The dialog body yields to the editor; the dialog's own Cancel stays. */
+:global(.modal-content) > :has(.fullPane) {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+:global(.modal-content) > :has(.fullPane) > :not(:has(.fullPane)) {
+  display: none;
+}
+
+:global(.modal-content) > :has(.fullPane) > :has(.fullPane) {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  min-height: 0;
+}
+
+.fullPane {
+  display: flex;
+  align-self: center;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.fullPane > :global(.new-session-header),
+.fullPane :global(.new-session-project-slot),
+.fullPane .newProject,
+.fullPane :global(.new-session-provider-slot),
+.fullPane .advancedSection,
+.fullPane .secondaryOptions {
+  display: none;
+}
+
+.fullPane :global(.new-session-top-layout),
+.fullPane :global(.new-session-main-stack) {
+  display: block;
+  min-height: 0;
+  width: 100%;
+}
+
+.fullPane :global(.new-session-input-area) {
+  min-height: 0;
+}
+
+.fullPane :global(.speech-draft-field textarea) {
+  max-height: 100%;
+}
+
+.fullPaneWide {
+  width: 100%;
+  max-width: none;
+}
+
+:global(.main-content-constrained)
+  :global(.page-content-inner.new-session-page-shell):has(.fullPaneWide) {
+  max-width: none;
+}
+
+@media (width <= 600px) {
+  :global(.modal-overlay):has(.fullPane.fullPane) {
+    padding: 0;
+  }
+
+  :global(.modal):has(.fullPane.fullPane) {
+    height: 100dvh;
+    max-height: 100dvh;
+  }
+}
+
+.pendingFilesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* Model list provenance under the model picker: muted while the list is live
+   and current, warning-toned when it is the built-in fallback or a refresh
+   failed. */
+.catalogStatus,
+.catalogStatusMuted {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+  color: var(--text-muted);
+  padding: 0.55rem 0.65rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+}
+
+.catalogStatus {
+  border-color: color-mix(
+    in srgb,
+    var(--warning-color) 38%,
+    var(--border-color)
+  );
+  background: color-mix(in srgb, var(--warning-color) 8%, var(--bg-code));
+}
+
+.catalogStatusMuted {
+  color: var(--text-dimmed);
+}
+
+/* Reserve the notice's wrapping height before its catalog arrives. */
+.catalogMessage {
+  display: grid;
+}
+
+.catalogMessage::before {
+  content: attr(data-sizing-text);
+  visibility: hidden;
+}
+
+.catalogMessage::before,
+.catalogMessage > span {
+  grid-area: 1 / 1;
+}
+
+.catalogAction {
+  flex: none;
+}
+
+.creationRecovery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+.toolbarActions {
+  position: relative;
+}
+
+.shortcutsHelp {
+  flex-shrink: 0;
+}
+
+.shortcutsTrigger {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  list-style: none;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+.shortcutsTrigger::-webkit-details-marker {
+  display: none;
+}
+
+.shortcutsQuestion {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}
+
+.shortcutsTrigger:hover,
+.shortcutsTrigger:focus-visible {
+  color: var(--text-primary);
+}
+
+.shortcutsPopover {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  z-index: 60;
+  display: grid;
+  gap: var(--space-2);
+  width: min(300px, calc(100dvw - 32px));
+  padding: var(--space-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  box-shadow: 0 8px 28px rgb(0 0 0 / 0.28);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+.shortcutsRow {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.shortcutsRow kbd {
+  font-family: var(--font-mono);
+}
+`;export{n as default};
+//# sourceMappingURL=NewSessionForm.module-B76GOl8b.js.map

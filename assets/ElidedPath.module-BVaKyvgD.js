@@ -1,0 +1,32 @@
+const n=`.path {
+  display: flex;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  white-space: nowrap;
+}
+.prefix,
+.parent,
+.name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.prefix {
+  flex: 0 1 auto;
+  min-inline-size: 0;
+}
+.tail {
+  display: flex;
+  flex: 0 0 auto;
+  min-inline-size: 0;
+  max-inline-size: 85%;
+}
+.parent {
+  flex: 0 1 auto;
+  min-inline-size: 0;
+}
+.name {
+  flex: 0 0 auto;
+  max-inline-size: 100%;
+}
+`;export{n as default};
+//# sourceMappingURL=ElidedPath.module-BVaKyvgD.js.map

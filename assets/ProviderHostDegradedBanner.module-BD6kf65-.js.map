@@ -1,0 +1,1 @@
+{"version":3,"file":"ProviderHostDegradedBanner.module-BD6kf65-.js","sources":["../../src/components/ProviderHostDegradedBanner.module.css?raw"],"sourcesContent":["export default \".root {\\n  flex-shrink: 0;\\n}\\n\\n.body {\\n  max-width: 52rem;\\n}\\n\""],"names":["ProviderHostDegradedBanner_module"],"mappings":"AAAA,MAAAA,EAAe;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;"}

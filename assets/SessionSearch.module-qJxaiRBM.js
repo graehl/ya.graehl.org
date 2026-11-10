@@ -1,0 +1,363 @@
+const n=`.header {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+}
+.quickAge {
+  display: flex;
+  gap: 4px;
+}
+.withDetail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 40%);
+  grid-template-rows: auto minmax(0, 1fr);
+  max-width: none;
+}
+.detailHost {
+  grid-area: 1 / 2 / 3 / 3;
+  min-height: 0;
+  min-width: 0;
+  border-left: 1px solid var(--border-color);
+}
+@media (width < 1100px) {
+  .withDetail {
+    display: flex;
+  }
+  .detailHost {
+    position: fixed;
+    inset: 0 0 0 20px;
+    z-index: 100;
+    box-shadow: -8px 0 24px #0005;
+  }
+}
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+/* Compounded to outrank the checkbox's own top alignment, so the box sits
+   centered in the row. */
+.fields .field {
+  align-items: center;
+  min-height: 28px;
+  white-space: nowrap;
+}
+.fields kbd {
+  font:
+    11px ui-monospace,
+    monospace;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+.searchIn {
+  display: none;
+  font-size: 12px;
+}
+.search {
+  flex: 0 1 340px;
+  min-width: 160px;
+}
+.needleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 300px;
+  min-width: 0;
+}
+.statusArea {
+  flex: 0 0 132px;
+  height: 32px;
+}
+.searchStatus {
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  gap: 5px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-size: 11px;
+  line-height: 15px;
+  color: var(--text-secondary);
+}
+.statusDetails {
+  width: max-content;
+  max-width: 280px;
+}
+.scanIndicator {
+  flex: 0 0 1em;
+  color: var(--accent-primary);
+}
+.matchedTitle {
+  flex: 1;
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.diagnostics {
+  margin-top: 12px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
+}
+.diagnostics q {
+  font-weight: 600;
+}
+.diagnostics > summary {
+  cursor: pointer;
+  min-height: 28px;
+  align-content: center;
+}
+.content {
+  padding: 10px 12px;
+}
+.content.withBulkBar {
+  /* Keeps the last results and the selection list clear of the fixed bar. */
+  padding-bottom: 96px;
+}
+.filterRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 12px;
+  margin-bottom: 8px;
+}
+.range,
+.filters,
+.age {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+.filters {
+  flex-wrap: wrap;
+}
+.range {
+  flex-wrap: wrap;
+}
+.age {
+  gap: 4px;
+  font:
+    12px / 16px system-ui,
+    sans-serif;
+}
+.limit {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-secondary);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.limitInput {
+  width: 3.5rem;
+}
+.ageField {
+  position: relative;
+  display: grid;
+  align-items: center;
+  height: 28px;
+  padding: 0 5px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+.ageField > span,
+.ageInput {
+  grid-area: 1 / 1;
+  font: inherit;
+}
+.ageField > span {
+  visibility: hidden;
+  white-space: pre;
+}
+/* Chromeless: the frame above draws the box and sizes it to the text. */
+.ageInput {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  margin: 0;
+  padding: inherit;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text-primary);
+  text-align: left;
+}
+.ageField:first-child .ageInput {
+  text-align: right;
+}
+.ageField:focus-within {
+  border-color: var(--accent-primary);
+}
+
+.filters .dropdownContainer {
+  width: auto;
+  min-width: 0;
+}
+.scope {
+  position: relative;
+  container: session-search-selection / inline-size;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  padding: 5px 0;
+  border-block: 1px solid var(--border-color);
+  font-size: 12px;
+}
+.selectionInfo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.scope .selectionCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 30px;
+  color: var(--text-primary);
+  font-size: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.selectionCancelIcon {
+  color: var(--error-color);
+}
+.statusFilters {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.statusFilters > span {
+  margin-right: 3px;
+}
+.results {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+.progress,
+.help {
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin: 8px 0;
+}
+.help svg {
+  vertical-align: -0.2em;
+}
+.helpSlot {
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+.helpSlot .help {
+  margin: 0;
+  width: max-content;
+  white-space: nowrap;
+}
+.footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+@media (width >= 1100px) {
+  .footer:has(> .manager):has(> .diagnostics) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+.manager {
+  display: grid;
+  gap: 5px;
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  font-size: 12px;
+}
+@media (width < 1100px) {
+  .manager {
+    max-height: 300px;
+    overflow: auto;
+  }
+}
+.managerChoice {
+  padding-block: 7px;
+}
+.manager small {
+  color: var(--text-secondary);
+}
+.projectCta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 12px;
+}
+@container session-search-selection (max-width: 330px) {
+  .statusFilters > span {
+    display: none;
+  }
+}
+@media (width <= 700px) {
+  .fields {
+    width: 100%;
+    gap: 10px;
+  }
+  .searchIn {
+    display: inline;
+  }
+  .fields kbd {
+    display: none;
+  }
+  .fields .field {
+    min-height: 30px;
+  }
+  .search {
+    flex: 1;
+    width: 0;
+    min-width: 0;
+  }
+  .needleRow {
+    flex-basis: 100%;
+  }
+  .content {
+    padding: 8px 10px;
+  }
+  .range {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .ageField {
+    height: 32px;
+  }
+  .filters {
+    width: 100%;
+  }
+  .scope {
+    column-gap: 8px;
+  }
+  .statusFilters {
+    gap: 2px;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SessionSearch.module-qJxaiRBM.js.map

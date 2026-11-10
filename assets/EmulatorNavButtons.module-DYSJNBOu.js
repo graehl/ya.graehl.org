@@ -1,0 +1,18 @@
+const n=`.root {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 12px;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+
+/* Round 48 px device keys (census mapping); compounded so the shape does
+   not depend on stylesheet order. */
+.button.button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+`;export{n as default};
+//# sourceMappingURL=EmulatorNavButtons.module-DYSJNBOu.js.map

@@ -1,0 +1,43 @@
+const n=`/* The Projects page's add-project form: path, optional chosen name and
+ * code, and the submit/cancel row. It fills the toolbar it sits in. */
+
+.form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+}
+
+.fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.field {
+  flex: 1 1 14rem;
+}
+
+.codeField {
+  flex: 0 1 13rem;
+}
+
+/* ProjectsPage's "or start from" caption uses this. */
+.label {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+`;export{n as default};
+//# sourceMappingURL=AddProjectForm.module-CLB-Mp5L.js.map

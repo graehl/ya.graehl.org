@@ -1,0 +1,42 @@
+const n=`.panel {
+  display: grid;
+  gap: 0.6rem;
+  padding: 0.85rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  min-width: 0;
+}
+.panel p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+.status {
+  display: grid;
+  gap: 0.4rem;
+  padding: 0.7rem;
+  border-radius: 5px;
+  background: var(--bg-secondary);
+  overflow-wrap: anywhere;
+}
+.muted {
+  color: var(--text-secondary);
+}
+/* A path wraps as a unit rather than at its hyphens. */
+.path {
+  white-space: nowrap;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.account {
+  display: grid;
+  gap: 0.4rem;
+  overflow-wrap: anywhere;
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 0.7rem;
+}
+`;export{n as default};
+//# sourceMappingURL=AgentAuthRouterControls.module-Dnm9Xl0H.js.map

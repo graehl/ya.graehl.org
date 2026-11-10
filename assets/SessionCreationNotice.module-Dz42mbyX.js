@@ -1,0 +1,15 @@
+const n=`.notice {
+  margin: 0.75rem;
+}
+.notice p {
+  margin: 0 0 0.5rem;
+}
+.notice pre {
+  margin: 0;
+  font: inherit;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+`;export{n as default};
+//# sourceMappingURL=SessionCreationNotice.module-Dz42mbyX.js.map

@@ -1,0 +1,23 @@
+const n=`.link {
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: var(--space-2, 8px);
+  padding: 4px 6px;
+  color: var(--accent-color);
+  font-size: 0.82rem;
+  border-radius: 5px;
+}
+
+.link:hover {
+  text-decoration: underline;
+  background: var(--bg-hover, rgba(255, 255, 255, 0.06));
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--focus-border);
+  outline-offset: -2px;
+}
+`;export{n as default};
+//# sourceMappingURL=CommitHistoryParentLink.module-D9DuUPfA.js.map

@@ -1,0 +1,2 @@
+const o="_blocks_zabo0_1",t="_block_zabo0_1",_="_text_zabo0_16",n="_tools_zabo0_21",s="_hint_zabo0_26",e="_panel_zabo0_31",c="_actions_zabo0_41",i="_preview_zabo0_47",a="_inherited_zabo0_55",b="_restriction_zabo0_62",l={blocks:o,block:t,text:_,tools:n,hint:s,panel:e,actions:c,preview:i,inherited:a,restriction:b};export{c as actions,t as block,o as blocks,l as default,s as hint,a as inherited,e as panel,i as preview,b as restriction,_ as text,n as tools};
+//# sourceMappingURL=InstructionBlocks.module-BTM4cYQs.js.map

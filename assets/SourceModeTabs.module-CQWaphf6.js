@@ -1,0 +1,10 @@
+const e=`/* The \`stacked\` variant is the phone layout, where the tab strip is its own
+   full-width row above the action row instead of sitting in the page header. */
+@media (width < 760px) {
+  .stacked {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+`;export{e as default};
+//# sourceMappingURL=SourceModeTabs.module-CQWaphf6.js.map

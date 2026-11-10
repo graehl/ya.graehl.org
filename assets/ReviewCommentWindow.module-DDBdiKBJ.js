@@ -1,0 +1,2 @@
+const t="_window_g9rkt_1",n="_anchor_g9rkt_12",s="_snippet_g9rkt_18",o="_actions_g9rkt_30",i="_submitActions_g9rkt_37",_="_destination_g9rkt_46",e="_defaultSessionTarget_g9rkt_50",a={window:t,anchor:n,snippet:s,actions:o,submitActions:i,destination:_,defaultSessionTarget:e};export{o as actions,n as anchor,a as default,e as defaultSessionTarget,_ as destination,s as snippet,i as submitActions,t as window};
+//# sourceMappingURL=ReviewCommentWindow.module-DDBdiKBJ.js.map

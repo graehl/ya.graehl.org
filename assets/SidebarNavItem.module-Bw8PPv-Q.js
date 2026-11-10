@@ -1,0 +1,33 @@
+const n=`.row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-inline-size: 0;
+}
+.row > a {
+  flex: 1;
+  min-inline-size: 0;
+}
+/* Matches the inline-end inset of a session row's own trailing control, so a
+ * navigation accessory and the counts below it share one right edge. */
+.accessory {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  margin-inline-end: 4px;
+}
+:global(.sidebar-collapsed) .row {
+  flex-direction: column;
+}
+/* The count sits at the row's end and, like the label, leaves the collapsed
+ * desktop rail. */
+.badge {
+  margin-left: auto;
+}
+@media (width >= 1100px) {
+  :global(.sidebar-collapsed) .badge {
+    display: none;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SidebarNavItem.module-Bw8PPv-Q.js.map

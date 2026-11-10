@@ -1,0 +1,31 @@
+const n=`.row {
+  display: grid;
+  grid-template-columns: minmax(4rem, auto) minmax(0, 1fr) max-content;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.row input[type="range"] {
+  min-width: 0;
+  accent-color: var(--app-yep-green);
+}
+
+.row input[type="range"]:disabled {
+  opacity: 0.55;
+}
+
+.number {
+  width: 4.5rem;
+}
+
+.hint {
+  grid-column: 2 / -1;
+  margin-top: -0.1rem;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.3;
+}
+`;export{n as default};
+//# sourceMappingURL=RangeNumberRow.module-JKS7DdFu.js.map

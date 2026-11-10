@@ -1,0 +1,24 @@
+const e=`/* SessionMenu's trigger layout; the menu itself is the shared ui/Menu. */
+.wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.overlayTrigger {
+  position: absolute;
+}
+
+/* Category choices hang under their item, checks under its label text. */
+.categoryChoices {
+  padding-left: calc(16px + var(--space-2));
+}
+
+.newCategoryForm {
+  padding: var(--space-1) var(--space-2);
+}
+
+.newCategoryInput {
+  min-width: 12rem;
+}
+`;export{e as default};
+//# sourceMappingURL=SessionMenu.module-CFdRxEg_.js.map

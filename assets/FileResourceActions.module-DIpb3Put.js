@@ -1,0 +1,18 @@
+const n=`/* Names what the menu acts on; long paths keep their end. It takes the menu's
+   width rather than widening it. */
+.heading {
+  box-sizing: border-box;
+  display: block;
+  width: 0;
+  min-width: 100%;
+  overflow: hidden;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  direction: rtl;
+  text-align: left;
+}
+`;export{n as default};
+//# sourceMappingURL=FileResourceActions.module-DIpb3Put.js.map

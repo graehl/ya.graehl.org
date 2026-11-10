@@ -1,0 +1,317 @@
+const n=`.compactLink {
+  column-gap: var(--space-2);
+}
+
+.searchRow {
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 8px 6px 8px 44px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+.searchRow :global(.session-list-item__link) {
+  padding: 0;
+  min-width: 0;
+  background: transparent;
+}
+.searchRow :global(.session-list-item__title) {
+  margin-left: -20px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.searchRow :global(.session-list-item__meta) {
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: 11px;
+  margin-top: 1px;
+}
+.searchSelection {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 40px;
+  z-index: 2;
+  cursor: pointer;
+}
+.searchRow:has([data-search-previews]) :global(.session-list-item__meta) {
+  padding-right: 94px;
+}
+.searchCheckbox {
+  position: absolute;
+  left: 3px;
+  top: 11px;
+}
+.searchPreviews {
+  flex-basis: 100%;
+  min-width: 0;
+  margin-top: 4px;
+}
+.searchPreviews:empty {
+  display: none;
+}
+
+/* The hover menu may cover title text, never adjacent row actions. */
+.body {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-self: stretch;
+}
+
+/*
+ * A provider-phase pill can be long: a card holding one lets its meta line
+ * wrap the pill below project and age instead of squeezing them, and lets
+ * the link shrink so the pill's ellipsis applies.
+ */
+.body:has([data-provider-phase-pill]) :global(.session-list-item__link) {
+  min-width: 0;
+}
+
+.body :global(.session-list-item__meta):has([data-provider-phase-pill]) {
+  flex-wrap: wrap;
+  row-gap: var(--space-1);
+}
+.searchRow > .body {
+  flex-basis: 100%;
+}
+
+/*
+ * A compact row's project name and status letter close the row beside the
+ * overlay rather than beneath it. They repeat the title link's destination, so
+ * they stay a click target for the same session while keeping their own
+ * keyboard focus out of the tab order.
+ */
+.compactTrailing {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--sidebar-row-min-height, 34px);
+  padding-block: var(--sidebar-row-padding-block, var(--space-1));
+  padding-inline: 0 0.75ch;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+/*
+ * With the row split into a title link and its trailing furniture, the wash
+ * for hover and the current row belongs to the row itself; two separately
+ * washed chips with a gap between them read as two controls.
+ */
+.compactRow:hover,
+.compactRow:global(.current) {
+  background: var(--bg-hover);
+  border-radius: var(--radius-sm);
+}
+.compactRow:global(.session-list-item--compact):hover
+  :global(.session-list-item__link),
+.compactRow:global(.session-list-item--compact):global(.current)
+  :global(.session-list-item__link) {
+  background: transparent;
+}
+
+.questions {
+  flex: 0 0 auto;
+  align-self: center;
+  margin-inline-end: 4px;
+}
+.questions:empty {
+  display: none;
+}
+
+.executor {
+  max-width: 80px;
+}
+
+.executorText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.providerChildLink {
+  cursor: pointer;
+}
+
+.compactWithProviderChildren {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.compactWithProviderChildren .compactLink {
+  min-width: 0;
+}
+
+/* This row drops the flex gap so its outline wraps flush; restore the space
+ * the trailing furniture would otherwise lose against the title. */
+.compactWithProviderChildren .compactTrailing {
+  padding-inline-start: var(--space-2);
+}
+
+/*
+ * The disclosure column, overlay menu, and unread dot all sit beside the
+ * parent row, so they must track the sidebar density setting rather than the
+ * comfortable-mode constant. Hardcoding 34px here made every session with
+ * subagents 9px taller than its siblings in compact spacing.
+ */
+.compactWithProviderChildren :global(.session-list-item__menu) {
+  top: 0;
+  height: var(--sidebar-row-min-height, 34px);
+  transform: none;
+}
+
+.compactWithProviderChildren:global(.unread)::before {
+  top: calc(var(--sidebar-row-min-height, 34px) / 2);
+}
+
+.providerChildrenDisclosure {
+  display: inline-flex;
+  width: 1.5rem;
+  min-height: var(--sidebar-row-min-height, 34px);
+  flex: 0 0 1.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+}
+
+.providerChildrenDisclosure:hover,
+.providerChildrenDisclosure:focus-visible,
+.providerChildrenDisclosure[aria-expanded="true"] {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.providerChildrenDisclosure:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: -2px;
+}
+
+.providerChildrenDisclosure svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+  transition: transform 120ms ease;
+}
+
+.providerChildrenDisclosure[aria-expanded="true"] svg {
+  transform: rotate(90deg);
+}
+
+/*
+ * The outline is a dense sub-list, not a second session list: rows sit flush
+ * against each other and the indent is only deep enough to read as nested.
+ * The left padding is the gutter the per-row activity rail occupies.
+ */
+.providerChildrenOutline {
+  display: flex;
+  min-width: 0;
+  flex: 0 0 100%;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0.75ch 2px calc(0.5rem + 1ch);
+  list-style: none;
+}
+
+.providerChildrenOutlineItem {
+  min-width: 0;
+}
+
+.providerChildrenOutlineLink {
+  display: flex;
+  min-width: 0;
+  min-height: max(20px, calc(var(--sidebar-row-min-height, 34px) - 10px));
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-2) 0 0;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  line-height: var(--sidebar-row-line-height, 1.2);
+  text-decoration: none;
+}
+
+.providerChildrenOutlineLink:hover,
+.providerChildrenOutlineLink:focus-visible {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  outline: none;
+}
+
+/*
+ * Activity rail. Sits at the indent boundary so the column of markers reads
+ * as the nesting guide and the recency cue at once. Levels are relative to
+ * the freshest sibling (see providerChildActivityLevels), so the rail is
+ * stable between renders and needs no clock.
+ *
+ * The ramp is prominence, not hue: the sidebar's green already means unread,
+ * and a second green here would read as a second unread signal.
+ */
+.providerChildrenActivity {
+  width: 3px;
+  height: 0.85em;
+  flex: 0 0 3px;
+  margin-right: 1px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text-muted) 22%, transparent);
+}
+
+.providerChildrenActivityRecent {
+  background: color-mix(in srgb, var(--text-muted) 55%, transparent);
+}
+
+.providerChildrenActivityLatest {
+  height: 1.15em;
+  background: var(--text-primary);
+}
+
+.providerChildrenOutlineTitle {
+  overflow: hidden;
+  min-width: 0;
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.providerChildrenOutlineType {
+  overflow: hidden;
+  max-width: 42%;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (pointer: coarse) {
+  .compactWithProviderChildren :global(.session-list-item__menu) {
+    height: 40px;
+  }
+
+  .compactWithProviderChildren:global(.unread)::before {
+    top: 20px;
+  }
+
+  .providerChildrenDisclosure {
+    min-height: 40px;
+  }
+
+  /* Child rows stay tappable even though the outline is otherwise dense. */
+  .providerChildrenOutlineLink {
+    min-height: 32px;
+  }
+}
+
+/* Avoid WebKit's first-tap hover reveal. Touch rows reveal their menu through
+   the shared focus/open rules instead of permanently covering every title. */
+@media (hover: hover) and (pointer: fine) {
+  :global(.session-list-item):hover .body > :global(.session-list-item__menu) {
+    opacity: 1;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SessionListItem.module-xcbRaTfR.js.map

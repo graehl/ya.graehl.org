@@ -1,0 +1,1 @@
+{"version":3,"file":"CopyTextButton.module-BW1-byFH.js","sources":["../../src/components/ui/CopyTextButton.module.css?raw"],"sourcesContent":["export default \".label {\\n  /* Center the visible letters beside the icon, including the descender. */\\n  position: relative;\\n  top: 1px;\\n}\\n\""],"names":["CopyTextButton_module"],"mappings":"AAAA,MAAAA,EAAe;AAAA;AAAA;AAAA;AAAA;"}

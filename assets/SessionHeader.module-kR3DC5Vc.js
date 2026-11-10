@@ -1,0 +1,186 @@
+const e=`/*
+ * Shared by every composer of the global \`.session-header\` row: \`PageHeader\`
+ * and \`SessionPage\`'s own header.
+ *
+ * The shared \`.session-header-inner\` keeps a tight 0.25rem left inset because
+ * the sidebar toggle or back button that normally leads the row supplies the
+ * rest through its own padding. With no such control — the desktop case, where
+ * the sidebar carries its own toggle — the title would otherwise sit 4px from
+ * the content column's edge.
+ */
+.row {
+  --header-control-size: 36px;
+  --header-row-size: 44px;
+}
+
+.row:global(.session-header-inner) {
+  min-height: var(--header-row-size);
+  padding-block: calc(
+    (var(--header-row-size) - var(--header-control-size)) /
+    2
+  );
+}
+
+.row :global(.sidebar-toggle) {
+  min-width: var(--header-control-size);
+}
+
+/* The anchor launcher is not a shared Button; preserve its header target. */
+.row :global(a.sidebar-toggle) {
+  min-height: var(--header-control-size);
+}
+
+:global(.session-header-inner).noLeadingControl {
+  padding-left: 0.75rem;
+}
+
+/* A badge after the title (clearloop remaining count) must stay visible when
+   the title ellipsizes: the text shrinks, the badge does not. */
+.titleWithBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.titleWithBadge > :global(.session-title-text) {
+  flex: 0 1 auto;
+}
+
+.titleWithBadge > :not(:global(.session-title-text)) {
+  flex-shrink: 0;
+}
+
+/* The pinned router account is secondary to the title: it yields space first
+   and leaves narrow headers entirely; Session Info carries the full pin. */
+.routerAccount {
+  flex: 0 8 auto;
+  min-width: 2.5rem;
+  max-width: 10rem;
+  margin-left: var(--space-1);
+  padding: 0 var(--space-2);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font: inherit;
+  font-size: 0.6875rem;
+  line-height: 1.25rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+}
+
+.routerAccount:hover,
+.routerAccount:focus-visible {
+  color: var(--text-primary);
+}
+
+/* Session messages scroll continuously under the header, so a soft fade
+   below it reads as depth. Page headers (inbox, lists, settings) skip it:
+   their first controls sit directly underneath and the static overlay
+   washed them out even at scroll top. */
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 24px;
+  background: linear-gradient(to bottom, var(--bg-surface), transparent);
+  pointer-events: none;
+}
+
+.header .left {
+  overflow: visible;
+}
+
+.header .titleRow {
+  min-width: 3rem;
+}
+
+.header .actions {
+  flex-wrap: nowrap;
+}
+
+.header .modelButton {
+  align-items: center;
+  min-height: var(--header-control-size);
+  max-width: 14rem;
+  transform: none;
+}
+
+.header .menuTrigger {
+  min-width: var(--header-control-size);
+}
+
+.header .project {
+  max-width: 8.5rem;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.header .project > :global(.project-breadcrumb) {
+  display: block;
+  min-width: 0;
+  flex-shrink: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.header[data-header-layout="compact"] .project {
+  max-width: 5rem;
+  overflow: hidden;
+}
+
+.header[data-header-layout="narrow"] .project {
+  max-width: 3.5rem;
+  overflow: hidden;
+}
+
+.header[data-header-layout="narrow"] .modelButton {
+  max-width: 8rem;
+}
+
+/* Preserve the mounted inline field if a roomy header shrinks mid-edit. */
+.header[data-inline-rename="true"][data-header-layout="narrow"]
+:global(.session-header-inner),
+.header[data-inline-rename="true"][data-header-layout="narrow"] .left {
+  flex-wrap: wrap;
+}
+
+.header[data-inline-rename="true"][data-header-layout="narrow"] .left,
+.header[data-inline-rename="true"][data-header-layout="narrow"] .titleRow {
+  flex-basis: 100%;
+}
+
+@media (pointer: coarse) {
+  .row {
+    --header-control-size: 44px;
+  }
+}
+
+/* Project paths are long: the move menu is wider than a plain action menu.
+   Compounded to outrank the menu's own min-width; min-width also wins over
+   its max-width. Layout only. */
+.reclassifyMenu[role="menu"] {
+  min-width: min(28rem, calc(100dvw - 16px));
+}
+
+.archivedBadge {
+  flex-shrink: 0;
+  margin-left: var(--space-1);
+}
+
+/* The project App button sits beside the session's last-view icon. */
+.projectAppButton {
+  flex-shrink: 0;
+}
+
+@media (width <= 700px) {
+  .routerAccount {
+    display: none;
+  }
+}
+`;export{e as default};
+//# sourceMappingURL=SessionHeader.module-kR3DC5Vc.js.map

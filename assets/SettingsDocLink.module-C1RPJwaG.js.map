@@ -1,0 +1,1 @@
+{"version":3,"file":"SettingsDocLink.module-C1RPJwaG.js","sources":["../../src/pages/settings/SettingsDocLink.module.css?raw"],"sourcesContent":["export default \".link {\\n  color: var(--link-color);\\n}\\n\""],"names":["SettingsDocLink_module"],"mappings":"AAAA,MAAAA,EAAe;AAAA;AAAA;"}

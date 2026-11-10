@@ -1,0 +1,43 @@
+const n=`.toolUse {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.label {
+  color: var(--text-secondary, var(--text-muted));
+}
+
+.shellId {
+  padding: 0.125rem 0.375rem;
+  border-radius: 3px;
+  color: var(--text-muted);
+  background: var(--bg-code);
+  font-family: "SF Mono", Monaco, monospace;
+  font-size: var(--font-size-base);
+}
+
+.result {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.message {
+  color: var(--text-secondary, var(--text-muted));
+}
+
+.error {
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: var(--error-color);
+  background: var(--bg-error);
+}
+
+.empty {
+  color: var(--text-muted);
+  font-size: var(--font-size-lg);
+  font-style: italic;
+}
+`;export{n as default};
+//# sourceMappingURL=KillShellRenderer.module-Mn7VEKCu.js.map

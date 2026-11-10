@@ -1,0 +1,48 @@
+const n=`.limitControls {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* One column on a phone, and up to three once the row is wide enough for a
+   provider name to sit beside its checkbox without wrapping: the list is a
+   dozen short labels, which read as a block rather than as a tall stack. */
+.providerToggles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: var(--space-1) var(--space-4);
+  margin-top: var(--space-2);
+  max-width: 42rem;
+}
+
+.grokApiKey {
+  margin-top: var(--space-2);
+}
+
+/* The muted line under a Switch, linked to it through aria-describedby. */
+.switchHint {
+  margin: var(--space-1) 0 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.gatewayUrl,
+.customModelId {
+  flex: 1;
+}
+
+.gatewayStartCommand {
+  margin-top: var(--space-3);
+}
+.signInShortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.deprecationSpacing {
+  margin: calc(-1 * var(--space-2)) 0 var(--space-3);
+}
+`;export{n as default};
+//# sourceMappingURL=ProvidersSettings.module--eqRsBmk.js.map

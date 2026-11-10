@@ -1,0 +1,25 @@
+const e=`.queuedBubble:global(.message-user-prompt) {
+  opacity: 0.7;
+  border-left: 3px solid var(--queue-bubble-accent, var(--attention-color));
+  padding-left: var(--space-2);
+  /* Balance the visible ink while retaining the bubble's overall height. */
+  padding-top: calc(0.25rem + 1px);
+  padding-bottom: calc(0.25rem - 1px);
+  white-space: pre-wrap;
+}
+
+.projectQueueBubble {
+  --queue-bubble-accent: var(--project-queue-action-bg);
+}
+
+/* m/M progress badge on the /clearloop queue entry (topics/session-rewind.md). */
+.clearloopBadge {
+  margin-right: 0.5em;
+}
+
+/* A failed /btw aside's error, under the card's request and transcript. */
+.btwAsideError {
+  grid-column: 1;
+}
+`;export{e as default};
+//# sourceMappingURL=MessageList.module-FvhpWl2k.js.map

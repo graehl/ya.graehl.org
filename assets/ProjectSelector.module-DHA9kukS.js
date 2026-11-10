@@ -1,0 +1,70 @@
+const e=`/*
+ * Project selector: the inline trigger in a page header. The menu, its
+ * rows and the phone bottom sheet belong to the shared Menu
+ * (components/ui/Menu.tsx); \`.menu\` only sets its width.
+ *
+ * Three literals stay on the elements alongside these module classes:
+ * \`project-selector-container\`, \`project-selector-button\`, and
+ * \`project-selector-text\`. The source-header layout in
+ * \`styles/index.css\` reaches into the selector by those exact names to
+ * constrain and truncate the identity row, and
+ * \`styles/__tests__/sourceControlLayout.test.ts\` asserts those
+ * selectors. Those five rules stay global and unchanged.
+ */
+
+.container {
+  display: inline-flex;
+  min-width: 0;
+  /* Allow container to grow on desktop where there's room */
+  flex-shrink: 0;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: inherit;
+  padding: var(--space-1) var(--space-2);
+  margin: calc(-1 * var(--space-1)) calc(-1 * var(--space-2));
+  border-radius: var(--radius-md);
+  transition: background 0.15s ease;
+}
+
+.button:hover {
+  background: var(--bg-hover);
+}
+
+.text {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* Only truncate on mobile where space is limited */
+@media (width <= 768px) {
+  .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100dvw - 150px);
+  }
+}
+
+.chevron {
+  flex-shrink: 0;
+  opacity: 0.6;
+  transition: transform 0.15s ease;
+}
+
+.button[aria-expanded="true"] .chevron {
+  transform: rotate(180deg);
+}
+
+/* Project names can be long; give the menu room for them. */
+/* Compound: beats the shared menu's own min-width whichever loads first. */
+.menu[role="menu"] {
+  min-width: min(480px, calc(100dvw - 16px));
+}
+`;export{e as default};
+//# sourceMappingURL=ProjectSelector.module-DHA9kukS.js.map

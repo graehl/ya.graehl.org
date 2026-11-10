@@ -1,0 +1,87 @@
+const n=`.bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  padding-bottom: max(var(--space-3), env(safe-area-inset-bottom, 0px));
+  background: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.2s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.count {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* Stack icon and text vertically on mobile */
+@media (width <= 768px) {
+  .actions {
+    gap: var(--space-1);
+  }
+
+  /* Stacked icon and label are taller than the control's 32 px minimum;
+     give them padding and let the button grow. Doubled so it outranks the
+     shared .button padding regardless of stylesheet order. */
+  .actionButton.actionButton {
+    flex-direction: column;
+    padding-block: var(--space-1);
+  }
+
+  .actionButton svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .filtered {
+    justify-content: flex-end;
+    padding: var(--space-2) var(--space-3);
+    padding-bottom: max(var(--space-2), env(safe-area-inset-bottom, 0px));
+    background: transparent;
+    border-top: none;
+    box-shadow: none;
+    pointer-events: none;
+  }
+
+  .filtered .actions {
+    pointer-events: auto;
+  }
+
+  .filtered .actionButton {
+    flex-direction: row;
+  }
+
+  .filtered .actionButton svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=BulkActionBar.module-FFSTpDrv.js.map

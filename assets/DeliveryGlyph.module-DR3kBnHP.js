@@ -1,0 +1,11 @@
+const n=`.glyph {
+  display: inline-flex;
+  min-width: 1em;
+  height: 1em;
+  align-items: center;
+  justify-content: center;
+  padding-block-start: 4px;
+  line-height: 1;
+}
+`;export{n as default};
+//# sourceMappingURL=DeliveryGlyph.module-DR3kBnHP.js.map

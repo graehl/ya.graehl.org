@@ -1,0 +1,2 @@
+const t="_root_qzplt_2",e="_head_qzplt_17",o="_icon_qzplt_25",_="_summary_qzplt_30",l="_output_qzplt_35",c="_event_qzplt_42",s="_progress_qzplt_55",n="_completed_qzplt_59",p="_failed_qzplt_70",a="_cancelled_qzplt_81",d={root:t,head:e,icon:o,summary:_,output:l,event:c,progress:s,completed:n,failed:p,cancelled:a};export{a as cancelled,n as completed,d as default,c as event,p as failed,e as head,o as icon,l as output,s as progress,t as root,_ as summary};
+//# sourceMappingURL=TaskNotificationBlock.module-pRoQrmwK.js.map

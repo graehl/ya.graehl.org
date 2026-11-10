@@ -1,0 +1,36 @@
+const n=`/* Same 8px footprint as the thinking dot, so titles do not shift. */
+.ring {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--thinking-color);
+  flex-shrink: 0;
+}
+
+.ring[data-phase="background"] {
+  border-color: var(--text-dimmed);
+}
+
+.pill {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: min(100%, 52ch);
+}
+
+/* Waiting keeps the thinking color, which no Badge tone carries;
+   compounded so it outranks the Badge's own tone class. */
+.pill[data-phase="waiting"] {
+  --badge-color: var(--thinking-color);
+  --badge-soft: color-mix(in srgb, var(--thinking-color) 12%, transparent);
+}
+
+/* Times lead the text, so the ellipsis removes the label first. */
+.pillText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-variant-numeric: tabular-nums;
+}
+`;export{n as default};
+//# sourceMappingURL=SessionProviderPhase.module-BFhT2w4z.js.map

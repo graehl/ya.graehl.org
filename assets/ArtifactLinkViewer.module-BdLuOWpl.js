@@ -1,0 +1,42 @@
+const n=`.viewer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.viewer[hidden] {
+  display: none;
+}
+
+/* Layout comes from the shared \`ViewerHeader.module.css\`. */
+.header {
+  padding: var(--space-1) var(--space-2);
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+
+.title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--font-size-sm);
+}
+
+.frame {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  border: 0;
+  background: white;
+}
+
+.message {
+  margin: var(--space-3);
+}
+`;export{n as default};
+//# sourceMappingURL=ArtifactLinkViewer.module-BdLuOWpl.js.map

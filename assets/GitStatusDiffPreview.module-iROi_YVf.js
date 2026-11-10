@@ -1,0 +1,10 @@
+const e=`.notice {
+  margin: var(--space-1) var(--space-2);
+}
+
+/* The toolbar's width-adaptive layout is the shared \`ViewerHeader.module.css\`,
+   the same one the file viewer and the session right pane use. Do not add a
+   toolbar-specific breakpoint here: it would stop the diff toolbar wrapping on
+   the same terms as the file viewer at the same width. */
+`;export{e as default};
+//# sourceMappingURL=GitStatusDiffPreview.module-iROi_YVf.js.map

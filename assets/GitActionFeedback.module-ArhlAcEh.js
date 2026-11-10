@@ -1,0 +1,37 @@
+const n=`.hint {
+  margin: var(--space-1) 0 0;
+}
+
+.details {
+  margin-top: var(--space-2);
+}
+
+.details summary {
+  cursor: pointer;
+  padding-block: var(--space-1);
+}
+
+.output {
+  position: relative;
+  margin-top: var(--space-1);
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+}
+
+.output pre {
+  margin: 0;
+  padding-right: 32px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  color: var(--text-primary);
+}
+
+.copy {
+  position: absolute;
+  top: var(--space-1);
+  right: var(--space-1);
+  min-width: 32px;
+}
+`;export{n as default};
+//# sourceMappingURL=GitActionFeedback.module-ArhlAcEh.js.map

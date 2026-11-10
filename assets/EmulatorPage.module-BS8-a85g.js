@@ -1,0 +1,177 @@
+const n=`/* Device list */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.groupTitle {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.itemName {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.itemStatus {
+  font-size: 0.8em;
+  color: var(--text-secondary);
+}
+
+.itemActions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Buttons */
+/* Stream view */
+.streamView {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  max-height: 100dvh;
+}
+
+.streamHeader {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.connectionState {
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.streamHeaderActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.keyboardState {
+  padding: 6px 16px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  font-size: 0.75em;
+}
+
+.profileState {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 0.8em;
+}
+
+.profileTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-surface);
+}
+
+.profileTimelineItem {
+  display: flex;
+  gap: 8px;
+  font-size: 0.75em;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profileTimelineItem.latest {
+  color: var(--text-primary);
+}
+
+.profileTimelineTime {
+  font-variant-numeric: tabular-nums;
+  opacity: 0.85;
+}
+
+.profileTimelineDetail {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.streamContainer {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  overflow: hidden;
+}
+
+/* Status messages */
+.loading,
+.empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.error {
+  margin: 8px 0;
+}
+
+.connecting {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+/* Download prompt */
+.downloadPrompt {
+  padding: 32px 24px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.downloadPrompt p {
+  margin: 0 0 16px;
+}
+
+.downloadPrompt .error {
+  margin-bottom: 16px;
+}
+`;export{n as default};
+//# sourceMappingURL=EmulatorPage.module-BS8-a85g.js.map

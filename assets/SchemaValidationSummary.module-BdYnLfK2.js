@@ -1,0 +1,102 @@
+const n=`.trigger {
+  position: fixed;
+  left: 50%;
+  bottom: max(0.75rem, env(safe-area-inset-bottom));
+  z-index: 9998;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.625rem;
+  color: var(--warning-color);
+  background: color-mix(in srgb, var(--bg-surface) 94%, currentColor 6%);
+  border: 1px solid color-mix(in srgb, currentColor 65%, transparent);
+  border-radius: 999px;
+  box-shadow: var(--shadow-lg);
+  font: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  transform: translateX(-50%);
+}
+
+.trigger:hover {
+  color: var(--error-color);
+  border-color: currentColor;
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--focus-border);
+  outline-offset: 2px;
+}
+
+.icon {
+  font-size: 1.125rem;
+  line-height: 1;
+}
+
+.count {
+  min-width: 1ch;
+  font-size: var(--font-size-xs);
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.group {
+  min-width: 0;
+  padding: var(--space-3);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.heading code {
+  overflow-wrap: anywhere;
+}
+
+.issueList {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.issue {
+  display: grid;
+  grid-template-columns: max-content minmax(6rem, max-content) minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.path {
+  overflow-wrap: anywhere;
+}
+
+.message {
+  min-width: 0;
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
+}
+
+@media (width <= 600px) {
+  .issue {
+    grid-template-columns: max-content minmax(0, 1fr);
+  }
+
+  .message {
+    grid-column: 1 / -1;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SchemaValidationSummary.module-BdYnLfK2.js.map

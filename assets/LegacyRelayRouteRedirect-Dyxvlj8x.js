@@ -1,0 +1,2 @@
+import{j as e}from"./index-CBCjJwwH.js";import{g as r}from"./remoteRoutePaths-C_yAe7R4.js";import{e as a,N as i}from"./main-CGAgjPEE.js";import"./react-runtime-D-UPQ57m.js";import"./en-CHTocUdF.js";import"./relay-protocol-JPg_jCN3.js";import"./StartupShell.module-C9DlO-F6.js";import"./public-shares-LTh9JTXb.js";function f(){const t=a(),o=r(t);return e.jsx(i,{to:o??"/projects",replace:!0})}export{f as LegacyRelayRouteRedirect};
+//# sourceMappingURL=LegacyRelayRouteRedirect-Dyxvlj8x.js.map

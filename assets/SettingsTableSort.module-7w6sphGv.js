@@ -1,0 +1,17 @@
+const n=`.header .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  inline-size: 100%;
+  min-block-size: 44px;
+  padding: 4px 0;
+  font-size: inherit;
+  text-align: start;
+  overflow-wrap: normal;
+}
+.button span {
+  flex-shrink: 0;
+}
+`;export{n as default};
+//# sourceMappingURL=SettingsTableSort.module-7w6sphGv.js.map

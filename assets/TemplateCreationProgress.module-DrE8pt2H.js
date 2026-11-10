@@ -1,0 +1,47 @@
+const n=`.progress {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  background: var(--bg-secondary);
+}
+.heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.heading small {
+  color: var(--text-secondary);
+}
+.activity {
+  width: 100%;
+  height: 6px;
+  accent-color: var(--app-yep-green);
+}
+.toggle {
+  justify-self: start;
+}
+.log {
+  max-height: 180px;
+  min-width: 0;
+  margin: 0;
+  padding: 10px;
+  border-radius: 6px;
+  background: var(--bg-surface);
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.latest {
+  margin: 0;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+`;export{n as default};
+//# sourceMappingURL=TemplateCreationProgress.module-DrE8pt2H.js.map

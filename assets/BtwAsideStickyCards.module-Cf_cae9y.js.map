@@ -1,0 +1,1 @@
+{"version":3,"file":"BtwAsideStickyCards.module-Cf_cae9y.js","sources":["../../src/components/BtwAsideStickyCards.module.css?raw"],"sourcesContent":["export default \"/* Below the card's summary button, in the content column. */\\n.failure {\\n  grid-column: 1;\\n}\\n\""],"names":["BtwAsideStickyCards_module"],"mappings":"AAAA,MAAAA,EAAe;AAAA;AAAA;AAAA;"}

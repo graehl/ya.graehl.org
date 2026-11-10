@@ -1,0 +1,32 @@
+const n=`.root {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9999;
+  height: 2px;
+  pointer-events: none;
+  transition: background-color 0.3s ease;
+}
+
+.connecting {
+  background-color: var(--thinking-color);
+  animation: reconnectingPulse 1.5s ease-in-out infinite;
+}
+
+.disconnected {
+  background-color: var(--error-color);
+}
+
+@keyframes reconnectingPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=ConnectionBar.module-D-2uVxRJ.js.map

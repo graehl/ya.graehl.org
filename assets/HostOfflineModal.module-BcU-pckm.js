@@ -1,0 +1,25 @@
+const n=`.detail {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  background: var(--bg-code);
+  font-size: var(--font-size-sm);
+  overflow-wrap: anywhere;
+}
+
+.detail strong {
+  color: var(--text-primary);
+}
+
+.detail code {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  user-select: all;
+}
+
+.hint {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+`;export{n as default};
+//# sourceMappingURL=HostOfflineModal.module-BcU-pckm.js.map

@@ -1,0 +1,55 @@
+const n=`.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--thinking-color);
+  animation: thinking-indicator-pulse 1.5s ease-in-out infinite
+    var(--ya-activity-play, paused);
+  flex-shrink: 0;
+}
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The pill is a Badge in the thinking color, which no Badge tone carries;
+   compounded so it outranks the Badge's own tone class. */
+.thinking.pill {
+  --badge-color: var(--thinking-color);
+  --badge-soft: color-mix(in srgb, var(--thinking-color) 15%, transparent);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--thinking-color) 12%, transparent);
+  color: var(--thinking-color);
+  flex-shrink: 0;
+}
+
+.iconSvg {
+  width: 15px;
+  height: 15px;
+  animation: thinking-indicator-pulse 1.5s ease-in-out infinite
+    var(--ya-activity-play, paused);
+}
+
+@keyframes thinking-indicator-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=ThinkingIndicator.module-BRpZT56q.js.map

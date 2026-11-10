@@ -1,0 +1,41 @@
+const n=`.notice {
+  width: fit-content;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.label {
+  white-space: pre-wrap;
+}
+
+.objective {
+  white-space: pre-wrap;
+}
+
+.flag {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0.35rem;
+  color: var(--text-secondary);
+  border-radius: 4px;
+}
+
+.flag[data-goal-status="active"] {
+  color: color-mix(in srgb, var(--success-color) 75%, var(--text-secondary));
+}
+
+.flag[data-goal-status="paused"],
+.flag[data-goal-status="blocked"],
+.flag[data-goal-status="usageLimited"] {
+  color: color-mix(in srgb, var(--warning-color) 75%, var(--text-secondary));
+}
+
+.flag[aria-busy="true"] {
+  cursor: progress;
+}
+`;export{n as default};
+//# sourceMappingURL=GoalNotice.module-DZ1ho9Oa.js.map

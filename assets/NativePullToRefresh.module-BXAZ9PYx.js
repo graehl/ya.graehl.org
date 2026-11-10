@@ -1,0 +1,16 @@
+const n=`.indicator {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 56px);
+  left: 50%;
+  z-index: 9;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  font-size: var(--font-size-sm);
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+`;export{n as default};
+//# sourceMappingURL=NativePullToRefresh.module-BXAZ9PYx.js.map

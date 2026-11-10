@@ -1,0 +1,2 @@
+const o="_settings_7eciy_1",e="_sideGroups_7eciy_6",t="_sideGroup_7eciy_6",i="_sideGroupTitle_7eciy_19",s="_sideGroupEmpty_7eciy_27",p="_waveformOpacityControl_7eciy_34",r="_waveformOpacityCopy_7eciy_43",c={settings:o,sideGroups:e,sideGroup:t,sideGroupTitle:i,sideGroupEmpty:s,waveformOpacityControl:p,waveformOpacityCopy:r};export{c as default,o as settings,t as sideGroup,s as sideGroupEmpty,i as sideGroupTitle,e as sideGroups,p as waveformOpacityControl,r as waveformOpacityCopy};
+//# sourceMappingURL=ToolbarSettings.module-CU6SG8aO.js.map

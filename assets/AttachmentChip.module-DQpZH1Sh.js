@@ -1,0 +1,109 @@
+const n=`.chip {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  padding-right: var(--space-1);
+  background: var(--bg-code);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  font-size: var(--font-size-xs);
+}
+
+.imageChip {
+  overflow: hidden;
+  padding: 0;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: 0;
+  flex: 1;
+  padding: var(--space-1) var(--space-2);
+  padding-right: var(--space-1);
+  font-size: inherit;
+}
+
+.preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+
+.preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.previewFallback {
+  font-size: 11px;
+  line-height: 1;
+}
+
+.hoverPreview {
+  position: fixed;
+  z-index: 9990;
+  pointer-events: none;
+}
+
+.hoverPreview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.uploading {
+  opacity: 0.7;
+}
+
+.name {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 132px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-primary);
+}
+
+.size {
+  color: var(--text-dimmed);
+  flex-shrink: 0;
+}
+
+.progress {
+  color: var(--app-yep-green);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.remove {
+  margin-left: var(--space-1);
+}
+
+@media (width <= 600px) {
+  .name {
+    max-width: 80px;
+  }
+
+  .chip {
+    padding: 2px var(--space-1);
+    padding-right: 2px;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=AttachmentChip.module-DQpZH1Sh.js.map

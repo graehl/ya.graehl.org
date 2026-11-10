@@ -1,0 +1,87 @@
+const n=`.settings {
+  display: grid;
+  gap: var(--space-2);
+}
+.cacheLifetime {
+  width: 100%;
+  display: grid;
+  gap: var(--space-1);
+}
+.cacheLifetime output {
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+}
+.slider {
+  width: 100%;
+  min-height: 44px;
+  margin: 0;
+  accent-color: var(--accent-primary);
+}
+.cacheEndpoints {
+  display: flex;
+  justify-content: space-between;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+}
+.control,
+.days {
+  max-width: 100%;
+}
+.control {
+  width: 240px;
+}
+.days {
+  width: 80px;
+}
+/* Scope guidance stays above its control in both narrow settings panes and phones. */
+.settings .scopeRow {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-3);
+}
+.scopeRow .control {
+  width: 100%;
+}
+
+/*
+ * One credential source per pane row: a legend naming the provider, the
+ * ordered list of places a key can come from, and the override input. The
+ * list is plain text because a key never appears here, only its presence.
+ */
+.credential {
+  margin: var(--space-2) 0;
+  padding: var(--space-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.credential legend {
+  padding: 0 var(--space-1);
+  font-weight: 600;
+}
+
+.credential ul {
+  margin: var(--space-1) 0;
+  padding-left: var(--space-4);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+/*
+ * A control whose label is a sentence rather than a word: it stacks so the
+ * text keeps its line length and the field keeps the full pane width, which
+ * also stops the label from wrapping into a column on a phone.
+ */
+.stacked {
+  margin: var(--space-2) 0;
+}
+
+.projects {
+  margin: 0;
+  padding-left: var(--space-4);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  overflow-wrap: anywhere;
+}
+`;export{n as default};
+//# sourceMappingURL=IssueSettings.module-BXnTrRM5.js.map

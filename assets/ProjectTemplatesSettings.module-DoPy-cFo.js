@@ -1,0 +1,37 @@
+const n=`.form {
+  display: grid;
+  gap: 16px;
+  max-width: 44rem;
+}
+
+.source {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.source legend {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.status {
+  margin-top: 16px;
+  overflow-wrap: anywhere;
+}
+
+.status li {
+  margin-bottom: 10px;
+}
+`;export{n as default};
+//# sourceMappingURL=ProjectTemplatesSettings.module-DoPy-cFo.js.map

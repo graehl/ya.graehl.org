@@ -1,0 +1,138 @@
+const n=`/* The File Viewer share dialog's vhost address: one hostname serving the
+ * file itself, below the bearer-link inventory. */
+
+.section {
+  border-top: 1px solid var(--border-color);
+  display: grid;
+  gap: 8px;
+  padding-top: 12px;
+}
+
+.heading {
+  font-size: 0.83rem;
+}
+
+.description {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.form {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.nameField {
+  align-items: center;
+  background: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  display: flex;
+  flex: 1 1 100%;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  min-width: 0;
+  padding: 0 8px;
+}
+
+.nameField:focus-within {
+  border-color: var(--accent-color);
+}
+
+.nameInput {
+  background: transparent;
+  border: 0;
+  color: var(--text-primary);
+  flex: 1 1 6rem;
+  font: inherit;
+  min-width: 0;
+  outline: none;
+  padding: 8px 2px;
+}
+
+.scheme,
+.suffix {
+  color: var(--text-muted);
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.suffix {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+}
+
+.access {
+  align-items: center;
+  display: inline-flex;
+  font-size: 0.8rem;
+  gap: 6px;
+}
+
+.passwordInput {
+  width: 10rem;
+}
+
+.replace {
+  flex: 1 1 100%;
+}
+
+/* Finger-sized controls on touch. Compounded past the small field's (0,2,0)
+   and the checkbox's (0,1,1) coarse-pointer heights so these win in any
+   stylesheet order. */
+@media (pointer: coarse) {
+  .form .access .accessControl,
+  .form .access .passwordInput,
+  .form .replace {
+    min-height: 44px;
+  }
+}
+
+.submit {
+  margin-left: auto;
+}
+
+.sites {
+  display: grid;
+  gap: 6px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site {
+  align-items: center;
+  background: var(--bg-code);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  padding: 8px 10px;
+}
+
+.url {
+  color: var(--accent-color);
+  flex: 1 1 12rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.siteAccess {
+  flex: 0 0 auto;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+`;export{n as default};
+//# sourceMappingURL=FileVhostSection.module-B_nyhuDz.js.map

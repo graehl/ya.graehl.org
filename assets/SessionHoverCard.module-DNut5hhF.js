@@ -1,0 +1,2 @@
+const e="_root_686g7_5",_="_wide_686g7_15",t="_turn_686g7_38",r="_command_686g7_54",o="_meta_686g7_59",c="_project_686g7_68",n="_age_686g7_76",a="_reply_686g7_85",s="_replyMarker_686g7_95",g="_replyText_686g7_100",p={root:e,wide:_,turn:t,command:r,meta:o,project:c,age:n,reply:a,replyMarker:s,replyText:g};export{n as age,r as command,p as default,o as meta,c as project,a as reply,s as replyMarker,g as replyText,e as root,t as turn,_ as wide};
+//# sourceMappingURL=SessionHoverCard.module-DNut5hhF.js.map

@@ -1,0 +1,1 @@
+{"version":3,"file":"ViewerModePage.module-C1Ygu9xT.js","sources":["../../src/pages/ViewerModePage.module.css?raw"],"sourcesContent":["export default \".artifactHost {\\n  position: absolute;\\n  inset: 0;\\n}\\n\""],"names":["ViewerModePage_module"],"mappings":"AAAA,MAAAA,EAAe;AAAA;AAAA;AAAA;"}

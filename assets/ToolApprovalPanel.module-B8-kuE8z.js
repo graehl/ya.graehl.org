@@ -1,0 +1,157 @@
+const n=`/* Wrapper for the approval panel with floating toggle */
+.root {
+  position: relative;
+}
+
+/* Floating toggle button above the panel */
+.toggle {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 32px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-code);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.toggle:hover {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--text-muted);
+}
+
+.toggle svg {
+  transition: transform 0.2s ease;
+}
+
+.toggle svg.chevronUp {
+  transform: rotate(180deg);
+}
+
+/* Toggle button with pending indicator */
+.toggle.hasPending {
+  background: var(--status-badge-input-bg);
+  border-color: var(--status-badge-input-text);
+  color: var(--status-badge-input-text);
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+}
+
+.questionRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  width: 100%;
+}
+
+.question {
+  font-size: var(--font-size-base);
+  font-weight: 500;
+  color: var(--text-primary);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-all;
+}
+
+.viewDetails {
+  color: var(--link-color);
+  font-size: var(--font-size-sm);
+  text-align: left;
+  opacity: 0.8;
+}
+
+.viewDetails:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--text-primary);
+  display: block;
+}
+
+.subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  display: block;
+  margin-top: var(--space-1);
+}
+
+/* Options list - VSCode style */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* Full-width rows with the shortcut digit leading the label; long labels
+   wrap instead of overflowing the panel. */
+.options .option {
+  justify-content: flex-start;
+  gap: var(--space-3);
+  width: 100%;
+  white-space: normal;
+  text-align: left;
+}
+
+.shortcut {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+/* Feedback input */
+.feedback {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.feedbackInput {
+  flex: 1;
+}
+
+/* Mobile adjustments */
+@media (width <= 600px) {
+  .panel {
+    padding: var(--space-2);
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=ToolApprovalPanel.module-B8-kuE8z.js.map
