@@ -1,0 +1,2 @@
+import"./index-CBCjJwwH.js";import{B as o,C as n,E as c,F as u}from"./main--HqQd9BL.js";function a(e){return n(`server:${e}`)}function m(e){return e.serverInstanceId?a(e.serverInstanceId):o(e.id)}function y(e){return u(s(e))}function s(e){const r=e.trim();try{const t=new URL(r);return t.hash="",t.toString()}catch{return r}}function l(e){return n(`remote:${c(e)}`)}export{y as a,l as b,m as r};
+//# sourceMappingURL=sourceIdentity-Cop2p4pq.js.map
