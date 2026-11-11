@@ -1,0 +1,2 @@
+import{aa as u,ab as A,j as i}from"./base-4TUD83IF.js";const d="_messageAge_14y3e_1",$={messageAge:d};function j({timestampMs:e,nowMs:g,className:o,prefix:t,suffix:a,formatLabel:s}){if(e==null)return null;const c=new Date(e),n=u(e,g),l=A(e),r=(s==null?void 0:s(n))??`${t?`${t} `:""}${n}${a?` ${a}`:""}`;return i.jsx("time",{className:o??$.messageAge,"data-message-age":!0,dateTime:c.toISOString(),title:l,children:r})}export{j as M};
+//# sourceMappingURL=MessageAge-DUKxXVKw.js.map

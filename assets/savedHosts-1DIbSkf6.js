@@ -1,0 +1,2 @@
+import{$ as a,l as n}from"./base-4TUD83IF.js";import{g as i}from"./main-Cw8_T737.js";const c="ya.savedHosts";function f(){const r=i();if(!r)return()=>{};const t=()=>{r.storage.local.set({[c]:n().hosts}).catch(()=>{})};return t(),a(t)}function l(r,t){const o=r.filter(s=>s.mode==="relay"&&s.relayUsername&&s.relayUrl);return t.activeHostIds===null?o:o.filter(s=>{var e;return(e=t.activeHostIds)==null?void 0:e.includes(s.id)})}function H(r,t){const o=l(r,t);return o.find(s=>s.id===t.defaultHostId)??o[0]}export{l as a,H as d,f as i};
+//# sourceMappingURL=savedHosts-1DIbSkf6.js.map
