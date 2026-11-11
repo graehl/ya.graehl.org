@@ -1,0 +1,196 @@
+const n=`/* Blame view: gutter, line number and highlighted code; the root owns source typography and exposes data-source-blame-view for source-column placement. */
+.root {
+  position: relative;
+  max-height: calc(100dvh - 200px);
+  overflow: auto;
+  border: 1px solid var(--border-subtle, #21262d);
+  border-radius: var(--radius-md);
+  font-family: var(--font-mono);
+  font-size: var(--source-code-font-size);
+  line-height: var(--source-code-line-height);
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle, #21262d);
+}
+
+.pathGroup {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  min-width: 0;
+}
+
+.path {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-secondary, #8b949e);
+}
+
+/* Passed through \`CopyButton\`'s \`className\`: layout only. */
+.pathCopy {
+  flex-shrink: 0;
+}
+
+.lines {
+  --blame-hash-column-width: calc(5ch + 0.75rem);
+
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.run {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns:
+    var(--blame-hash-column-width)
+    var(--blame-line-number-column-width)
+    minmax(max-content, 1fr);
+  gap: 0;
+  align-items: baseline;
+  width: max-content;
+  min-width: 100%;
+  padding: 0;
+  text-align: left;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.gutter {
+  align-self: stretch;
+  padding: 0 6px;
+  color: var(--text-muted);
+  font: inherit;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.commitLink {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 2px;
+}
+
+.gutterLoading {
+  color: var(--text-muted);
+  opacity: 0.55;
+}
+
+.lineNumber {
+  align-self: stretch;
+  min-width: 0;
+  padding: 0 0.4rem 0 0.25rem;
+  color: var(--text-muted);
+  font: inherit;
+  text-align: right;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Token spans carry inline colors from the server highlight; the cell only
+   needs pre whitespace and a foreground for un-highlighted text. */
+.code {
+  min-width: max-content;
+  padding-right: 0.5rem;
+  white-space: pre;
+  tab-size: var(--tab-size);
+  color: var(--shiki-foreground, var(--text-primary, #e6edf3));
+  cursor: pointer;
+  user-select: text;
+}
+
+.truncated {
+  padding: 8px 10px;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.provenanceStatus {
+  color: var(--text-muted);
+  font-family: var(--font-sans, sans-serif);
+  font-size: var(--font-size-sm);
+}
+
+.notice {
+  margin: var(--space-1) var(--space-2);
+}
+
+.run.scrollable {
+  overflow-x: auto;
+}
+
+.row:hover {
+  background: var(--bg-hover, rgba(255, 255, 255, 0.05));
+}
+
+.row.hasReviewComment {
+  background: color-mix(in srgb, var(--success-color) 12%, transparent);
+}
+
+.commitLink.authorColored {
+  color: oklch(
+    var(--blame-author-color-lightness) var(--blame-author-color-chroma)
+      var(--blame-author-hue)
+  );
+}
+
+.commitLink:hover {
+  color: var(--link-color, #58a6ff);
+  text-decoration-color: currentColor;
+}
+
+.commitLink:focus-visible {
+  color: var(--link-color, #58a6ff);
+  text-decoration-color: currentColor;
+}
+
+.gutter.uncommitted {
+  color: var(--warning-color);
+}
+
+.lineNumber:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
+.code:not([role="button"]) {
+  cursor: text;
+}
+
+.code:focus-visible {
+  outline: 1px solid var(--focus-border);
+  outline-offset: -1px;
+}
+
+.lineNumber:focus-visible {
+  outline: 1px solid var(--focus-border);
+  outline-offset: -1px;
+}
+`;export{n as default};
+//# sourceMappingURL=BlameView.module-GnHqDky5.js.map

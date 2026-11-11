@@ -1,0 +1,64 @@
+const n=`/* Sized like the header's 30px icon buttons so it shares their row. */
+.find {
+  display: flex;
+  align-items: center;
+  flex: 0 1 14rem;
+  min-width: 11rem;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-input);
+  padding: 0 6px;
+  gap: 6px;
+}
+
+.find[hidden] {
+  display: none;
+}
+
+.find:focus-within {
+  border-color: var(--primary-color);
+}
+
+.input {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  outline: none;
+  padding: 0;
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  font-size: var(--font-size-base);
+}
+
+.input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.count {
+  flex: none;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.count[data-empty] {
+  color: var(--error-color, #e05252);
+}
+
+/* The key hint is read by assistive technology; a visible tooltip would sit
+   over the document the reader is searching. */
+.hint {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+`;export{n as default};
+//# sourceMappingURL=ViewerFindField.module-m31ZXEYJ.js.map

@@ -1,0 +1,263 @@
+const n=`/*
+ * Styles owned by LocalMediaModal.tsx: the inline preview nodes this module
+ * creates imperatively, the media modal shell, and the local file viewer.
+ *
+ * The generated markdown vocabulary that surrounds these previews
+ * (.local-media-link-group, .local-media-inline-toggle, .local-media-link,
+ * .local-media-type, .local-media-inline-preview) is produced outside React and
+ * stays global in generated.css, as does the shared fixed-font rule set that
+ * composes .local-file-text with many other owners.
+ */
+
+.inlineFrame {
+  position: relative;
+  display: inline-block;
+  max-width: min(100%, 720px);
+}
+
+/*
+ * A vector with no declared width/height has an aspect ratio and nothing else,
+ * so it cannot size a shrink-to-fit frame — inside .inlineFrame it collapses to
+ * zero. Such a figure gets a definite frame width to resolve against instead.
+ * Vectors that do declare a size keep the ordinary shrink-to-fit frame, so the
+ * declared size still decides how large they draw.
+ */
+.inlineFrameVector {
+  display: block;
+  width: min(100%, 640px);
+}
+
+.inlineImageButton {
+  display: block;
+  padding: 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-code);
+  cursor: zoom-in;
+}
+
+.inlineImage {
+  display: block;
+  max-width: 100%;
+  max-height: min(60vh, 480px);
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+
+.inlinePlayer {
+  display: block;
+  max-width: 100%;
+  max-height: min(72vh, 720px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.inlineLoading {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+}
+
+.inlineError {
+  display: inline-block;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--error-color);
+}
+
+/* Local media modal content */
+.modalContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.titleLink {
+  display: block;
+  overflow: hidden;
+  color: inherit;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.imageToolbarHost {
+  display: flex;
+  min-width: 0;
+}
+
+.imageHeaderActions.imageHeaderActions {
+  display: contents;
+}
+
+@media (width <= 600px) {
+  .imageToolbarHost {
+    width: 100%;
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+.imageFrame {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  background: var(--bg-surface);
+  position: relative;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  box-sizing: border-box;
+  background: var(--bg-surface);
+}
+
+.imageLoadError {
+  position: absolute;
+  z-index: 2;
+  top: var(--space-2);
+  left: 50%;
+  max-width: min(36rem, calc(100% - 2rem));
+  box-sizing: border-box;
+  transform: translateX(-50%);
+}
+
+.player {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: var(--radius-md);
+}
+
+.loading {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.fileModalContent {
+  display: flex;
+  flex-direction: column;
+  min-height: min(68vh, 720px);
+  height: 100%;
+}
+
+.fileModalMeta {
+  flex: none;
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fileTextFrame {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: var(--bg-code);
+}
+
+.fileText {
+  margin: 0;
+  padding: var(--space-3);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.fileHtmlFrame.fileHtmlFrame {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  border: 0;
+  background: var(--bg-surface);
+}
+
+.fileBlobFrame {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  border: 0;
+  background: var(--bg-surface);
+}
+
+.fileLoading {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.fileText code {
+  font-family: var(--font-mono);
+  font-size: var(--fixed-font-size-sm);
+}
+
+.inlineImageButton:hover {
+  border-color: var(--text-secondary);
+}
+
+/* A button sizes to fit its content even when it is display: block, which would
+   hand the image an indefinite width again. */
+.inlineFrameVector .inlineImageButton {
+  width: 100%;
+}
+
+.imageHeader.imageHeader {
+  justify-content: flex-start;
+  gap: 0.375rem;
+}
+
+.imageHeader > [data-modal-title] {
+  min-width: 0;
+  overflow: hidden;
+  margin-right: auto;
+}
+
+@media (width <= 600px) {
+  .imageHeader.imageHeader {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+  }
+}
+
+@media (width <= 600px) {
+  .imageHeader > [data-modal-title] {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* The shared Modal frame owns its look; this viewer only sizes it. */
+[data-modal-frame]:has(.fileModalContent) {
+  height: min(80vh, calc(100dvh - 1.5rem));
+}
+
+@media (width <= 600px) {
+  .imageHeaderActions > [data-modal-close]:first-of-type {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+@media (width <= 600px) {
+  .imageHeaderActions > [data-modal-close]:last-of-type {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=LocalMediaModal.module-5e3dX6LD.js.map

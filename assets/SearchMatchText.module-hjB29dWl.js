@@ -1,0 +1,49 @@
+const n=`.withMatch {
+  min-width: 0;
+  display: flex;
+}
+
+.matchPrefix,
+.matchSuffix {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.matchPrefix {
+  flex: 0 1 auto;
+  direction: rtl;
+  text-align: left;
+  unicode-bidi: plaintext;
+}
+
+.match {
+  max-width: 100%;
+  flex: 0 0 auto;
+  overflow: hidden;
+  color: inherit;
+  background: color-mix(in srgb, var(--warning-color) 30%, transparent);
+  border-radius: var(--radius-xs);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.matchSuffix {
+  flex: 1 1 auto;
+}
+
+@media (width <= 600px) {
+  .wrapMatchOnNarrow {
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+
+  .wrapMatchOnNarrow .matchPrefix,
+  .wrapMatchOnNarrow .matchSuffix {
+    overflow: visible;
+    white-space: normal;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SearchMatchText.module-hjB29dWl.js.map

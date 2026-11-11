@@ -1,0 +1,229 @@
+const n=`/*
+ * Agents page: section shells, process cards, provider/state badges, and the
+ * host process metrics popover.
+ *
+ * The two \`.context-usage-indicator\` composition rules stay in
+ * the owning modules. That class belongs to ContextUsageIndicator, so the
+ * relationship is anchored on the global \`agent-card-meta\` and
+ * \`agent-metrics-wrap\` hooks the elements below still carry.
+ */
+
+.section {
+  margin-bottom: var(--space-4);
+}
+
+.section h2 {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+  margin: 0 0 var(--space-3);
+  color: var(--text-primary);
+}
+
+.empty {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: var(--space-3);
+}
+
+.feedback {
+  margin: 0 0 var(--space-4);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.card {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s;
+}
+
+@media (hover: hover) {
+  .card:hover {
+    border-color: var(--border-input);
+  }
+}
+
+.cardTerminated {
+  border-style: dashed;
+  opacity: 0.7;
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.cardSessionTitle {
+  font-weight: 500;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* An external row is read-only; only its correlated title opens the session. */
+.cardSessionLink {
+  text-decoration: none;
+}
+
+.cardSessionLink:hover,
+.cardSessionLink:focus-visible {
+  text-decoration: underline;
+}
+
+.cardProject {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.killButton {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.cardUptime {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.cardPid {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+.metricsWrap {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.metrics {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0.125rem 0.45rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.metrics:hover,
+.metrics:focus-visible,
+.metrics[aria-expanded="true"] {
+  border-color: var(--border-input);
+  color: var(--text-primary);
+}
+
+/* Content of the shared Popover: the metrics, one per line. */
+.metricsPopover {
+  display: block;
+  max-width: min(22rem, calc(100dvw - 2rem));
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-xs);
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+.cardExternal {
+  cursor: default;
+}
+
+.cardDetails {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.providerChildren {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-top: var(--space-3);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.providerChild {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  min-width: 0;
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+}
+
+.providerChildBranch,
+.providerChildType {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.providerChildTitle {
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.detailRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-1) 0;
+}
+
+.detailLabel {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.detailValue {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  text-align: right;
+  word-break: break-all;
+}
+`;export{n as default};
+//# sourceMappingURL=AgentsPage.module-DESG-p_D.js.map

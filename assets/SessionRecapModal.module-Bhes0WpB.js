@@ -1,0 +1,14 @@
+const e=`.recapModeCaption {
+  margin: 0.4rem 0 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+}
+
+/* The helper model picker sits beside its description in a settings row. */
+.modelSelect {
+  width: auto;
+  min-width: 160px;
+}
+`;export{e as default};
+//# sourceMappingURL=SessionRecapModal.module-Bhes0WpB.js.map

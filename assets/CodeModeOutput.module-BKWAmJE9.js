@@ -1,0 +1,51 @@
+const n=`.output {
+  display: grid;
+  gap: 0.75rem;
+  min-inline-size: 0;
+}
+
+.text {
+  margin: 0;
+  padding: 0.75rem;
+  max-block-size: 24rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+}
+
+.error {
+  color: var(--error-color);
+}
+
+.metadata {
+  margin: 0;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  font-size: var(--font-size-base);
+}
+
+.document {
+  min-inline-size: 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+}
+
+.summary {
+  padding: 0.625rem 0.75rem;
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+
+.description {
+  margin: 0;
+  padding: 0 0.75rem 0.625rem;
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
+}
+`;export{n as default};
+//# sourceMappingURL=CodeModeOutput.module-BKWAmJE9.js.map

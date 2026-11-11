@@ -1,0 +1,29 @@
+const n=`/*
+ * Sticky rather than in the page flow: the server has already refused to
+ * open its database, so this has to be seen once on any route.
+ */
+.root {
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+
+.body {
+  max-width: 52rem;
+}
+
+.command {
+  display: block;
+  overflow-x: auto;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: var(--space-1);
+  padding: 0.2rem 0.4rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-code);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-lg);
+  white-space: pre;
+}
+`;export{n as default};
+//# sourceMappingURL=StorageFilesystemBanner.module-BNOHdj4Y.js.map

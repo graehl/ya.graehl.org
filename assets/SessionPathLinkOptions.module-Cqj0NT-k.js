@@ -1,0 +1,32 @@
+const n=`.options {
+  display: grid;
+  gap: 8px;
+  min-inline-size: 0;
+  margin: 0;
+  padding: 8px 0;
+  border: 0;
+}
+
+.options legend {
+  padding: 0;
+  color: inherit;
+  font-size: var(--font-size-sm);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: var(--font-size-base);
+}
+
+.row span {
+  min-inline-size: 0;
+}
+
+.select {
+  max-inline-size: 130px;
+}
+`;export{n as default};
+//# sourceMappingURL=SessionPathLinkOptions.module-Cqj0NT-k.js.map

@@ -1,0 +1,417 @@
+const n=`.session-header {
+  flex-shrink: 0; /* Never shrink the header */
+  background: var(--bg-surface);
+  position: relative;
+  z-index: 10;
+}
+
+.session-header-inner {
+  padding: calc(0.5rem - 1px) 1rem calc(0.5rem - 1px) 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 44px; /* Consistent height whether toggle button is present or not */
+}
+
+.session-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+}
+
+.session-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0; /* Allow text truncation */
+  flex: 1;
+}
+
+.session-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  row-gap: 2px;
+  flex-shrink: 0;
+  margin-left: 2px;
+}
+.project-breadcrumb-wrapper {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.project-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  text-decoration: none;
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 2px 0;
+  max-width: 8.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: color 0.15s;
+}
+
+.project-breadcrumb:hover {
+  color: var(--text-primary);
+}
+
+.session-title {
+  color: var(--text-primary);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* Allow shrinking inside the header instead of leaving unused space. */
+  max-width: 100%;
+  font-size: var(--font-size-base);
+  font-family: var(--font-ui);
+  text-align: left;
+}
+
+.session-title:hover {
+  color: var(--text-secondary);
+}
+
+.session-title-input {
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: inherit;
+  font-family: inherit;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.125rem 0.375rem;
+  flex: 1 1 16rem;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+}
+
+.session-title-input:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.session-title-input:disabled {
+  color: var(--text-muted);
+  background: var(--bg-hover);
+  cursor: not-allowed;
+}
+
+.session-title-edit {
+  display: flex;
+  flex: 1 1 16rem;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.session-title-edit-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.session-title-chevron-trigger {
+  flex-shrink: 0;
+}
+
+.session-title-retitle-accept.is-armed,
+.session-title-retitle-accept.is-armed:disabled {
+  color: var(--accent-primary);
+  opacity: 0.7;
+}
+
+.session-title-retitle-status {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.1;
+}
+
+.session-title-retitle-status.is-ready {
+  color: var(--text-secondary);
+}
+
+.session-title-retitle-status.is-error {
+  color: var(--error-color);
+}
+
+.session-title-retitle-status.is-armed {
+  color: var(--accent-primary);
+}
+
+.session-title-skeleton {
+  display: inline-block;
+  width: 120px;
+  height: 1em;
+  background: var(--bg-hover);
+  border-radius: var(--radius-sm);
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.session-title-recent-trigger {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+.session-title-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.session-title-chevron {
+  opacity: 0.6;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.session-title-chevron-trigger.is-open .session-title-chevron {
+  opacity: 1;
+  transform: rotate(180deg);
+}
+
+.session-title-chevron-trigger:hover .session-title-chevron,
+.session-title-chevron-trigger:focus-visible .session-title-chevron {
+  opacity: 1;
+}
+@media (width <= 600px) {
+  .session-header {
+    padding: 0;
+  }
+}
+@media (width <= 600px) {
+  .session-header-inner {
+    padding: 0.375rem 0.375rem 0.375rem 0.25rem;
+  }
+}
+@media (width <= 600px) {
+  .session-header-left {
+    gap: 0.375rem;
+  }
+}
+.session-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-width: 0;
+  flex: 1;
+  /* Note: Don't use overflow:hidden here - it clips the dropdown menu */
+}
+.star-indicator-inline {
+  color: var(--warning-color);
+  margin-right: var(--space-1);
+  flex-shrink: 0;
+}
+.provider-badge-button {
+  display: inline-flex;
+  border-radius: var(--radius-sm);
+  transition: opacity 0.15s;
+  transform: translateY(-1px);
+}
+
+.provider-badge-button:hover {
+  opacity: 0.8;
+}
+
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/*
+ * Shared by every consumer of the module-owned session-header row: \`PageHeader\`
+ * and \`SessionPage\`'s own header.
+ *
+ * The shared inner row keeps a tight 0.25rem left inset because
+ * the sidebar toggle or back button that normally leads the row supplies the
+ * rest through its own padding. With no such control — the desktop case, where
+ * the sidebar carries its own toggle — the title would otherwise sit 4px from
+ * the content column's edge.
+ */
+.row {
+  --header-control-size: 36px;
+  --header-row-size: 44px;
+}
+
+.row.session-header-inner {
+  min-height: var(--header-row-size);
+  padding-block: calc(
+    (var(--header-row-size) - var(--header-control-size)) /
+    2
+  );
+}
+
+.row [data-sidebar-toggle] {
+  min-width: var(--header-control-size);
+}
+
+/* The anchor launcher is not a shared Button; preserve its header target. */
+.row a[data-sidebar-toggle] {
+  min-height: var(--header-control-size);
+}
+
+.session-header-inner.noLeadingControl {
+  padding-left: 0.75rem;
+}
+
+/* A badge after the title (clearloop remaining count) must stay visible when
+   the title ellipsizes: the text shrinks, the badge does not. */
+.titleWithBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.titleWithBadge > .session-title-text {
+  flex: 0 1 auto;
+}
+
+.titleWithBadge > :not(.session-title-text) {
+  flex-shrink: 0;
+}
+
+/* The pinned router account is secondary to the title: it yields space first
+   and leaves narrow headers entirely; Session Info carries the full pin. */
+.routerAccount {
+  flex: 0 8 auto;
+  min-width: 2.5rem;
+  max-width: 10rem;
+  margin-left: var(--space-1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Session messages scroll continuously under the header, so a soft fade
+   below it reads as depth. Page headers (inbox, lists, settings) skip it:
+   their first controls sit directly underneath and the static overlay
+   washed them out even at scroll top. */
+.header::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 24px;
+  background: linear-gradient(to bottom, var(--bg-surface), transparent);
+  pointer-events: none;
+}
+
+.header .left {
+  overflow: visible;
+}
+
+.header .titleRow {
+  min-width: 3rem;
+}
+
+.header .actions {
+  flex-wrap: nowrap;
+}
+
+.header .modelButton {
+  align-items: center;
+  min-height: var(--header-control-size);
+  max-width: 14rem;
+  transform: none;
+}
+
+.header .menuTrigger {
+  min-width: var(--header-control-size);
+}
+
+.header .project {
+  max-width: 8.5rem;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.header .project > .project-breadcrumb {
+  display: block;
+  min-width: 0;
+  flex-shrink: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.header[data-header-layout="compact"] .project {
+  max-width: 5rem;
+  overflow: hidden;
+}
+
+.header[data-header-layout="narrow"] .project {
+  max-width: 3.5rem;
+  overflow: hidden;
+}
+
+.header[data-header-layout="narrow"] .modelButton {
+  max-width: 8rem;
+}
+
+/* Preserve the mounted inline field if a roomy header shrinks mid-edit. */
+.header[data-inline-rename="true"][data-header-layout="narrow"]
+.session-header-inner,
+.header[data-inline-rename="true"][data-header-layout="narrow"] .left {
+  flex-wrap: wrap;
+}
+
+.header[data-inline-rename="true"][data-header-layout="narrow"] .left,
+.header[data-inline-rename="true"][data-header-layout="narrow"] .titleRow {
+  flex-basis: 100%;
+}
+
+@media (pointer: coarse) {
+  .row {
+    --header-control-size: 44px;
+  }
+}
+
+/* Project paths are long: the move menu is wider than a plain action menu.
+   Compounded to outrank the menu's own min-width; min-width also wins over
+   its max-width. Layout only. */
+.reclassifyMenu[role="menu"] {
+  min-width: min(28rem, calc(100dvw - 16px));
+}
+
+.archivedBadge {
+  flex-shrink: 0;
+  margin-left: var(--space-1);
+}
+
+/* The project App button sits beside the session's last-view icon. */
+.projectAppButton {
+  flex-shrink: 0;
+}
+
+@media (width <= 700px) {
+  .routerAccount {
+    display: none;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SessionHeader.module-Bx4cq62T.js.map

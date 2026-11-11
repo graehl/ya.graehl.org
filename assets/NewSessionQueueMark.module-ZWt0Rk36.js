@@ -1,0 +1,25 @@
+const n=`.mark {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+  background: white;
+  color: var(--project-queue-new-session-action-bg);
+  font-size: var(--font-size-sm);
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 0 0 1px
+    color-mix(
+      in srgb,
+      var(--project-queue-new-session-action-bg) 42%,
+      transparent
+    );
+  pointer-events: none;
+}
+`;export{n as default};
+//# sourceMappingURL=NewSessionQueueMark.module-ZWt0Rk36.js.map

@@ -1,0 +1,20 @@
+const n=`.panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  background: var(--bg-surface);
+}
+.panel > [data-modal-header] {
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.panel > [data-modal-content] {
+  flex: 1;
+  min-height: 0;
+  padding: 12px;
+  overflow: auto;
+}
+`;export{n as default};
+//# sourceMappingURL=SearchDetail.module-DY5gQtof.js.map

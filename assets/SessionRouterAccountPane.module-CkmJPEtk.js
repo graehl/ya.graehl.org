@@ -1,0 +1,42 @@
+const n=`.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.current {
+  margin: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.hint {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.select {
+  width: 100%;
+  min-width: 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (width <= 480px) {
+  .fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SessionRouterAccountPane.module-CkmJPEtk.js.map

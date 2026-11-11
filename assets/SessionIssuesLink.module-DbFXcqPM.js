@@ -1,0 +1,53 @@
+const n=`/*
+ * A header chip (ButtonBase) matching the neighboring share control at every
+ * width. The association count keeps tabular figures so it does not jitter
+ * as it changes.
+ */
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.count {
+  font-variant-numeric: tabular-nums;
+}
+
+/* A row's key, title and state share one line; the title yields first. */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
+/* The key identifies the row; the title fills whatever width is left. */
+.itemKey {
+  flex-shrink: 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.itemTitle {
+  overflow: hidden;
+  color: var(--text-secondary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* The state sits at the row's end, where a glance down the menu finds it. */
+.itemStatus {
+  margin-left: auto;
+}
+
+.empty,
+.more {
+  margin: 0;
+  padding: 6px 8px;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+`;export{n as default};
+//# sourceMappingURL=SessionIssuesLink.module-DbFXcqPM.js.map

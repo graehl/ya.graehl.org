@@ -1,0 +1,21 @@
+const n=`.sessionSetupBlock {
+  margin-bottom: var(--space-3);
+}
+
+.sessionSetupBlock [data-collapsible__summary] {
+  display: inline-flex;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-code);
+}
+
+.sessionSetupBlock [data-collapsible__content] {
+  margin-top: var(--space-2);
+}
+
+.sessionSetupEntry.sessionSetupEntry [data-message-user-prompt] {
+  max-width: 100%;
+}
+`;export{n as default};
+//# sourceMappingURL=SessionSetupBlock.module-7OBEBNH4.js.map

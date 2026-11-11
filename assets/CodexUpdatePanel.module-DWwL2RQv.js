@@ -1,0 +1,50 @@
+const n=`.panel {
+  margin-top: var(--space-2);
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.actionRow {
+  margin-top: var(--space-2);
+}
+
+.detected {
+  padding-top: var(--space-2);
+}
+
+.policy {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.command {
+  padding: 2px 6px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-sm);
+  font-size: 0.85em;
+}
+
+.message {
+  margin-top: var(--space-2);
+}
+
+.output {
+  margin-top: var(--space-2);
+}
+
+.outputText {
+  font-size: 0.8em;
+  white-space: pre-wrap;
+  max-height: 200px;
+  overflow: auto;
+}
+`;export{n as default};
+//# sourceMappingURL=CodexUpdatePanel.module-DWwL2RQv.js.map

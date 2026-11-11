@@ -1,0 +1,499 @@
+const n=`.subagentItem {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-md);
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+}
+
+.messageRenderRow {
+  position: relative;
+}
+
+.messageRenderContent {
+  min-width: 0;
+}
+
+.systemMessage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  margin: 8px 0;
+  background: var(--bg-tertiary, #2a2a2a);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--text-dimmed);
+  font-family: var(--output-prose-font-family);
+  font-optical-sizing: var(--output-prose-font-optical-sizing);
+  font-variation-settings: var(--output-prose-font-variation-settings);
+  font-size: var(--output-prose-font-size);
+  line-height: var(--output-prose-line-height);
+  color: var(--text-muted);
+}
+
+.systemMessageIcon {
+  font-size: 1.1em;
+  opacity: 0.7;
+}
+
+.systemMessageText {
+  font-style: italic;
+}
+
+.systemMessageCompactBoundary {
+  max-width: min(100%, 980px);
+}
+
+.systemMessageLocalCommand {
+  max-width: min(100%, 980px);
+}
+
+.systemMessageSummary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.systemMessageRecap {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 10px;
+  align-items: start;
+  max-width: min(760px, 100%);
+  margin: 8px 0 12px 24px;
+  padding: 10px 14px;
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-md, var(--radius-md));
+  background: color-mix(in srgb, var(--bg-secondary, #242424) 82%, transparent);
+  color: var(--text-muted);
+}
+
+.systemMessageRecapMark {
+  color: var(--text-dimmed);
+  font-size: 1.05rem;
+  line-height: 1.45;
+  opacity: 0.72;
+  text-align: center;
+}
+
+.systemMessageRecapBody {
+  min-width: 0;
+  opacity: 0.65;
+  font-family: var(--output-prose-font-family);
+  font-optical-sizing: var(--output-prose-font-optical-sizing);
+  font-variation-settings: var(--output-prose-font-variation-settings);
+  font-size: var(--output-prose-font-size);
+  font-style: italic;
+  line-height: calc(1.55em + var(--output-prose-line-height-offset));
+  white-space: pre-wrap;
+}
+.systemMessageCompacting {
+  border-left-color: var(--accent-primary);
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary, #2a2a2a) 0%,
+    color-mix(in srgb, var(--accent-primary) 10%, var(--bg-tertiary, #2a2a2a))
+      50%,
+    var(--bg-tertiary, #2a2a2a) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.systemMessageError {
+  border-left-color: var(--error-color, #ef4444);
+  background: color-mix(
+    in srgb,
+    var(--error-color, #ef4444) 10%,
+    var(--bg-tertiary, #2a2a2a)
+  );
+  color: var(--text-primary);
+}
+
+.systemMessageWarning {
+  border-left-color: var(--warning-color, #f59e0b);
+  background: color-mix(
+    in srgb,
+    var(--warning-color, #f59e0b) 10%,
+    var(--bg-tertiary, #2a2a2a)
+  );
+  color: var(--text-primary);
+}
+
+.systemMessageConfigAck {
+  border-left-color: var(--success-color, #10b981);
+  background: color-mix(
+    in srgb,
+    var(--success-color, #10b981) 10%,
+    var(--bg-tertiary, #2a2a2a)
+  );
+  color: var(--text-primary);
+}
+
+/* Conversation activity controls share stable preview data boundaries. */
+
+/*
+ * The label absorbs the header's free space, which parks the age and the
+ * controls after it against the trailing edge. Deliberately flex-grow rather
+ * than an auto margin on the age: growth resolves before auto margins, so the
+ * chevron's existing \`margin-left: auto\` is left with nothing to claim
+ * and stays put next to the age.
+ *
+ * The label is also what yields when the header is tight — the age and
+ * controls are fixed-size and carry state, while the label repeats what the
+ * card's own position already shows.
+ */
+.thinkingPreviewLabel {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*
+ * Where this thought sits in the turn, not how long it took: a quiet sibling
+ * of the activity summary's elapsed pill. Tabular figures so a live-updating
+ * age on an active turn does not jitter its neighbours.
+ */
+.thinkingPreviewAge {
+  flex: 0 0 auto;
+  padding-left: 0.5rem;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.activityChevron {
+  display: inline-flex;
+  width: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(1em + 1px);
+  line-height: 1;
+  opacity: 0.8;
+  transform: translateY(-0.25px);
+}
+
+.activityChevronExpanded {
+  transform: translateY(0.25px);
+}
+
+.activityPulse {
+  width: 4px;
+  height: 4px;
+  flex: 0 0 auto;
+  border-radius: var(--radius-full);
+  background: currentColor;
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--app-yep-green) 14%, transparent);
+  transform: translateY(-0.25px);
+}
+
+.activityLabel {
+  position: relative;
+  top: 0.25px;
+}
+
+/*
+ * Held height for the conversation activity row.
+ *
+ * A long streaming thinking block grows the row; when a shorter block replaces
+ * it, the row would hand that height straight back and — under follow mode —
+ * drag everything the reader was reading down the viewport. The row therefore
+ * keeps its high-water height until it has wanted less for a full cooling-off
+ * period. RenderItemComponent publishes the value (see
+ * lib/sessionDetail/activityHeightReserve.ts); no descendant sizes itself
+ * against it, which is what keeps the measurement from feeding back into the
+ * reserve.
+ */
+.activityHeightReserve {
+  min-height: var(--conversation-activity-reserved-height, 0);
+}
+
+/*
+ * Auto-hide rollup of the activity+thinking extras down to the compact
+ * summary. Height is set inline from the measured row to the summary height;
+ * overflow clips from the bottom. The mask keeps the summary solid and fades
+ * only the clipping edge. Duration comes from
+ * --conversation-thinking-rollup-ms (1.5s).
+ */
+.thinkingRollingUp {
+  overflow: hidden;
+  min-height: 0;
+  transition: height var(--conversation-thinking-rollup-ms, 1.5s) ease-in-out;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0,
+    #000 2.75rem,
+    #000 max(2.75rem, calc(100% - 2.5rem)),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0,
+    #000 2.75rem,
+    #000 max(2.75rem, calc(100% - 2.5rem)),
+    transparent
+  );
+}
+
+.thinkingAutoHiding {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--conversation-thinking-rollup-ms, 1.5s) ease-in;
+}
+
+/*
+ * Compact chips are always expandable — outline them so the chevron affordance
+ * is obvious even when the provider retained no summary body.
+ *
+ * Order-independent against the shared system-message class (equal specificity):
+ * that rule sets only \`border-left\`, and this rule re-declares it to the same
+ * value, so whichever wins the cascade the chip looks the same. The \`border\`
+ * shorthand's other three sides have no competing owner.
+ */
+.compactBoundaryOutline {
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.12));
+  border-left: 3px solid var(--text-dimmed);
+}
+
+.compactSummaryMarkdown {
+  min-width: 0;
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+}
+
+/*
+ * Rewound-group header (topics/session-rewind.md). A whole-row button so the
+ * collapsed group reads like the other outline chips and stays a touch
+ * target.
+ */
+.rewoundGroupHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+}
+
+.rewoundGroupToggleButton {
+  display: inline-flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: left;
+  font-size: inherit;
+}
+
+.rewoundItem {
+  opacity: 0.85;
+  /* Expanded group rows hang off a vertical bar under the header's marker. */
+  margin-left: 0.75rem;
+  border-left: 3px solid var(--text-dimmed);
+  padding-left: 0.75rem;
+  border-radius: 0;
+}
+
+.rewoundGroupToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: 0.35em;
+  border: 1px solid var(--text-dimmed);
+  border-radius: var(--radius-xs);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.rewoundGroupCopy {
+  margin-left: auto;
+}
+
+.contentFilterBlock {
+  display: block;
+  max-width: min(100%, 980px);
+}
+
+.contentFilterBlockTitle {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.contentFilterBlockGuidance {
+  margin: 6px 0 0;
+  /* Align the guidance under the title text, past the icon and its gap. */
+  padding-left: calc(1ch + 8px);
+  color: var(--text-secondary, var(--text-primary));
+  line-height: 1.45;
+  white-space: pre-wrap;
+}
+
+.contentFilterBlockLabel {
+  color: var(--text-muted);
+}
+
+.systemDetails {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+  padding-left: 30px;
+}
+
+.systemDetail {
+  margin: 0;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-code);
+  color: var(--text-muted);
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 0.82em;
+  font-style: normal;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.systemMessageSummary::-webkit-details-marker {
+  display: none;
+}
+
+.compactBoundaryOutline pre {
+  background: var(--bg-code);
+  color: var(--text-primary);
+}
+
+/*
+ * Provider tool output is primary transcript content even when its call is
+ * unavailable. Keep its expanded body readable instead of inheriting the
+ * quieter metadata treatment used by local-command details.
+ */
+.toolOutputDetails pre {
+  color: var(--text-primary);
+}
+
+.subagentItem [data-tool-row] {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.subagentItem [data-tool-row-header] {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.messageRenderRow.is-message-age-visible {
+  padding-bottom: 1rem;
+}
+
+.systemMessage.systemMessageDetails {
+  display: block;
+}
+
+.systemMessageSummary [data-collapsible__icon] {
+  opacity: 0.72;
+}
+
+.systemMessageError .systemMessageText {
+  font-style: normal;
+}
+
+.systemMessageError .systemMessageIcon {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.systemMessageWarning .systemMessageText {
+  font-style: normal;
+}
+
+.systemMessageWarning .systemMessageIcon {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.systemMessageConfigAck .systemMessageText {
+  font-style: normal;
+}
+
+.systemMessageLocalCommand .systemMessageText {
+  font-style: normal;
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+}
+
+.systemMessageConfigAck .systemMessageIcon {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.rewoundGroupToggleButton:hover {
+  background: var(--bg-hover);
+  outline: none;
+}
+
+.rewoundGroupToggleButton:focus-visible {
+  background: var(--bg-hover);
+  outline: none;
+}
+
+.messageRenderRow.is-message-age-visible [data-message-age] {
+  color: color-mix(in srgb, var(--warning-color) 70%, var(--text-dimmed));
+  opacity: 0.9;
+}
+
+.messageRenderRow.has-message-age:not(.is-message-age-visible)
+  [data-message-age] {
+  display: none;
+}
+
+.systemMessageDetails[open] .systemMessageSummary [data-collapsible__icon] {
+  transform: rotate(90deg);
+}
+
+/*
+ * Not even a two-line thought fits that budget, so the superseded card is
+ * dropped. It keeps its box in the flex layout at zero height rather than
+ * leaving the layout: removing the item would change the wrap the budget was
+ * measured from, and the drop decision would flap on and off.
+ */
+.activityHeightReserve[data-previous-thinking="dropped"]
+:global([data-conversation-thinking-preview][data-preview-slot="previous"]) {
+  height: 0;
+  border-width: 0;
+  visibility: hidden;
+}
+
+/*
+ * Vertical budget for a previous thinking card that wrapped below the current
+ * one.
+ *
+ * Beside the current card the previous one is free: it caps to the current
+ * card's height, which already owns the row. Below it, its height adds to the
+ * row, and the current card is then the one that leaves the top of the viewport
+ * under follow. RenderItemComponent measures the room left once the row still
+ * fits the transcript viewport with two lines of the preceding paragraph
+ * showing, and publishes it as --conversation-previous-thinking-budget. The
+ * current-height cap still applies, so the card takes whichever is smaller.
+ */
+.activityHeightReserve[data-previous-thinking="stacked"]
+  :global([data-conversation-thinking-preview][data-preview-slot="previous"])
+  :global([data-conversation-thinking-preview-content]) {
+  max-height: min(
+    var(--conversation-thinking-height, min(40vh, 24rem)),
+    var(--conversation-previous-thinking-budget, min(40vh, 24rem))
+  );
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 0 0;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=RenderItemComponent.module-TBO7OCwb.js.map

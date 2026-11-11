@@ -1,0 +1,130 @@
+const n=`.card {
+  position: relative;
+  --app-link-width: 2.75rem;
+}
+
+.link {
+  display: block;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover {
+  background: var(--bg-hover);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.withApp .header {
+  padding-left: calc(var(--app-link-width) + var(--space-2));
+}
+
+.identity {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Truncates the name itself so the code-name chip beside it stays visible. */
+.nameText {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Its own row under the title line, which would clip it, and above the caption. */
+.codeNameError {
+  max-width: 28rem;
+  margin-top: 2px;
+}
+
+.queueWarning {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.newSession,
+.settingsTrigger,
+.deleteTrigger {
+  flex-shrink: 0;
+}
+
+.newSession {
+  margin-left: auto;
+}
+
+/* Outside the card link (links cannot nest), so it sits over the header's
+   reserved leading space. */
+.appLink {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  width: var(--app-link-width);
+}
+
+/* One footer line: path on the left, session stats right-aligned. */
+.meta {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-top: var(--space-1);
+}
+
+.path {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* Truncate the head, keeping the project's own directory visible. The
+     \`bdi\` around the path keeps it reading left to right inside this box. */
+  direction: rtl;
+  text-align: left;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-shrink: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.separator {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.sessions,
+.time {
+  white-space: nowrap;
+}
+
+.thinking {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-muted);
+}
+`;export{n as default};
+//# sourceMappingURL=ProjectCard.module-DSI1vaq5.js.map

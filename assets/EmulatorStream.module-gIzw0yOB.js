@@ -1,0 +1,10 @@
+const n=`.video {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+`;export{n as default};
+//# sourceMappingURL=EmulatorStream.module-gIzw0yOB.js.map

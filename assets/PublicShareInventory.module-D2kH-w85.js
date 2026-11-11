@@ -1,0 +1,100 @@
+const n=`.list {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  display: grid;
+  max-height: min(72vh, 720px);
+  overscroll-behavior: contain;
+  overflow-y: auto;
+  touch-action: pan-y;
+}
+
+.listCompact {
+  max-height: min(240px, 35vh);
+}
+
+.row {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.row + .row {
+  border-top: 1px solid var(--border-color);
+}
+
+.rowHighlighted {
+  background: color-mix(in srgb, var(--accent-color) 13%, transparent);
+  box-shadow: inset 3px 0 var(--accent-color);
+}
+
+.rowMain {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.rowMain strong,
+.rowMeta {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rowMeta,
+.count {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.rowActions {
+  align-items: center;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 6px;
+}
+
+.rowTypeIcon {
+  align-items: center;
+  background: #475569;
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24);
+  color: #fff;
+  display: inline-flex;
+  flex: 0 0 26px;
+  height: 26px;
+  justify-content: center;
+}
+
+.rowTypeIcon svg {
+  height: 16px;
+  width: 16px;
+}
+
+.rowTypeIconLive {
+  background: color-mix(in srgb, var(--app-yep-green) 62%, #111827);
+}
+
+.empty {
+  color: var(--text-secondary);
+  padding: 24px 12px;
+  text-align: center;
+}
+
+.count {
+  text-align: right;
+}
+
+@media (width <= 600px) {
+  .row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+.actionIcon {
+  display: block;
+}
+`;export{n as default};
+//# sourceMappingURL=PublicShareInventory.module-D2kH-w85.js.map

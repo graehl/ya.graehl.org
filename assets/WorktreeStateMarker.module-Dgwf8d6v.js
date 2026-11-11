@@ -1,0 +1,13 @@
+const r=`.state {
+  flex-shrink: 0;
+  padding: 1px 4px;
+  color: var(--text-secondary, #8b949e);
+  background: var(--bg-tertiary, rgba(255, 255, 255, 0.05));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.12));
+  border-radius: var(--radius-full);
+  font-size: 0.66rem;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+`;export{r as default};
+//# sourceMappingURL=WorktreeStateMarker.module-Dgwf8d6v.js.map

@@ -1,0 +1,436 @@
+const n=`.fileViewer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  min-width: 0;
+  background: var(--bg-surface);
+}
+
+.fileViewerStandalone {
+  height: 100%;
+  min-height: 0;
+}
+.fileViewerHeader {
+  padding: 0.25rem 0.5rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.fileViewerMeta {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.fileViewerBody {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+  padding: 0;
+  scrollbar-gutter: stable;
+}
+
+.fileViewerLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--text-muted);
+}
+
+.fileViewerError {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  color: var(--error-color);
+}
+.fileViewerCode {
+  --file-viewer-code-x-padding: 0.625rem;
+  --file-viewer-code-line-box: var(--source-code-line-height);
+  --file-viewer-wrap-gutter: 1.15rem;
+  --file-viewer-wrap-columns: 156ch;
+  letter-spacing: 0;
+  background: var(--bg-code);
+  min-height: 100%;
+  min-width: 0;
+  width: min(100%, var(--file-viewer-wrap-columns));
+  overflow: visible;
+  font-family: var(--font-mono);
+  font-size: var(--source-code-font-size);
+  line-height: var(--source-code-line-height);
+}
+
+.fileViewerTruncated {
+  padding: 0.5rem 0.75rem;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+}
+
+.fileViewerEmptyContent {
+  padding: 0.5rem 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: inherit;
+  line-height: inherit;
+}
+.fileContentModal {
+  background: var(--bg-code);
+  border-radius: var(--radius-sm);
+  overflow: auto;
+}
+.codeHighlighterPlain {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  padding: 0.375rem var(--file-viewer-code-x-padding, 0.625rem);
+  margin: 0;
+  background: transparent;
+}
+.fileViewerImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  min-height: 200px;
+}
+
+.fileViewerImageLink {
+  display: flex;
+  max-width: 100%;
+  max-height: 80vh;
+  cursor: zoom-in;
+}
+.fileViewerBinary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+}
+.fileViewerFullscreen {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--bg-surface);
+  border-radius: 0;
+  max-height: none;
+  height: 100dvh;
+  width: 100dvw;
+}
+@media (width <= 800px) {
+  .fileViewerCode {
+    min-width: max-content;
+    width: max-content;
+  }
+}
+
+.viewer {
+  container-type: inline-size;
+  container-name: file-viewer;
+}
+
+.header {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.identityRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+}
+
+.context {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  min-height: 32px;
+}
+
+.info {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.path {
+  display: block;
+  min-height: 32px;
+  box-sizing: border-box;
+  padding-block: 6px;
+  color: var(--link-color);
+  font-family: var(--font-mono);
+  font-size: var(--fixed-font-size-base);
+  line-height: 20px;
+  overflow-wrap: anywhere;
+}
+
+.measurement {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.pathMeasure {
+  visibility: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+  min-width: 0;
+  margin-top: 4px;
+}
+
+.body {
+  position: relative;
+}
+
+.backButton {
+  flex: 0 0 auto;
+}
+
+.htmlPreviewFrame.htmlPreviewFrame {
+  width: 100%;
+  height: 100%;
+  min-height: min(68vh, 720px);
+  border: 0;
+  background: var(--bg-surface);
+}
+
+.diffBody {
+  min-height: 100%;
+  background: var(--bg-code);
+}
+
+.provenanceRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.375rem;
+  width: max-content;
+  min-height: 22px;
+  white-space: nowrap;
+}
+
+.windowActions {
+  display: flex;
+  flex: 0 0 auto;
+  padding-top: 1px;
+}
+
+.fullscreenButton {
+  flex: 0 0 auto;
+}
+
+.fileViewerImage img {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+pre.codeHighlighterPlain {
+  display: block;
+  padding: 0.375rem var(--file-viewer-code-x-padding, 0.625rem);
+  margin: 0;
+  overflow-x: auto;
+  line-height: var(--file-viewer-code-line-box, 1.24em);
+  font-family: var(--font-mono);
+  font-size: var(--fixed-font-size-sm);
+}
+
+pre.codeHighlighterPlain code {
+  display: block;
+  white-space: pre;
+}
+.fileViewerCodeHighlighted [data-shiki-container] {
+  padding: 0.375rem var(--file-viewer-code-x-padding, 0.625rem);
+}
+
+.codeHighlighterPlain .codeLineNumbers {
+  text-align: right;
+  padding-right: 0.75em;
+  color: var(--text-dimmed);
+  user-select: none;
+  min-width: 2.5em;
+}
+
+.codeHighlighterPlain .codeContent {
+  margin: 0;
+  overflow: visible;
+  line-height: var(--file-viewer-code-line-box, 1.24em);
+}
+
+.fileViewerImageLink:focus-visible {
+  outline: 2px solid var(--focus-border);
+  outline-offset: 3px;
+}
+
+.fileViewerFullscreen .fileViewerHeader {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0;
+  flex-shrink: 0;
+}
+
+.fileViewerFullscreen .fileViewerBody {
+  flex: 1;
+  overflow: auto;
+  padding: 0;
+}
+
+.fileViewerFullscreen .fileViewerCode {
+  padding: 0.5rem;
+}
+
+.fileViewerFullscreen .fileViewerImage {
+  padding: 0;
+}
+
+.fileViewerFullscreen .fileViewerImageLink {
+  max-height: calc(100dvh - 50px);
+}
+
+.context:empty {
+  display: none;
+}
+
+.codeHighlighterPlain .codeLineNumbers > div {
+  line-height: var(--file-viewer-code-line-box, 1.24em);
+}
+
+.codeHighlighterPlain .codeContent code {
+  display: block;
+  white-space: pre-wrap;
+}
+
+.fileViewerFullscreen .fileViewerImage img {
+  max-height: calc(100dvh - 50px);
+}
+@media (width <= 800px) {
+  .codeHighlighterPlain .codeContent code {
+    white-space: pre;
+    overflow-wrap: normal;
+  }
+}
+
+.codeHighlighterPlain .codeContent code > div {
+  min-height: var(--file-viewer-code-line-box, 1.24em);
+  padding-left: var(--file-viewer-wrap-gutter, 1.15rem);
+  text-indent: calc(-1 * var(--file-viewer-wrap-gutter, 1.15rem));
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  border-left: 1px solid rgba(148, 163, 184, 0.28);
+}
+@media (width <= 800px) {
+  .codeHighlighterPlain .codeContent code > div {
+    white-space: pre;
+    overflow-wrap: normal;
+    padding-left: 0;
+    text-indent: 0;
+    border-left: none;
+  }
+}
+
+.quoteReplySurface:hover [data-text-block-quote] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.quoteReplySurface:focus-within [data-text-block-quote] {
+  opacity: 1;
+  pointer-events: auto;
+}
+.fileViewerCode.fileViewerCode code {
+  font-family: inherit;
+  background: transparent;
+  box-shadow: none;
+}
+.fileViewerCode.fileViewerCode code * {
+  background: transparent;
+  box-shadow: none;
+}
+.fileViewerCode.fileViewerCode pre {
+  margin: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.fileViewerCode.fileViewerCode pre * {
+  background: transparent;
+  box-shadow: none;
+}
+
+.fileViewerCode.fileViewerCode .highlightedLine {
+  margin-left: calc(-1 * var(--file-viewer-code-x-padding, 0.625rem));
+  margin-right: calc(-1 * var(--file-viewer-code-x-padding, 0.625rem));
+  padding-left: calc(
+    var(--file-viewer-code-x-padding, 0.625rem) +
+    var(--file-viewer-wrap-gutter, 1.15rem)
+  );
+  padding-right: var(--file-viewer-code-x-padding, 0.625rem);
+  position: relative;
+  background-color: rgba(244, 63, 94, 0.08);
+  --file-viewer-highlight-background: rgba(244, 63, 94, 0.08);
+}
+
+.fileViewerCode .highlightedLineStart {
+  margin-left: calc(-1 * var(--file-viewer-code-x-padding, 0.625rem));
+  margin-right: calc(-1 * var(--file-viewer-code-x-padding, 0.625rem));
+  padding-left: calc(
+    var(--file-viewer-code-x-padding, 0.625rem) +
+    var(--file-viewer-wrap-gutter, 1.15rem)
+  );
+  padding-right: var(--file-viewer-code-x-padding, 0.625rem);
+  position: relative;
+  scroll-margin-block-start: 10vh;
+}
+
+.fileViewerCode .highlightedLineEnd {
+  margin-left: calc(-1 * var(--file-viewer-code-x-padding, 0.625rem));
+  margin-right: calc(-1 * var(--file-viewer-code-x-padding, 0.625rem));
+  padding-left: calc(
+    var(--file-viewer-code-x-padding, 0.625rem) +
+    var(--file-viewer-wrap-gutter, 1.15rem)
+  );
+  padding-right: var(--file-viewer-code-x-padding, 0.625rem);
+  position: relative;
+}
+
+.fileViewerCode .highlightedLineStart::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: var(--error-color);
+  opacity: 0.52;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 2.75rem;
+}
+
+.fileViewerCode .highlightedLineEnd::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: var(--error-color);
+  opacity: 0.52;
+  pointer-events: none;
+  bottom: 0;
+  left: 2.75rem;
+  right: 0;
+}
+`;export{n as default};
+//# sourceMappingURL=FileViewer.module-hYW3nv_A.js.map

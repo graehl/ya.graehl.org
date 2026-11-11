@@ -1,0 +1,1 @@
+{"version":3,"file":"ToolLabel.module-in6QsZbT.js","sources":["../../src/components/ToolLabel.module.css?raw"],"sourcesContent":["export default \".toolName {\\n  flex-shrink: 0;\\n  font-weight: 600;\\n  font-size: var(--font-size-base);\\n  color: var(--text-primary, #ccc);\\n}\\n\""],"names":["ToolLabel_module"],"mappings":"AAAA,MAAAA,EAAe;AAAA;AAAA;AAAA;AAAA;AAAA;"}

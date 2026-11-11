@@ -1,0 +1,137 @@
+const n=`/* Feature width; the shared Popover owns the frame, position and height. */
+.dropdown {
+  width: min(830px, calc(100dvw - 16px));
+}
+
+.current {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.header {
+  padding: 0.5rem 0.75rem;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.empty {
+  padding: 1rem 0.75rem;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  text-align: center;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.375rem;
+  padding: 0.375rem 0.625rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: background-color 0.1s ease;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item:hover {
+  background-color: var(--bg-hover);
+}
+
+.item:active {
+  background-color: var(--bg-selected);
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text-secondary);
+  min-width: 0;
+}
+
+.titleText {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Unread sessions: bold + bright text */
+.item.unread .title {
+  font-weight: 600;
+}
+
+/*
+ * The shared /btw aside module owns title colour on those rows
+ * at the same specificity this rule had, so exclude them here rather than
+ * letting stylesheet order decide which colour wins.
+ */
+.item.unread:not([data-btw-aside-session]) .title {
+  color: var(--text-primary);
+}
+
+.star {
+  color: var(--warning-color);
+  flex-shrink: 0;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 0.375rem;
+  font-size: var(--font-size-xs);
+  line-height: 1.15;
+  color: var(--text-muted);
+  min-width: 0;
+}
+
+.providerBadge {
+  flex-shrink: 0;
+}
+
+.project {
+  flex: 1 1 auto;
+  color: var(--text-muted);
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.time {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* The /btw chip is clickable (it opens the parent), so it is not a Badge. */
+.btwBadge {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+`;export{n as default};
+//# sourceMappingURL=RecentSessionsDropdown.module-B3nMa1NW.js.map

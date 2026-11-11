@@ -1,0 +1,45 @@
+const n=`.bullet {
+  position: relative;
+  display: block;
+  inline-size: 28px;
+  block-size: 28px;
+  border-radius: var(--radius-full);
+}
+
+.bullet::before {
+  content: "";
+  position: absolute;
+  inset: 11px;
+  border-radius: var(--radius-full);
+  background: var(--timeline-dot-default);
+}
+
+.bullet:hover::before,
+.bullet[aria-expanded="true"]::before {
+  background: var(--text-primary);
+  box-shadow: 0 0 0 3px var(--bg-hover);
+}
+
+.bullet:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: -2px;
+}
+
+.context {
+  inline-size: min(480px, calc(100dvw - 16px));
+}
+
+.context pre {
+  margin: 0;
+  padding-inline-end: 20px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: var(--font-mono);
+  font-size: var(--fixed-font-size-sm);
+}
+
+.close {
+  float: right;
+}
+`;export{n as default};
+//# sourceMappingURL=AcliCommentary.module-BVniJecT.js.map

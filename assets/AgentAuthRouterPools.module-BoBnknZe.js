@@ -1,0 +1,69 @@
+const n=`.panel {
+  display: grid;
+  gap: 0.75rem;
+  min-width: 0;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+.panel h3,
+.panel p {
+  margin: 0;
+}
+.toolbar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.toolbarField {
+  flex: 1 1 12rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: 0.75rem;
+}
+.account {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  overflow-wrap: anywhere;
+}
+.muted {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+}
+.window {
+  display: grid;
+  gap: 0.35rem;
+}
+.window progress {
+  width: 100%;
+  height: 0.65rem;
+  accent-color: var(--accent-color);
+}
+.editor {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+.editor fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  max-height: 16rem;
+  overflow: auto;
+  border: 1px solid var(--border-color);
+}
+`;export{n as default};
+//# sourceMappingURL=AgentAuthRouterPools.module-BoBnknZe.js.map

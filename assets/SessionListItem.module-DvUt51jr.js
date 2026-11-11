@@ -1,0 +1,524 @@
+const n=`.sessionListItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.sessionListItemCard .sessionListItemLink {
+  display: block;
+  flex: 1;
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: inherit;
+}
+
+.sessionListItemCard .sessionListItemLink:hover {
+  background: var(--bg-hover);
+}
+
+.sessionListItemCard .sessionListItemTitle {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 600;
+  font-size: var(--font-size-base);
+}
+
+.sessionListItemCard .sessionListItemMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-top: var(--space-1);
+}
+
+.sessionListItemProviderChildren {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  font-weight: 400;
+}
+
+.sessionListItemProviderChild {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.sessionListItemProviderChildTitle {
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sessionListItemProviderChildType {
+  flex-shrink: 0;
+}
+.sessionListItemProject {
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;
+}
+
+.sessionListItemProject::after {
+  content: "\\00B7"; /* middle dot separator */
+  margin-left: var(--space-2);
+}
+.sessionListItemCompact {
+  padding: 0;
+}
+
+.sessionListItemCompact .sessionListItemLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  min-height: var(--sidebar-row-min-height, 34px);
+  padding: var(--sidebar-row-padding-block, var(--space-1)) 0.75ch;
+  padding-left: 1ch;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--text-primary);
+  overflow: hidden;
+  line-height: var(--sidebar-row-line-height, 1.3);
+  transition: background 0.15s;
+}
+
+.sessionListItemCompact .sessionListItemLink:hover {
+  background: var(--bg-hover);
+}
+
+.sessionListItemCompact .sessionListItemTitleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1;
+  min-width: 0;
+}
+
+.sessionListItemCompact .sessionListItemTitleText {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: var(--font-size-sm);
+}
+
+@media (pointer: coarse) {
+  .sessionListItemCompact .sessionListItemLink {
+    min-height: 40px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+.sessionListItemProjectCompact {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+  flex-shrink: 0;
+}
+.searchRow .sessionListItemLink {
+  padding: 0;
+  min-width: 0;
+  background: transparent;
+}
+
+.sessionListItemCompact.current .sessionListItemLink {
+  background: var(--bg-hover);
+  font-weight: 500;
+}
+.sessionStarIcon {
+  flex-shrink: 0;
+  color: var(--warning-color);
+}
+.sessionBadge {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--font-size-xs);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.sessionListItemMenu {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  /* Gradient fade to blend with background */
+  padding-left: 1rem;
+  padding-right: var(--space-2);
+  background: linear-gradient(to right, transparent, var(--bg-secondary) 60%);
+}
+
+.sessionListItemCompact .sessionListItemMenu {
+  background: linear-gradient(to right, transparent, var(--bg-surface) 60%);
+}
+.compactWithProviderChildren .sessionListItemMenu {
+  top: 0;
+  height: var(--sidebar-row-min-height, 34px);
+  transform: none;
+}
+.sessionListItemLink:focus-visible ~ .sessionListItemMenu,
+.sessionListItemMenu:has(:focus-visible),
+.sessionListItemMenu[data-session-menu-open] {
+  opacity: 1;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .sessionListItem:focus-within .sessionListItemMenu {
+    opacity: 1;
+  }
+}
+.sessionListItemCard:hover .sessionListItemMenu {
+  background: linear-gradient(to right, transparent, var(--bg-hover) 60%);
+}
+.sessionListItemProviderBadge {
+  flex-shrink: 0;
+}
+.searchRow .sessionListItemTitle {
+  margin-left: -20px;
+  font-size: var(--font-size-lg);
+  line-height: 20px;
+}
+.sessionListItem .sessionListItemTitleText,
+.sessionListItem .sessionListItemTitle {
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+.sessionListItem.unread[data-session-unread] .sessionListItemTitleText,
+.sessionListItem.unread[data-session-unread] .sessionListItemTitle {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.sessionListItemCompact.unread::before {
+  content: "";
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--app-yep-green);
+  border-radius: var(--radius-full);
+}
+
+.compactLink {
+  column-gap: var(--space-2);
+}
+
+.searchRow {
+  flex-wrap: wrap;
+  gap: 0;
+  padding: 8px 6px 8px 44px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+}
+.searchRow .sessionListItemMeta {
+  flex-wrap: wrap;
+  gap: 5px;
+  font-size: var(--font-size-caption);
+  margin-top: 1px;
+}
+.searchSelection {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 40px;
+  z-index: 2;
+  cursor: pointer;
+}
+.searchRow:has([data-search-previews]) .sessionListItemMeta {
+  padding-right: 94px;
+}
+.searchCheckbox {
+  position: absolute;
+  left: 3px;
+  top: 11px;
+}
+.searchPreviews {
+  flex-basis: 100%;
+  min-width: 0;
+  margin-top: 4px;
+}
+.searchPreviews:empty {
+  display: none;
+}
+
+/* The hover menu may cover title text, never adjacent row actions. */
+.body {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  align-self: stretch;
+}
+
+/*
+ * A provider-phase pill can be long: a card holding one lets its meta line
+ * wrap the pill below project and age instead of squeezing them, and lets
+ * the link shrink so the pill's ellipsis applies.
+ */
+.body:has([data-provider-phase-pill]) .sessionListItemLink {
+  min-width: 0;
+}
+
+.body .sessionListItemMeta:has([data-provider-phase-pill]) {
+  flex-wrap: wrap;
+  row-gap: var(--space-1);
+}
+.searchRow > .body {
+  flex-basis: 100%;
+}
+
+/*
+ * A compact row's project name and status letter close the row beside the
+ * overlay rather than beneath it. They repeat the title link's destination, so
+ * they stay a click target for the same session while keeping their own
+ * keyboard focus out of the tab order.
+ */
+.compactTrailing {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: var(--sidebar-row-min-height, 34px);
+  padding-block: var(--sidebar-row-padding-block, var(--space-1));
+  padding-inline: 0 0.75ch;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+/*
+ * With the row split into a title link and its trailing furniture, the wash
+ * for hover and the current row belongs to the row itself; two separately
+ * washed chips with a gap between them read as two controls.
+ */
+.compactRow:hover,
+.compactRow.current {
+  background: var(--bg-hover);
+  border-radius: var(--radius-sm);
+}
+.compactRow.sessionListItemCompact:hover .sessionListItemLink,
+.compactRow.sessionListItemCompact.current .sessionListItemLink {
+  background: transparent;
+}
+
+.questions {
+  flex: 0 0 auto;
+  align-self: center;
+  margin-inline-end: 4px;
+}
+.questions:empty {
+  display: none;
+}
+
+.executor {
+  max-width: 80px;
+}
+
+.executorText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.providerChildLink {
+  cursor: pointer;
+}
+
+.compactWithProviderChildren {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.compactWithProviderChildren .compactLink {
+  min-width: 0;
+}
+
+/* This row drops the flex gap so its outline wraps flush; restore the space
+ * the trailing furniture would otherwise lose against the title. */
+.compactWithProviderChildren .compactTrailing {
+  padding-inline-start: var(--space-2);
+}
+
+/*
+ * The disclosure column, overlay menu, and unread dot all sit beside the
+ * parent row, so they must track the sidebar density setting rather than the
+ * comfortable-mode constant. Hardcoding 34px here made every session with
+ * subagents 9px taller than its siblings in compact spacing.
+ */
+
+.compactWithProviderChildren.unread::before {
+  top: calc(var(--sidebar-row-min-height, 34px) / 2);
+}
+
+.providerChildrenDisclosure {
+  display: inline-flex;
+  width: 1.5rem;
+  min-height: var(--sidebar-row-min-height, 34px);
+  flex: 0 0 1.5rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+}
+
+.providerChildrenDisclosure:hover,
+.providerChildrenDisclosure:focus-visible,
+.providerChildrenDisclosure[aria-expanded="true"] {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.providerChildrenDisclosure:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: -2px;
+}
+
+.providerChildrenDisclosure svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.5;
+  transition: transform 120ms ease;
+}
+
+.providerChildrenDisclosure[aria-expanded="true"] svg {
+  transform: rotate(90deg);
+}
+
+/*
+ * The outline is a dense sub-list, not a second session list: rows sit flush
+ * against each other and the indent is only deep enough to read as nested.
+ * The left padding is the gutter the per-row activity rail occupies.
+ */
+.providerChildrenOutline {
+  display: flex;
+  min-width: 0;
+  flex: 0 0 100%;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0 0.75ch 2px calc(0.5rem + 1ch);
+  list-style: none;
+}
+
+.providerChildrenOutlineItem {
+  min-width: 0;
+}
+
+.providerChildrenOutlineLink {
+  display: flex;
+  min-width: 0;
+  min-height: max(20px, calc(var(--sidebar-row-min-height, 34px) - 10px));
+  align-items: center;
+  gap: var(--space-1);
+  padding: 0 var(--space-2) 0 0;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  line-height: var(--sidebar-row-line-height, 1.2);
+  text-decoration: none;
+}
+
+.providerChildrenOutlineLink:hover,
+.providerChildrenOutlineLink:focus-visible {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+  outline: none;
+}
+
+/*
+ * Activity rail. Sits at the indent boundary so the column of markers reads
+ * as the nesting guide and the recency cue at once. Levels are relative to
+ * the freshest sibling (see providerChildActivityLevels), so the rail is
+ * stable between renders and needs no clock.
+ *
+ * The ramp is prominence, not hue: the sidebar's green already means unread,
+ * and a second green here would read as a second unread signal.
+ */
+.providerChildrenActivity {
+  width: 3px;
+  height: 0.85em;
+  flex: 0 0 3px;
+  margin-right: 1px;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--text-muted) 22%, transparent);
+}
+
+.providerChildrenActivityRecent {
+  background: color-mix(in srgb, var(--text-muted) 55%, transparent);
+}
+
+.providerChildrenActivityLatest {
+  height: 1.15em;
+  background: var(--text-primary);
+}
+
+.providerChildrenOutlineTitle {
+  overflow: hidden;
+  min-width: 0;
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.providerChildrenOutlineType {
+  overflow: hidden;
+  max-width: 42%;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (pointer: coarse) {
+  .compactWithProviderChildren .sessionListItemMenu {
+    height: 40px;
+  }
+  .compactWithProviderChildren.unread::before {
+    top: 20px;
+  }
+
+  .providerChildrenDisclosure {
+    min-height: 40px;
+  }
+
+  /* Child rows stay tappable even though the outline is otherwise dense. */
+  .providerChildrenOutlineLink {
+    min-height: 32px;
+  }
+}
+
+/* Avoid WebKit's first-tap hover reveal. Touch rows reveal their menu through
+   the shared focus/open rules instead of permanently covering every title. */
+@media (hover: hover) and (pointer: fine) {
+  .sessionListItem:hover .body > .sessionListItemMenu {
+    opacity: 1;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SessionListItem.module-DvUt51jr.js.map

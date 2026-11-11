@@ -1,0 +1,130 @@
+const n=`.detailTitleRow {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
+}
+
+.detailTitleRow [data-source-detail-subject] {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cleanLanding {
+  display: flex;
+  min-height: min(24rem, 48vh);
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cleanState {
+  display: flex;
+  min-height: 12rem;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-4);
+  text-align: center;
+}
+
+.cleanIcon {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--success-color);
+  background: color-mix(in srgb, var(--success-color) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--success-color) 30%, transparent);
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.cleanState p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.cleanState [data-source-empty] {
+  padding: 0;
+  color: var(--text-primary);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.folderGroup {
+  min-width: 0;
+  list-style: none;
+}
+
+.folderHeader {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+}
+
+.disclosure {
+  width: 1rem;
+  flex: 0 0 1rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono, monospace);
+  font-weight: 700;
+  text-align: center;
+}
+
+.folderCount {
+  flex: 0 0 auto;
+}
+
+.folderChildren.folderChildren {
+  margin: 0 0 0 0.95rem;
+  padding: 0 0 0 0.45rem;
+  list-style: none;
+  border-left: 1px solid var(--border-subtle, #21262d);
+}
+
+.scanProgress {
+  flex: 0 1 auto;
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.scanNotice {
+  flex: 0 1 auto;
+  margin-left: auto;
+}
+
+.currentContent {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.currentContentActions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 4px 8px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.currentContent > :global([data-file-viewer]) {
+  min-height: 0;
+  flex: 1;
+  border: 0;
+  border-radius: 0;
+}
+`;export{n as default};
+//# sourceMappingURL=WorkingTreeBrowser.module-BLtM5Vmd.js.map

@@ -1,0 +1,125 @@
+const n=`/*
+ * FilterDropdown owns its trigger and the layout of each option's content.
+ * The surface, rows, check marks, group labels, separators and the phone
+ * bottom sheet belong to the shared Menu (components/ui/Menu.tsx).
+ *
+ * Caller-facing presentation is expressed as props (fullWidth, triggerVariant,
+ * panelVariant, triggerSize, triggerClassName), not as ancestor selectors reaching into
+ * these class names.
+ */
+
+.container {
+  display: inline-block;
+}
+
+/* The trigger is a shared Button: secondary by default, ghost for the chip
+ * variant. The shared variant also owns its pressed/selected state. */
+.buttonLabel {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chevron {
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+/*
+ * Fills the field it sits in. The label is flex: 1 1 auto, so space-between
+ * only matters for trigger content that does not grow.
+ */
+.container.fullWidth {
+  width: 100%;
+}
+
+.button.fullWidth {
+  width: 100%;
+  min-width: 0;
+  justify-content: space-between;
+}
+
+/* One line of option content: dot, icon, label, then trailing meta and
+ * count. Wraps below the label when a narrow sheet has no room. */
+.optionRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px var(--space-2);
+  min-width: 0;
+}
+
+.optionLabel {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.optionIcon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.optionIcon svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.colorDot {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.meta,
+.count {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.meta {
+  display: inline-flex;
+  align-items: center;
+}
+
+/*
+ * Model picker: the rows lead with a ProviderBadge. Give the badge a
+ * consistent gutter so model names line up, and widen the desktop menu so
+ * descriptions wrap to one or two lines instead of three or four.
+ */
+/* Model badges share one column so the names after them line up. */
+.modelBadge {
+  display: inline-flex;
+  justify-content: flex-start;
+  min-width: 96px;
+}
+
+@media (width > 768px) {
+  .modelMenu {
+    width: 360px;
+  }
+}
+
+/*
+ * Narrow layout: triggers stretch to their column. Previously unscoped
+ * selectors inside the sessions filter-bar media block, so they applied to
+ * every FilterDropdown at this width.
+ */
+@media (width <= 600px) {
+  .container {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .button {
+    width: 100%;
+    min-width: 0;
+    justify-content: space-between;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=FilterDropdown.module-DTGvjHAj.js.map

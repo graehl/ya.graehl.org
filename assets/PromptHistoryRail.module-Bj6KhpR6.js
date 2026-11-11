@@ -1,0 +1,83 @@
+const n=`.composer {
+  position: relative;
+  min-width: 0;
+  padding-inline-start: 36px;
+}
+.rail {
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0;
+  width: 36px;
+  max-height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  z-index: 2;
+}
+.target {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  touch-action: none;
+  cursor: grab;
+}
+.target span {
+  display: block;
+  width: 14px;
+  height: 2px;
+  background: currentColor;
+}
+.target:hover,
+.target:focus-visible {
+  color: var(--app-yep-green);
+  background: var(--bg-tertiary);
+}
+.target:focus-visible {
+  outline: 2px solid var(--app-yep-green);
+  outline-offset: -2px;
+}
+.target:active {
+  cursor: grabbing;
+}
+.preview {
+  position: fixed;
+  z-index: 10000;
+  box-sizing: border-box;
+  max-height: 180px;
+  padding: 12px;
+  overflow: hidden;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-lg);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  box-shadow: 0 4px 16px #0003;
+  font-size: var(--font-size-lg);
+  line-height: 1.45;
+  transform-origin: top left;
+  pointer-events: none;
+}
+.caret {
+  position: fixed;
+  z-index: 10001;
+  width: 2px;
+  background: var(--app-yep-green);
+  pointer-events: none;
+}
+@media (pointer: coarse) {
+  .composer {
+    padding-inline-start: 44px;
+  }
+  .rail,
+  .target {
+    width: 44px;
+  }
+  .target {
+    height: 44px;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=PromptHistoryRail.module-Bj6KhpR6.js.map

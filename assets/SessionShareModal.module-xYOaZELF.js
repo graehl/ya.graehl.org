@@ -1,0 +1,281 @@
+const n=`.sessionShareReadonlyNote {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+.sessionShareActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2);
+}
+
+.sessionShareAction {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  cursor: pointer;
+}
+
+.sessionShareAction:disabled {
+  cursor: not-allowed;
+}
+
+.sessionShareOptionTitle {
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.sessionShareOptionDescription {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+}
+
+.sessionShareViewerCount {
+  align-self: flex-start;
+}
+
+.sessionShareManagement {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sessionShareManagementHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.sessionShareGlobalControls {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.sessionShareViewerList {
+  max-height: 180px;
+  overflow-y: auto;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.sessionShareViewerRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sessionShareViewerRow:last-child {
+  border-bottom: none;
+}
+
+.sessionShareViewerMain {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sessionShareViewerToken {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sessionShareViewerMeta,
+.sessionShareViewerState {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+.sessionShareViewerMeta {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sessionShareViewerActions {
+  display: flex;
+  gap: var(--space-1);
+}
+
+@media (width <= 600px) {
+  .sessionShareActions {
+    grid-template-columns: 1fr;
+  }
+}
+
+.managerLayout {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: clamp(190px, 25%, 210px) minmax(0, 1fr);
+}
+
+.managerSidebar,
+.managerMain,
+.filterGroup {
+  display: grid;
+  gap: 8px;
+}
+
+.managerSidebar {
+  align-content: start;
+  border-right: 1px solid var(--border-color);
+  padding-right: 14px;
+}
+
+.managerMain {
+  align-content: start;
+  min-width: 0;
+}
+
+.filterGroup {
+  font-size: var(--font-size-sm);
+}
+
+.filterGroup > span {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.filterButton {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  gap: 7px;
+  min-width: 0;
+  text-align: left;
+}
+
+/* The trailing columns hold small icon buttons, which widen on coarse
+   pointers; auto columns follow them. */
+.filterRow {
+  display: grid;
+  gap: 4px;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  min-width: 0;
+}
+
+.filterRowNoCreate {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.filterRowWithFreeze {
+  grid-template-columns: minmax(0, 1fr) auto auto auto;
+}
+
+.filterRowNoCreate.filterRowWithFreeze {
+  grid-template-columns: minmax(0, 1fr) auto auto;
+}
+
+.addButton,
+.freezeTypeButton,
+.revokeTypeButton {
+  align-self: stretch;
+}
+
+/* Scope options stack in the first column on the parent's rows (subgrid),
+   so each revoke button sits beside its option. */
+.scopeGroup {
+  column-gap: 4px;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.scopeGroup > span {
+  grid-column: 1 / -1;
+}
+
+.filterGroup .scopeOptions {
+  display: grid;
+  grid-column: 1;
+  grid-row: span 3;
+  grid-template-rows: subgrid;
+  row-gap: normal;
+}
+
+.scopeGroup .revokeTypeButton {
+  grid-column: 2;
+}
+
+.filterIcon {
+  align-items: center;
+  background: #273449;
+  border-radius: var(--radius-md);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.28),
+    0 1px 3px rgba(0, 0, 0, 0.26);
+  color: #fff;
+  display: inline-flex;
+  flex: 0 0 26px;
+  height: 26px;
+  justify-content: center;
+  transition:
+    background 0.15s,
+    box-shadow 0.15s;
+}
+
+.filterIcon svg {
+  height: 17px;
+  width: 17px;
+}
+
+.filterButton[aria-pressed="true"] .filterIcon,
+.scopeOptions [aria-checked="true"] .filterIcon {
+  background: color-mix(in srgb, var(--app-yep-green) 68%, #111827);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, #fff 28%, var(--app-yep-green)),
+    0 1px 3px rgba(0, 0, 0, 0.26);
+}
+
+:global([data-theme="light"]) .filterIcon {
+  background: #475569;
+}
+
+@media (prefers-color-scheme: light) {
+  :global([data-theme="auto"]) .filterIcon {
+    background: #475569;
+  }
+}
+
+.filterButton:disabled {
+  cursor: not-allowed;
+}
+
+@media (width <= 600px) {
+  .managerLayout {
+    gap: 10px;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .managerSidebar {
+    border-bottom: 1px solid var(--border-color);
+    border-right: 0;
+    padding-bottom: 10px;
+    padding-right: 0;
+  }
+
+  .filterButton {
+    gap: 5px;
+  }
+
+  .filterIcon {
+    flex-basis: 24px;
+    height: 24px;
+  }
+
+  .filterIcon svg {
+    height: 15px;
+    width: 15px;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SessionShareModal.module-xYOaZELF.js.map

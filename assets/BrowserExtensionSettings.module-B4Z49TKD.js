@@ -1,0 +1,77 @@
+const n=`.lede,
+.hint {
+  margin: 0 0 8px;
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+}
+.feedback {
+  margin: 0 0 8px;
+}
+.hostList,
+.siteList {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.hostRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 8px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+.hostName {
+  flex: 1;
+  min-width: 160px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.hostName span {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+.inlineControl {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+}
+.allowlist {
+  margin: 12px 0;
+}
+.siteList li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+.siteList li > span {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.siteList li > span span {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+.siteInput {
+  flex: 1;
+}
+.siteList .addSite {
+  border-style: dashed;
+}
+`;export{n as default};
+//# sourceMappingURL=BrowserExtensionSettings.module-B4Z49TKD.js.map

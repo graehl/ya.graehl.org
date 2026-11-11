@@ -1,0 +1,1 @@
+{"version":3,"file":"SpeechSettings.module-D9kaoTKS.js","sources":["../../src/pages/settings/SpeechSettings.module.css?raw"],"sourcesContent":["export default \".field {\\n  display: grid;\\n  gap: var(--space-2);\\n  width: min(100%, 28rem);\\n}\\n\""],"names":["SpeechSettings_module"],"mappings":"AAAA,MAAAA,EAAe;AAAA;AAAA;AAAA;AAAA;"}

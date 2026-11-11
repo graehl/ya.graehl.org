@@ -1,0 +1,23 @@
+const e=`/* Settings search field plus the adjacent match-values toggle that appears
+   only while a query is active (contract: topics/settings-search.md). The
+   result-pane visibility belongs to SettingsRows.module.css: it styles rows
+   the search results mount from every other settings pane. */
+
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+
+.inputWrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.valuesToggle {
+  display: flex;
+  white-space: nowrap;
+}
+`;export{e as default};
+//# sourceMappingURL=SettingsSearchBar.module-2zvn4oQK.js.map

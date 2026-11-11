@@ -1,0 +1,24 @@
+const n=`.external-session-risk-explanation {
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.external-session-risk-explanation p {
+  margin: 0 0 0.6rem;
+}
+
+.external-session-risk-explanation ul {
+  margin: 0 0 0.6rem;
+  padding-left: 1.1rem;
+}
+
+.external-session-risk-explanation li {
+  margin-bottom: 0.5rem;
+}
+
+.external-session-risk-explanation .external-session-risk-caveat {
+  margin-bottom: 0;
+  opacity: 0.85;
+}
+`;export{n as default};
+//# sourceMappingURL=ExternalSessionWarning.module-C7BhAIuY.js.map

@@ -1,0 +1,8 @@
+const n=`.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: var(--space-2, 8px);
+}
+`;export{n as default};
+//# sourceMappingURL=CommitHistoryParentLink.module-BjZgTx1e.js.map

@@ -1,0 +1,238 @@
+const n=`.fields {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+
+.fields > p {
+  margin: -4px 0 4px;
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+}
+
+.expiry {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fields button {
+  align-self: flex-start;
+}
+
+.provider {
+  margin-block: 24px;
+}
+
+.provider > summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.provider[open] > summary {
+  margin-block-end: 16px;
+}
+
+.vhosts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.vhostHeading {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+}
+
+.vhostHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.vhostIntro {
+  display: grid;
+  gap: 12px;
+}
+
+.vhostIntro p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.vhostIntro p,
+.password p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+}
+
+.vhostRow {
+  display: grid;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  align-items: end;
+  min-width: 0;
+}
+
+.vhostRow button {
+  align-self: end;
+}
+
+.password {
+  display: flex;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 8px;
+}
+
+.password p {
+  flex: 1 1 100%;
+  margin: 0;
+}
+
+.pathField {
+  min-width: 0;
+}
+.domainSuffix {
+  display: block;
+  color: var(--text-secondary);
+  font-size: var(--font-size-caption);
+}
+.domainName,
+.domainSuffix {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.domainName {
+  display: inline;
+}
+.table button[aria-expanded] {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* Row actions sit right of the domain and target, so the cells a click
+   expands stay contiguous. */
+.table th.linksHeader {
+  width: 36px;
+}
+.table th.linksHeader,
+.table td.links {
+  padding-inline: 2px;
+}
+/* One icon wide; the occasional sign-in log button wraps below the link. */
+.linksCell {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+}
+.withLinkIcon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+.linkIcon {
+  flex: none;
+}
+.linkIconLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@container settings-collection (max-width: 560px) {
+  .table th.linksHeader {
+    width: 48px;
+  }
+}
+.target {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.table {
+  --settings-first-column-width: 40%;
+}
+.table th:nth-child(2) {
+  width: 22%;
+}
+/* One line per access label; a cramped column ellipsizes, never breaks
+   the word letter by letter. */
+.accessButton {
+  max-width: 100%;
+}
+.accessLabel {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@container settings-collection (max-width: 560px) {
+  .table {
+    --settings-first-column-width: 35%;
+  }
+  .table th:nth-child(2) {
+    width: 20%;
+  }
+}
+.table .oauthBlocked > td {
+  background: color-mix(in srgb, var(--error-color, #c44343) 12%, transparent);
+}
+.table .oauthBlocked .blockedToggle,
+.table .oauthBlocked small {
+  color: var(--error-color, #c44343);
+}
+.table .oauthBlocked small {
+  display: block;
+}
+.linkedFiles {
+  display: block;
+  color: var(--text-secondary);
+  font-size: var(--font-size-caption);
+  cursor: help;
+}
+.access {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+@media (width <= 640px) {
+  .vhostRow {
+    grid-template-columns: 1fr;
+  }
+
+  .pathField {
+    grid-column: auto;
+  }
+
+  .vhostRow button {
+    align-self: flex-start;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=ArtifactSettings.module-DmHpQ8PL.js.map

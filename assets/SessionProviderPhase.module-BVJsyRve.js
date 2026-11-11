@@ -1,0 +1,29 @@
+const n=`/* Same 8px footprint as the thinking dot, so titles do not shift. */
+.ring {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--thinking-color);
+  flex-shrink: 0;
+}
+
+.ring[data-phase="background"] {
+  border-color: var(--text-dimmed);
+}
+
+.pill {
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: min(100%, 52ch);
+}
+
+/* Times lead the text, so the ellipsis removes the label first. */
+.pillText {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-variant-numeric: tabular-nums;
+}
+`;export{n as default};
+//# sourceMappingURL=SessionProviderPhase.module-BVJsyRve.js.map

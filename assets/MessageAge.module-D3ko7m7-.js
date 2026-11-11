@@ -1,0 +1,21 @@
+const n=`.messageAge {
+  position: absolute;
+  right: -0.25rem;
+  bottom: 0;
+  padding: 1px 4px;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bg-surface) 92%, transparent);
+  box-shadow: 0 0 0 1px
+    color-mix(in srgb, var(--border-subtle) 65%, transparent);
+  color: var(--text-dimmed);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  line-height: 1.2;
+  opacity: 0;
+  pointer-events: none;
+  text-align: right;
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+}
+`;export{n as default};
+//# sourceMappingURL=MessageAge.module-D3ko7m7-.js.map

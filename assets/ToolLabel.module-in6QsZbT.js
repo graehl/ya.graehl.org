@@ -1,0 +1,8 @@
+const o=`.toolName {
+  flex-shrink: 0;
+  font-weight: 600;
+  font-size: var(--font-size-base);
+  color: var(--text-primary, #ccc);
+}
+`;export{o as default};
+//# sourceMappingURL=ToolLabel.module-in6QsZbT.js.map

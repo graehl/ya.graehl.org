@@ -1,0 +1,153 @@
+const n=`.contextThresholdPopover,
+.contextSubscriptionPopover {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(calc(-50% + var(--context-popover-shift, 0px)));
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 200px;
+  padding: var(--space-2) var(--space-3);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color, #3c3c3c);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+.contextSubscriptionPopover {
+  width: min(320px, calc(100dvw - 16px));
+  gap: var(--space-2);
+  cursor: default;
+}
+
+.subscriptionUsageHeader,
+.subscriptionUsageWindowHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.subscriptionUsageSummary,
+.subscriptionUsageReset {
+  margin-top: 2px;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.subscriptionUsageWindows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.subscriptionUsageWindow {
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border-color);
+}
+
+.subscriptionUsageWindowHeading {
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+.subscriptionUsageWindowHeading strong {
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.subscriptionUsageMeter {
+  height: 4px;
+  margin-top: var(--space-1);
+  overflow: hidden;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+}
+
+.subscriptionUsageMeter > span {
+  display: block;
+  height: 100%;
+  background: var(--text-muted);
+  border-radius: inherit;
+}
+
+.subscriptionUsageWindow:first-child .subscriptionUsageMeter > span {
+  background: var(--warning-color);
+}
+
+.contextThresholdPopover input[type="range"] {
+  width: 100%;
+}
+
+.contextThresholdPopoverTitle {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--text-primary, #e0e0e0);
+}
+
+.contextThresholdPopoverHint {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.contextThresholdPopoverForce {
+  display: flex;
+  gap: var(--space-1);
+  align-items: center;
+  padding-top: var(--space-1);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  border-top: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+/* Token-accounting section of the context-usage popover. The popover shell
+   and the subscription-quota rows remain global (\`.context-subscription-*\`). */
+
+.tokenUsage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border-color);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+}
+
+.row dt,
+.row dd {
+  margin: 0;
+}
+
+.row dd {
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.hint {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.compactAction {
+  align-self: flex-start;
+}
+`;export{n as default};
+//# sourceMappingURL=ContextUsagePopover.module-C2Vs7PLQ.js.map

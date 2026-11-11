@@ -1,0 +1,17 @@
+const n=`.messageFollowToggle {
+  position: absolute;
+  top: -12px;
+  right: 10px;
+  z-index: 2;
+}
+
+.messageFollowToggle svg {
+  flex-shrink: 0;
+}
+
+.messageFollowToggle.is-new-output {
+  max-width: min(220px, calc(100dvw - 32px));
+  white-space: nowrap;
+}
+`;export{n as default};
+//# sourceMappingURL=MessageFollowButton.module-Cv52vY6R.js.map

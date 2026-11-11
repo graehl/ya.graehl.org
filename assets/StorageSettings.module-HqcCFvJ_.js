@@ -1,0 +1,15 @@
+const n=`.setting[data-settings-item] {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-3);
+}
+
+.choiceHeading {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  font-weight: 600;
+}
+`;export{n as default};
+//# sourceMappingURL=StorageSettings.module-HqcCFvJ_.js.map

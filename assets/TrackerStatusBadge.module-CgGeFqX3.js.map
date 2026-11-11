@@ -1,0 +1,1 @@
+{"version":3,"file":"TrackerStatusBadge.module-CgGeFqX3.js","sources":["../../src/components/TrackerStatusBadge.module.css?raw"],"sourcesContent":["export default \".badge {\\n  flex-shrink: 0;\\n}\\n\""],"names":["TrackerStatusBadge_module"],"mappings":"AAAA,MAAAA,EAAe;AAAA;AAAA;"}

@@ -1,0 +1,14 @@
+const t=`.statusEmpty {
+  color: var(--text-muted);
+  font-style: italic;
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.diffLoading {
+  padding: var(--space-4);
+  text-align: center;
+  color: var(--text-muted);
+}
+`;export{t as default};
+//# sourceMappingURL=SourceStatus.module-ADLr0BfX.js.map

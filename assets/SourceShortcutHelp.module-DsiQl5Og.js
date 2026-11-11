@@ -1,0 +1,50 @@
+const n=`.root {
+  display: inline-flex;
+}
+
+.trigger {
+  display: grid;
+  place-items: center;
+  cursor: help;
+}
+
+/* The shared Popover owns the surface; this lays out the shortcut table. */
+.popover {
+  display: grid;
+  width: max-content;
+  min-width: 210px;
+}
+
+.popoverTitle {
+  margin: 0 4px 5px;
+  color: var(--text-primary, #e6edf3);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 4px;
+  color: var(--text-secondary, #8b949e);
+  font-size: var(--font-size-sm);
+}
+
+.row kbd {
+  color: var(--text-primary, #e6edf3);
+  font: inherit;
+  font-family: var(--font-mono, monospace);
+  text-align: right;
+}
+
+/* The narrow commit layout hides this disclosure entirely; the sibling
+   keyboard hint is owned by SourceSearch.module.css. */
+@media (width <= 600px) {
+  .root {
+    display: none;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SourceShortcutHelp.module-DsiQl5Og.js.map

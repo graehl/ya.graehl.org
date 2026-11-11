@@ -1,0 +1,62 @@
+const n=`.jump {
+  flex: 0 0 auto;
+}
+.footerAction {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+.preview {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding: 6px 0;
+}
+.previewPath {
+  padding: 0 10px 4px;
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: var(--font-size-caption);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lines {
+  margin: 0;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-caption);
+  line-height: 1.45;
+}
+.line {
+  display: flex;
+  gap: 8px;
+  padding: 0 10px;
+}
+.line[data-cited] {
+  background: var(--bg-tertiary);
+}
+.lineNumber {
+  flex: 0 0 2.5em;
+  color: var(--text-secondary);
+  text-align: right;
+  user-select: none;
+}
+.lineText {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+}
+.more,
+.previewStatus {
+  padding: 0 10px;
+  color: var(--text-secondary);
+  font-size: var(--font-size-caption);
+}
+@media (width < 760px) {
+  .lines {
+    max-height: 7.5em;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=FileViewCompletionSheet.module-Omf8wNh2.js.map

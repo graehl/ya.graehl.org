@@ -1,0 +1,60 @@
+const n=`.notice {
+  margin: 0.5rem 0;
+  min-width: 0;
+}
+.summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.review {
+  margin-top: 0.75rem;
+  max-height: 40vh;
+  overflow: auto;
+}
+.versions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+.versions h4 {
+  margin: 0 0 0.5rem;
+}
+.preview {
+  overflow-wrap: anywhere;
+  max-height: 10rem;
+  overflow: auto;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+.preview pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 0;
+  font: inherit;
+}
+.preview pre + pre {
+  margin-top: 0.75rem;
+}
+.preview p {
+  margin: 0;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+@media (width <= 600px) {
+  .summary {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .versions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=DraftSyncNotice.module-C67hZm4e.js.map

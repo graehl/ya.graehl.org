@@ -1,0 +1,71 @@
+const n=`.fileList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.fileList > [data-source-file-row] {
+  content-visibility: auto;
+  contain-intrinsic-size: 34px;
+}
+
+.inventory {
+  min-width: 0;
+}
+
+.sectionControls {
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 0 8px;
+  padding: 0;
+  border: 0;
+}
+
+.sectionToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.truncated {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 8px;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.detail {
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.detail > :global([data-file-viewer]),
+.detail > [data-source-blame-view] {
+  min-height: 0;
+  flex: 1;
+  border: 0;
+  border-radius: 0;
+}
+
+.detailModes {
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 4px 8px;
+  background: var(--bg-secondary);
+  border: 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+`;export{n as default};
+//# sourceMappingURL=BlameBrowser.module-KiJ1YBSU.js.map

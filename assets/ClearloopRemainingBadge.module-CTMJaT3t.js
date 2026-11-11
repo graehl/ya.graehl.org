@@ -1,0 +1,48 @@
+const n=`/* The passive count is a Badge; the header's live control below is a button
+   and keeps its own chip. */
+.label {
+  display: inline-flex;
+  flex-shrink: 0;
+  margin-left: var(--space-1);
+  vertical-align: middle;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 1.5rem;
+  margin-left: var(--space-1);
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-full);
+  /* A deep green keeps white digits readable in both themes. */
+  background: #15803d;
+  color: #fff;
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+  vertical-align: middle;
+}
+
+/*
+ * Patient loops also wait for the project to go idle, so they wear the same
+ * purple the rest of the Project Queue surface uses.
+ */
+.patientButton {
+  background: var(--project-queue-action-bg);
+}
+
+.cancelable {
+  font: inherit;
+  font-weight: 700;
+}
+
+.cancelable:hover,
+.cancelable:focus-visible {
+  background: #b91c1c;
+  outline: none;
+}
+`;export{n as default};
+//# sourceMappingURL=ClearloopRemainingBadge.module-CTMJaT3t.js.map

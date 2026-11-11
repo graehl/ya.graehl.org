@@ -1,0 +1,373 @@
+const n=`/*
+ * The shared button family (plan 182, family 1). The control owns its look;
+ * a caller's className adds layout only (margins, flex placement, width).
+ * Variants started from the census prototypes and the most-used legacy
+ * family, settings-button.
+ */
+
+/* ButtonBase: a reset for clickable rows, previews, disclosures and image wrappers. The
+   :where() keeps it at zero specificity, so the owner's styles always win.
+   Font size is the base token rather than inherited: raw buttons render at
+   the browser's ~13 px default, and every legacy row was designed at that
+   size, so a swapped row keeps its text size unless its owner sets one. */
+:where(.base) {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-size: var(--font-size-base);
+  text-align: inherit;
+  cursor: pointer;
+}
+
+:where(.base:disabled) {
+  cursor: not-allowed;
+}
+
+.base:focus-visible,
+.button:focus-visible {
+  outline: 2px solid var(--focus-border);
+  outline-offset: 2px;
+}
+
+.button {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  min-height: 32px;
+  margin: 0;
+  padding: 0 var(--space-3);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-size: var(--font-size-sm);
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+}
+
+.button:disabled,
+.button[aria-disabled="true"] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button[aria-busy="true"] {
+  cursor: progress;
+}
+
+.small {
+  min-height: 26px;
+  padding: 0 var(--space-2);
+  font-size: var(--font-size-xs);
+}
+
+.large {
+  min-height: 36px;
+}
+
+.dense {
+  min-height: 22px;
+  padding: 0 var(--space-1);
+  font-size: var(--font-size-xs);
+}
+
+/* Zero specificity: a dense control that its owner positions absolutely
+   (a corner copy button) keeps that position. */
+:where(.dense) {
+  position: relative;
+}
+
+/* Text glyphs (×, ↑) used as icons read at a larger size than labels. */
+.icon {
+  width: 32px;
+  padding: 0;
+  font-size: var(--font-size-2xl);
+  line-height: 1;
+}
+
+.icon.small {
+  width: 26px;
+  font-size: var(--font-size-2xl);
+}
+
+.icon.large {
+  width: 36px;
+}
+
+.icon.dense {
+  width: 22px;
+  font-size: var(--font-size-base);
+}
+
+/* Fingers, not cursors: coarse pointers get a larger hit area. */
+@media (pointer: coarse) {
+  .button {
+    min-height: 44px;
+  }
+
+  .small {
+    min-height: 36px;
+  }
+
+  .icon {
+    width: 44px;
+  }
+
+  .icon.small {
+    width: 36px;
+  }
+
+  /* Dense controls keep their drawn size so their row does not grow; the
+     hit area extends invisibly around them instead. */
+  .dense {
+    min-height: 22px;
+  }
+
+  .icon.large {
+    width: 44px;
+  }
+
+  .icon.dense {
+    width: 22px;
+  }
+
+  .dense::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
+  }
+}
+
+.icon svg {
+  flex-shrink: 0;
+}
+
+.primary {
+  background: var(--app-yep-green-dark);
+  color: #fff;
+}
+
+.primary:hover:not(:disabled, [aria-disabled="true"]) {
+  background: var(--app-yep-green);
+}
+
+.secondary {
+  background: var(--bg-hover);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.secondary[aria-pressed="true"],
+.secondary[data-selected="true"] {
+  border-color: var(--app-yep-green);
+}
+
+.secondary[aria-pressed="true"],
+.outline[aria-pressed="true"] {
+  font-weight: 600;
+}
+
+.outline[aria-pressed="true"],
+.outline[data-selected="true"] {
+  background: var(--bg-hover);
+  border-color: var(--app-yep-green);
+}
+
+.secondary:hover:not(:disabled, [aria-disabled="true"]) {
+  background: var(--border-color);
+}
+
+.outline {
+  background: transparent;
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.outline:hover:not(:disabled, [aria-disabled="true"]) {
+  background: var(--bg-hover);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.ghost:hover:not(:disabled, [aria-disabled="true"]) {
+  background: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+/* On is a filled, bordered chip: a background alone is too faint to read as
+   a state in a row of toggles. */
+.ghost[aria-pressed="true"],
+.ghost[data-selected="true"] {
+  background: var(--bg-hover);
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.danger {
+  background: var(--error-color);
+  border-color: var(--error-color);
+  color: #fff;
+}
+
+.danger:hover:not(:disabled, [aria-disabled="true"]) {
+  background: color-mix(in srgb, var(--error-color) 85%, #000);
+}
+
+.dangerOutline {
+  background: transparent;
+  border-color: var(--error-color);
+  color: var(--error-color);
+}
+
+.dangerOutline:hover:not(:disabled, [aria-disabled="true"]) {
+  background: color-mix(in srgb, var(--error-color) 14%, transparent);
+}
+
+/* Text actions share the link color without drawing a background on hover. */
+.link {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--link-color);
+  font-size: inherit;
+  line-height: inherit;
+  vertical-align: baseline;
+}
+
+:where(.link) {
+  position: relative;
+}
+
+@media (pointer: coarse) {
+  .link::before {
+    content: "";
+    position: absolute;
+    inset: min(0px, calc((100% - 44px) / 2));
+  }
+}
+
+/* Floating actions share an opaque surface. Filled variants already supply one. */
+.button.elevated {
+  box-shadow: var(--shadow-md);
+}
+
+.elevated:is(.secondary, .outline, .ghost) {
+  background: var(--bg-surface);
+}
+
+.elevated:is(.secondary, .outline, .ghost):hover:not(:disabled) {
+  background: var(--bg-hover);
+}
+
+.attentionOutline {
+  background: transparent;
+  color: var(--warning-color);
+  border-color: var(--warning-color);
+}
+
+.attentionOutline:hover:not(:disabled, [aria-disabled="true"]) {
+  background: color-mix(in srgb, var(--warning-color) 14%, transparent);
+}
+
+.link:hover:not(:disabled, [aria-disabled="true"]) {
+  text-decoration: underline;
+}
+
+/* Copy feedback shares one successful outline across transcript and viewers. */
+.successOutline {
+  background: transparent;
+  border-color: var(--success-color);
+  color: var(--success-color);
+}
+
+.successOutline:hover:not(:disabled, [aria-disabled="true"]) {
+  background: color-mix(in srgb, var(--success-color) 14%, transparent);
+}
+
+.button.wrap {
+  display: inline;
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: start;
+}
+.button.truncate {
+  display: inline-block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.button.mono {
+  font-family: var(--font-mono);
+  font-size: var(--fixed-font-size-base);
+}
+/* Inline controls preserve the surrounding prose's line box. */
+.button.inline,
+.button.inlineIcon {
+  position: relative;
+  min-height: 0;
+  display: inline;
+  height: auto;
+  padding: 0 0.25em;
+  font-size: 0.78em;
+  line-height: 1;
+  vertical-align: baseline;
+}
+.button.inline {
+  vertical-align: 0.1em;
+}
+.button.inlineIcon {
+  display: inline-flex;
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  vertical-align: middle;
+}
+.inlineIcon svg {
+  width: 11px;
+  height: 11px;
+}
+.button.subdued {
+  opacity: 0.4;
+}
+.button.subdued:is(:hover, :focus-visible, .successOutline) {
+  opacity: 1;
+}
+.elevated.attentionOutline {
+  background: var(--bg-surface);
+}
+.elevated.attentionOutline:hover:not(:disabled) {
+  background: var(--bg-hover);
+}
+@media (pointer: coarse) {
+  .button.touchLarge {
+    min-height: 44px;
+  }
+  .button.inline::before,
+  .button.inlineIcon::before {
+    content: "";
+    position: absolute;
+    inset: min(0px, calc((100% - 44px) / 2));
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=Button.module-DECGiX2e.js.map

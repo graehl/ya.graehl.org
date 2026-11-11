@@ -1,0 +1,40 @@
+const o=`/* "What's the risk?" affordance: hover shows a popover, click opens a modal. */
+.root {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltipVisible {
+  z-index: 2147483647;
+}
+
+.tooltip {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2147483647;
+  width: min(360px, 90vw);
+  max-height: 60vh;
+  overflow-y: auto;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  text-align: left;
+  font-weight: 400;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Reveal on hover or keyboard focus of the affordance. Pointer-only: touch
+   devices use the click-to-modal path instead. */
+@media (hover: hover) {
+  .root:hover .tooltip,
+  .root:focus-within .tooltip {
+    display: block;
+  }
+}
+`;export{o as default};
+//# sourceMappingURL=RiskAffordance.module-D1CDwQVx.js.map

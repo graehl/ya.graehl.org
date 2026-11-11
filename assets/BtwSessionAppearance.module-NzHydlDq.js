@@ -1,0 +1,16 @@
+const e=`.recentSessionsBadge.btw,
+.sessionBadgeBtw {
+  background: color-mix(in srgb, var(--provider-codex) 16%, transparent);
+  color: color-mix(in srgb, var(--provider-codex) 86%, var(--text-primary));
+  border: 1px solid
+    color-mix(in srgb, var(--provider-codex) 45%, var(--border-color));
+  font-family: var(--font-mono);
+}
+
+.recentSessionItem.btwAsideSession .recentSessionTitle,
+[data-session-list-item].btwAsideSession [data-session-list-item__title],
+[data-session-list-item].btwAsideSession [data-session-list-item__title-text] {
+  color: color-mix(in srgb, var(--provider-codex) 84%, var(--text-primary));
+}
+`;export{e as default};
+//# sourceMappingURL=BtwSessionAppearance.module-NzHydlDq.js.map

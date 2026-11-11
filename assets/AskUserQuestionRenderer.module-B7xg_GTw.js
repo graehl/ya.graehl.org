@@ -1,0 +1,92 @@
+const n=`.toolUse,
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.text {
+  color: var(--text-secondary, var(--text-muted));
+}
+
+.options {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--bg-code);
+}
+
+.option:hover {
+  background: var(--bg-tertiary);
+}
+
+.optionSelected {
+  border-color: #4a4;
+  background: rgba(68, 170, 68, 0.1);
+}
+
+.optionIndicator {
+  color: var(--text-muted);
+  font-family: monospace;
+  flex-shrink: 0;
+}
+
+.optionSelected .optionIndicator {
+  color: var(--success-color);
+}
+
+.optionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.optionLabel {
+  font-weight: 500;
+  color: var(--text-secondary, var(--text-muted));
+}
+
+.optionDesc {
+  font-size: var(--font-size-base);
+  color: var(--text-muted);
+}
+
+.error {
+  color: var(--error-color);
+  padding: 0.5rem;
+  background: var(--bg-error);
+  border-radius: var(--radius-sm);
+}
+
+.empty {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: var(--font-size-lg);
+}
+`;export{n as default};
+//# sourceMappingURL=AskUserQuestionRenderer.module-B7xg_GTw.js.map

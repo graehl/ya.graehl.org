@@ -1,0 +1,207 @@
+const n=`.viewer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+.title {
+  flex: 1;
+  /* A crowded phone toolbar still leaves the home icon whole. */
+  min-width: 28px;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.title svg {
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}
+/* Reads as the title; the icon and name are one target for the app's home. */
+.home {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  padding: 2px 4px;
+  margin-left: -4px;
+  border-radius: var(--radius-sm);
+  font-size: inherit;
+}
+.home:hover:not(:disabled) {
+  background: var(--bg-secondary);
+}
+.home:disabled {
+  cursor: default;
+}
+.titleText {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* The page an app reports, after its name; it gives way first when crowded. */
+.crumbs {
+  flex: 0 100 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  direction: rtl;
+  text-align: left;
+  font-size: 0.8em;
+  color: var(--text-secondary);
+}
+.crumbTrail {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+.crumbSeparator {
+  padding: 0 3px;
+  opacity: 0.7;
+}
+.pathActions {
+  flex-shrink: 0;
+}
+.pathActions .copyPath {
+  opacity: 0;
+}
+.title:hover .copyPath,
+.title:focus-within .copyPath {
+  opacity: 1;
+}
+@media (hover: none) {
+  .pathActions .copyPath {
+    display: none;
+  }
+}
+.frame {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  border: 0;
+  background: white;
+}
+.details {
+  overflow: auto;
+  padding: 16px;
+  min-height: 0;
+}
+.details code {
+  overflow-wrap: anywhere;
+}
+.servedStopped {
+  padding: 6px 10px;
+  border-inline-start: 3px solid var(--warning-color);
+  color: var(--warning-color);
+}
+.field {
+  margin-block: 12px;
+}
+/* Its own row, not beside the button before it. */
+.checkLabel {
+  width: 100%;
+  margin-block: 12px;
+}
+.details button {
+  margin: 4px;
+  /* Icon-and-text buttons sit level with plain ones in a row. */
+  vertical-align: middle;
+}
+.details fieldset {
+  min-width: 0;
+  margin: 16px 0 0;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+}
+.details dt {
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+.details dd {
+  margin: 4px 0 12px;
+}
+/* Edit sits after the command text, level with it. */
+.details .commandEdit {
+  margin-inline-start: 8px;
+}
+.commandField {
+  margin-block: 4px;
+}
+.commandEditor > div button:first-child {
+  margin-inline-start: 0;
+}
+.inlineSettings {
+  min-width: 0;
+}
+.addressLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+.addressLink > a {
+  min-width: 0;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--font-size-sm);
+}
+.details p {
+  overflow-wrap: anywhere;
+}
+.inlineSettings .details {
+  overflow: visible;
+  padding: 0;
+  font-size: var(--font-size-sm);
+  line-height: 1.45;
+}
+.inlineSettings .details p {
+  margin-block: 8px;
+}
+.inlineSettings .details > p:first-child {
+  margin-top: 0;
+}
+.inlineSettings .details dl {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 6px 16px;
+  font-size: var(--font-size-sm);
+}
+.inlineSettings .details dt,
+.inlineSettings .details dd {
+  margin: 0;
+}
+.workspace[data-main-content-constrained],
+.workspace[data-main-content-mobile-inner] {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+.composer {
+  min-width: 0;
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+}
+.appColumn {
+  min-width: 0;
+  min-height: 0;
+  flex: 1;
+}
+.concealed {
+  display: none;
+}
+`;export{n as default};
+//# sourceMappingURL=ProjectAppViewer.module-D8h6_RD0.js.map

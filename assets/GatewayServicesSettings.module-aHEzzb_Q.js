@@ -1,0 +1,169 @@
+const n=`.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.card {
+  /* As many short fields across as stay legible: two in the settings pane at a
+     laptop width, three in a wide one, one on a phone. 16rem paired nothing —
+     the pane is ~430px inside a 1000px viewport, and this app's root font makes
+     a rem 18.4px, so 16rem asked for more than two columns could ever have. */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  /* Fields align at the top of their row. Bottom alignment let a short field
+     drop to the foot of a row whose height came from a neighbour's hint, which
+     left a hole above it and put two labels in the same row at different
+     heights. */
+  align-items: start;
+  gap: 0.5rem 1rem;
+  margin: 0;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color, #3a3a3a);
+  border-radius: var(--radius-md);
+  min-width: 0;
+}
+
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0 0.35rem;
+}
+
+/* Reordering sits with the entry's title because the list order is what the
+   model pickers show, so it reads as a property of this entry's place in the
+   list rather than as one more setting inside it. */
+.reorder {
+  display: inline-flex;
+  gap: 0.15rem;
+}
+
+/* Hints and the wide rows read as their own band rather than as a column. */
+.wide {
+  grid-column: 1 / -1;
+}
+
+/* A field whose value is long — a URL, a shell command — takes two tracks, so
+   it stays readable where the short ones pair off.
+ 
+   Only once there is a second column to take. A span wider than the explicit
+   track count does not clamp: it creates an implicit track, which on a phone
+   turned the whole card into two ~130px columns whose labels all wrapped. */
+@media (width >= 480px) {
+  .span2 {
+    grid-column: span 2;
+  }
+}
+
+/* Hints that span several fields, drawn as the shared Field hint so the card
+   has one hint style. A hint for one field is that Field's own \`hint\`. */
+.hint {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.4;
+}
+
+.status {
+  align-self: center;
+  font-size: var(--font-size-lg);
+  opacity: 0.75;
+}
+
+/* The id doubles as the entry's title, so it reads as a heading rather than
+   as one more field in the stack. */
+.id {
+  font-weight: 600;
+  width: 12ch;
+  min-width: 8ch;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+/* The effort group's heading, drawn as a shared Field label. */
+.field > span {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+/* Wide enough for the largest accepted delay (86400) plus the spinner. */
+.delay {
+  width: 10ch;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+/* A list-wide setting takes its own line, its description under it. */
+.setting {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  width: 100%;
+  margin: var(--space-2) 0;
+}
+
+.advanced > summary {
+  cursor: pointer;
+  min-height: 2.25rem;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-size-lg);
+}
+
+/* The same grid as the card, on a wrapper rather than on the <details> itself:
+   a browser with a \`::details-content\` box lays every child after the summary
+   out inside one anonymous block, so a grid on the <details> reaches exactly
+   one item and everything inside it stacks. */
+.advancedBody {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  /* Fields align at the top of their row. Bottom alignment let a short field
+     drop to the foot of a row whose height came from a neighbour's hint, which
+     left a hole above it and put two labels in the same row at different
+     heights. */
+  align-items: start;
+  gap: 0.5rem 1rem;
+}
+
+.advancedBody > button {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+/* The exact commands, one per line, selectable and never wrapped mid-token. */
+.commands {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: var(--font-size-lg);
+}
+
+.commands > span {
+  opacity: 0.85;
+}
+
+.commands > code {
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+`;export{n as default};
+//# sourceMappingURL=GatewayServicesSettings.module-aHEzzb_Q.js.map

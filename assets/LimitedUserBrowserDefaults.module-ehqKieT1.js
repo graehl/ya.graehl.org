@@ -1,0 +1,53 @@
+const n=`.panel {
+  font-size: var(--font-size-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.panel h3 {
+  margin: 0;
+  font-size: var(--font-size-lg);
+}
+.hint {
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+  margin: 0;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.status {
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 16em) minmax(0, 1fr) 40px;
+  align-items: center;
+  gap: 6px;
+}
+.key {
+  overflow-wrap: anywhere;
+  color: var(--text-secondary);
+}
+@media (width <= 480px) {
+  .row {
+    grid-template-columns: minmax(0, 1fr) 40px;
+  }
+  .key {
+    grid-column: 1 / -1;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=LimitedUserBrowserDefaults.module-ehqKieT1.js.map

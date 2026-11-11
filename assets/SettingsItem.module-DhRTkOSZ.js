@@ -1,0 +1,38 @@
+const n=`@container (max-width: 36rem) {
+  .descriptionFullWidthOnNarrow {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) max-content;
+    align-items: start;
+    column-gap: var(--space-3);
+    row-gap: var(--space-2);
+  }
+
+  .descriptionFullWidthOnNarrow > [data-settings-info] {
+    display: contents;
+  }
+
+  .descriptionFullWidthOnNarrow > [data-settings-info] > strong {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 0;
+  }
+
+  .descriptionFullWidthOnNarrow > [data-settings-info] > p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .descriptionFullWidthOnNarrow
+    > [data-settings-info]
+    > [data-settings-origin] {
+    grid-column: 1 / -1;
+  }
+
+  .descriptionFullWidthOnNarrow > [data-settings-info] + * {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=SettingsItem.module-DhRTkOSZ.js.map

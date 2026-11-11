@@ -1,0 +1,28 @@
+const n=`.optionDescriptionList {
+  display: grid;
+  gap: var(--space-1);
+  margin: var(--space-2) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+
+.optionDescriptionList li {
+  display: grid;
+  gap: 2px;
+}
+
+.optionDescriptionList strong {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+.ignoredToolsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+}
+`;export{n as default};
+//# sourceMappingURL=DevelopmentSettings.module-r5oKBxK7.js.map

@@ -1,0 +1,177 @@
+const n=`.messageInputCollapsedMic.voiceInputButton {
+  --composer-control-size: 30px;
+  background: color-mix(in srgb, var(--bg-surface) 76%, transparent);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.16);
+}
+.voiceInputButton {
+  align-items: center;
+  justify-content: center;
+  width: var(--composer-control-size);
+  height: var(--composer-control-size);
+  cursor: pointer;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+.voiceInputButton,
+[data-new-session-form-toolbar] .voiceInputButton,
+[data-message-input-keyboard-actions] .voiceInputButton {
+  display: flex;
+  padding: 0;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+}
+
+.voiceInputButton:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-input);
+}
+
+.voiceInputButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.voiceInputButton.listening {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgb(239, 68, 68);
+  color: rgb(239, 68, 68);
+}
+
+.voiceInputButton.listening:hover {
+  background: rgba(239, 68, 68, 0.25);
+}
+.voiceInputLevelDisc {
+  opacity: 0.82;
+  transform: scale(1.18);
+  transform-box: view-box;
+  transform-origin: center;
+}
+
+.voiceInputRecording {
+  overflow: visible;
+}
+
+.voiceInputLevelGlyph {
+  color: var(--bg-input);
+}
+
+.voiceInputRecording.is-speech-active .voiceInputLevelDisc {
+  animation: voice-input-level-pulse 0.9s ease-in-out infinite;
+}
+
+@keyframes voice-input-level-pulse {
+  0%,
+  100% {
+    opacity: 0.75;
+    transform: scale(1.18);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.32);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .voiceInputRecording.is-speech-active .voiceInputLevelDisc {
+    animation: none;
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+.voiceInputContainer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.voiceInputStatus {
+  font-size: 0.75rem;
+  color: var(--text-primary);
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.voiceInputContainer.statusError .voiceInputStatus {
+  color: rgb(239, 68, 68);
+}
+
+[data-new-session-form-toolbar] .voiceInputButton {
+  width: var(--composer-control-size);
+  height: var(--composer-control-size);
+  min-width: var(--composer-control-size);
+  border-radius: var(--radius-md);
+}
+
+.button.button.button {
+  position: relative;
+  width: 3.75rem;
+  min-width: 3.75rem;
+  padding-inline: 0.35rem;
+  gap: 0.25rem;
+  overflow: visible;
+}
+
+.button > svg {
+  flex: 0 0 18px;
+}
+
+.backendLabel {
+  min-width: 0;
+  overflow: hidden;
+  color: currentColor;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+
+.starting.starting {
+  border-color: var(--warning-color);
+  background: color-mix(in srgb, var(--warning-color) 14%, transparent);
+  color: var(--warning-color);
+}
+
+.starting.starting:hover {
+  background: color-mix(in srgb, var(--warning-color) 22%, transparent);
+}
+
+@media (pointer: coarse) {
+  .button::before {
+    position: absolute;
+    inset: -10px 0 -4px;
+    content: "";
+  }
+}
+
+.inlineWaveform.inlineWaveform.inlineWaveform {
+  width: 100%;
+  max-width: none;
+  flex: 1 1 auto;
+  gap: 0.2rem;
+  justify-content: flex-start;
+  overflow: visible;
+}
+
+.inlineWaveform > svg {
+  flex: 0 0 18px;
+  margin-inline: 2px;
+}
+
+.inlineWaveform [data-speech-waveform="true"] {
+  height: 100%;
+  min-width: 0;
+  max-width: 78px;
+  flex: 1 10 78px;
+  margin-left: 0;
+  padding-left: 0;
+}
+`;export{n as default};
+//# sourceMappingURL=VoiceInputButton.module-l4OHnwKU.js.map

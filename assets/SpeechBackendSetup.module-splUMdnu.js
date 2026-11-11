@@ -1,0 +1,107 @@
+const n=`.wrap {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  width: 100%;
+}
+
+.wrap h3 {
+  margin: 0;
+  font-size: var(--font-size-lg);
+}
+
+.wrap p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.catalog {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+}
+.backend {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+/* The GPU switch with its help line under it. */
+.gpu {
+  display: grid;
+  gap: 4px;
+}
+
+.gpu > p {
+  margin: 0;
+}
+
+.environmentLock {
+  padding: 8px;
+  border-left: 3px solid var(--border-color);
+  background: var(--bg-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+.model {
+  overflow-wrap: anywhere;
+  font-size: var(--font-size-sm);
+}
+.backendActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+.access {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.access code {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.meta {
+  overflow-wrap: anywhere;
+  margin-top: 4px;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+.reason {
+  margin-top: 4px;
+}
+
+.consoleLabel {
+  font-size: var(--font-size-base);
+}
+
+.console {
+  max-height: 12rem;
+  min-height: 6rem;
+  overflow: auto;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: var(--font-size-sm);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+`;export{n as default};
+//# sourceMappingURL=SpeechBackendSetup.module-splUMdnu.js.map

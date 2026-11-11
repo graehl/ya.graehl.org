@@ -1,0 +1,72 @@
+const n=`.readToolUse {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.readRange {
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+}
+
+.readTextResult {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.readTextInline {
+  gap: 0.25rem;
+}
+
+.readImageResult {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.imageInfo {
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.readImage {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm);
+}
+
+.readPdfResult {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.readError {
+  color: var(--error-color);
+  padding: 0.5rem;
+  background: var(--bg-error);
+  border-radius: var(--radius-sm);
+}
+
+.imagePreviewButton {
+  align-self: flex-start;
+  max-width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-code);
+  cursor: zoom-in;
+}
+
+.imagePreviewButton:hover {
+  border-color: var(--text-secondary);
+}
+
+.imagePreviewButton:focus-visible {
+  border-color: var(--text-secondary);
+}
+`;export{n as default};
+//# sourceMappingURL=ReadRenderer.module-BI281NTC.js.map

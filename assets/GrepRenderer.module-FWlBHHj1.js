@@ -1,0 +1,275 @@
+const n=`.toolUse {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pattern {
+  font-family: "SF Mono", Monaco, monospace;
+  font-size: var(--font-size-lg);
+  color: var(--link-color);
+}
+
+.glob {
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+}
+
+.path {
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.count {
+  color: var(--text-muted);
+  font-size: var(--font-size-base);
+}
+
+.inlineSummary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 0.22rem;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  line-height: 1.35;
+}
+
+.summaryPattern {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+  min-width: 0;
+  position: relative;
+}
+
+.summaryPatternRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.summaryPatternClip {
+  display: inline-block;
+  flex: 0 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.summaryPatternAction {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.summaryPatternAction:hover {
+  color: var(--text-secondary);
+}
+
+.summaryPatternAction:focus {
+  outline: 1px solid var(--focus-border, #007acc);
+  outline-offset: 1px;
+}
+
+.summaryPatternFull {
+  display: block;
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.summaryPatternMeasure {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  visibility: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.summaryScope {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: baseline;
+  gap: 0.25rem;
+  min-width: 0;
+  white-space: nowrap;
+  color: var(--text-muted);
+}
+
+/* FilePathLink renders this child and keeps its global class, so the scope
+   reaches in narrowly. Two class levels, matching the specificity that beat
+   the global \`.file-path-link-name { word-break: break-all }\`. */
+.summaryScope :global([data-file-path-link-name]) {
+  word-break: normal;
+}
+
+.summaryScopePrefix {
+  color: var(--text-dimmed, var(--text-muted));
+}
+
+.summaryScopeText {
+  color: var(--link-color);
+}
+
+.summaryArrow {
+  color: var(--text-dimmed, var(--text-muted));
+}
+
+.matchCountButton {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.matchModal {
+  max-height: min(70vh, 42rem);
+  overflow: auto;
+}
+
+.matchTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.matchTable th,
+.matchTable td {
+  border-bottom: 1px solid var(--border-subtle, var(--border-color));
+  padding: 0.25rem 0.4rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.matchFile {
+  max-width: 18rem;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.matchLine {
+  width: 4.5rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.matchText {
+  font-family: var(--font-mono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.matchHighlight {
+  background: color-mix(
+    in srgb,
+    var(--warning-color, #cca700) 28%,
+    transparent
+  );
+  color: inherit;
+  padding: 0 0.05rem;
+}
+
+.collapsedPreview {
+  display: grid;
+  gap: 0.2rem;
+  width: 100%;
+  padding: 0.375rem 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-code);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary, var(--text-muted));
+}
+
+.previewMatch {
+  display: grid;
+  grid-template-columns: max-content max-content minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.previewMatch:not(:has(.previewFile)) {
+  grid-template-columns: max-content minmax(0, 1fr);
+}
+
+.previewFile {
+  max-width: 10rem;
+  overflow: hidden;
+  color: var(--text-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.previewLine {
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.previewText {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.previewMore {
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+}
+
+.countSummary {
+  color: var(--text-muted);
+  font-size: var(--font-size-lg);
+}
+
+/* Shares its element with the global \`.code-block\`, which sets \`margin:
+   0.5rem 0\`. The legacy \`.grep-content\` only won that tie by coming later in
+   the previous shared cascade; the element qualifier keeps it winning independently of
+   where this module lands in the sheet order. */
+pre.content {
+  margin: 0;
+}
+
+.error {
+  color: var(--error-color);
+  padding: 0.5rem;
+  background: var(--bg-error);
+  border-radius: var(--radius-sm);
+}
+
+.empty {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: var(--font-size-lg);
+}
+`;export{n as default};
+//# sourceMappingURL=GrepRenderer.module-FWlBHHj1.js.map

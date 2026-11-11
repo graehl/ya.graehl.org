@@ -1,0 +1,85 @@
+const n=`/* Environment settings: read-only catalog of documented startup env vars. */
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* The select keeps its intrinsic width beside the label. */
+.filterSelect {
+  width: auto;
+}
+
+/* Tightens SettingsRows.group for this dense catalog. The stable data
+   boundary keeps the override more specific than the shared group rule. */
+.group[data-settings-group] {
+  gap: var(--space-2);
+}
+
+.groupTitle {
+  margin: 0 0 var(--space-1);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.row {
+  padding: var(--space-2);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+}
+
+.unset {
+  opacity: 0.7;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.name {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.value {
+  margin-left: auto;
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+  word-break: break-all;
+}
+
+.valueUnset {
+  font-family: inherit;
+  color: var(--text-dimmed);
+  font-style: italic;
+}
+
+.description {
+  margin: var(--space-1) 0 0;
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+}
+
+/* Dynamic, runtime-computed caption (e.g. HOST's active listen addresses). */
+.note {
+  margin: var(--space-1) 0 0;
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+`;export{n as default};
+//# sourceMappingURL=EnvironmentSettings.module-YUbw4KNH.js.map

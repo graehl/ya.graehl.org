@@ -1,0 +1,215 @@
+const n=`.panel {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-3);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.header strong {
+  color: var(--text-primary);
+}
+
+.header p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+}
+
+.fileAccessSettingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-3);
+  border-top: 1px solid var(--border-color);
+}
+
+.fileAccessSettingRow:first-child {
+  border-top: 0;
+}
+
+.fileAccessSettingRowField,
+.fileAccessSettingRowReadonly {
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.fileAccessSettingRowField [data-settings-info],
+.fileAccessSettingRowReadonly [data-settings-info] {
+  flex: 1 1 18rem;
+}
+
+.agentApiPreview {
+  min-width: 0;
+  max-width: 100%;
+  margin-block: var(--space-2);
+}
+
+.agentApiPreview pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.customFoldersControls {
+  display: flex;
+  flex: 1 1 20rem;
+  align-items: flex-end;
+  gap: var(--space-2);
+  width: 100%;
+  min-width: min(100%, 18rem);
+  max-width: 28rem;
+}
+
+.customFoldersInput {
+  flex: 1 1 auto;
+}
+
+/* A text field beside its row's description (SettingsRows.inlineField). */
+.inlineField {
+  flex: 1 1 20rem;
+  width: auto;
+  min-width: min(100%, 18rem);
+  max-width: 28rem;
+}
+
+.port {
+  width: 96px;
+  flex-shrink: 0;
+}
+
+.customFoldersButton {
+  flex: 0 0 7rem;
+}
+
+/* The password choice nested under Require Password (SettingsRows.subsection). */
+.passwordBlock.passwordBlock {
+  margin-top: 0;
+  margin-bottom: var(--space-3);
+}
+
+.passwordState {
+  margin: var(--space-2) 0;
+}
+
+.passwordHint {
+  margin: var(--space-2) 0 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.passwordActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  min-height: 2.25rem;
+  margin-top: var(--space-2);
+}
+
+.passwordFeedback {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.passwordFeedbackGood {
+  color: var(--success-color);
+}
+
+.passwordFeedbackBad {
+  color: var(--error-color);
+}
+
+.passwordApply {
+  flex: 0 0 auto;
+}
+
+@media (width < 700px) {
+  .passwordActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .customFoldersControls {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: none;
+  }
+
+  .customFoldersButton {
+    flex-basis: auto;
+    width: 100%;
+  }
+}
+
+.connectionFields {
+  min-width: 0;
+  margin-inline: 0;
+  padding: 0;
+  border: 0;
+}
+
+.connectionActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+}
+
+.connectionActions p {
+  flex: 1 1 15rem;
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+.actionButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+@media (width < 700px) {
+  .connectionSection {
+    position: relative;
+  }
+
+  .connectionActions {
+    position: sticky;
+    bottom: 0;
+    z-index: 1;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .connectionActions p {
+    flex-basis: auto;
+  }
+
+  .actionButtons {
+    justify-content: flex-end;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=LocalAccessSettings.module-wVkaAYut.js.map

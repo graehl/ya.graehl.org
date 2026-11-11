@@ -1,0 +1,2 @@
+import{j as n,Z as r}from"./base-D9y8Mt2J.js";const _="_card_h6ykv_1",i="_quiet_h6ykv_30",u="_accent_h6ykv_34",d="_compact_h6ykv_37",c={card:_,quiet:i,accent:u,compact:d};function l({selected:e,variant:t="default",size:s="default",className:o,...a}){return n.jsx(r,{...a,"aria-pressed":e??a["aria-pressed"],className:[c.card,t==="quiet"&&c.quiet,t==="accent"&&c.accent,s==="compact"&&c.compact,o].filter(Boolean).join(" ")})}export{l as S};
+//# sourceMappingURL=SelectableCard-C739bEHY.js.map

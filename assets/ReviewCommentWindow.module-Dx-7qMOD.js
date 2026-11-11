@@ -1,0 +1,54 @@
+const n=`.window {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2, 8px);
+  padding: var(--space-3, 12px);
+  border: 1px solid var(--border-color, #30363d);
+  border-radius: var(--radius-md);
+  background: var(--bg-tertiary);
+  box-shadow: var(--shadow-md);
+}
+
+.anchor {
+  font-family: var(--font-mono, monospace);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary, #8b949e);
+}
+
+.snippet {
+  margin: 0;
+  max-height: 6em;
+  overflow: auto;
+  padding: var(--space-2, 8px);
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  font-family: var(--font-mono, monospace);
+  font-size: var(--font-size-sm);
+  white-space: pre;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-2, 8px);
+}
+
+.submitActions {
+  display: flex;
+  flex: 1 1 280px;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: flex-end;
+  gap: var(--space-2, 8px);
+}
+
+.destination {
+  flex: 1 1 220px;
+}
+
+.defaultSessionTarget {
+  display: inline-flex;
+}
+`;export{n as default};
+//# sourceMappingURL=ReviewCommentWindow.module-Dx-7qMOD.js.map

@@ -1,0 +1,303 @@
+const n=`.page {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-lg);
+}
+.page :where(h1, h2, h3, p) {
+  margin: 0;
+}
+/* Zero specificity, so links styled as shared buttons keep their color. */
+:where(.page a) {
+  color: var(--accent-primary);
+}
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+.topbar h1 {
+  font-size: var(--font-size-2xl);
+  margin-bottom: 4px;
+}
+.muted {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  flex: 1;
+  min-height: 0;
+}
+.sidebar {
+  border-right: 1px solid var(--border-color);
+  overflow-y: auto;
+  background: var(--bg-secondary);
+  padding-bottom: 24px;
+}
+.sources {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+.sectionHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.sectionHeading h2 {
+  font-size: var(--font-size-base);
+}
+.sectionHeading a {
+  padding: 12px 0 12px 12px;
+}
+.source {
+  position: relative;
+  padding: 0 78px 8px 0;
+}
+.sourceChoice {
+  padding: 12px 0;
+  font-weight: 600;
+}
+.sourceDetail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding-left: 28px;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+.source p {
+  padding: 8px 0 0 28px;
+}
+.sourceDetail .control {
+  position: absolute;
+  top: 8px;
+  right: 0;
+}
+.localSource > strong {
+  display: block;
+  padding: 12px 0 8px;
+  overflow-wrap: anywhere;
+}
+.localSource .sourceDetail,
+.localSource p {
+  padding-left: 0;
+}
+.groupControl {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  gap: 12px;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+.groupSelect {
+  width: auto;
+  max-width: 170px;
+}
+.groups {
+  padding: 0 12px;
+}
+.groups section {
+  margin-bottom: 18px;
+}
+.groups h3 {
+  padding: 4px 8px 10px;
+  font-size: var(--font-size-sm);
+  overflow-wrap: anywhere;
+}
+.groups :where(h3) small {
+  display: block;
+  margin-top: 4px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+.session {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+.session span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}
+.session small {
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+}
+.empty {
+  margin: auto;
+  padding: 32px;
+  max-width: 520px;
+}
+.empty h2 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.empty p {
+  margin-top: 12px;
+  line-height: 1.6;
+}
+.conversationHeader {
+  padding: 20px 28px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+.conversationHeader h2 {
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 8px 0 12px;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+.actions a {
+  margin-left: auto;
+}
+.transcript {
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  padding: 16px 28px 40px;
+  overflow-wrap: anywhere;
+}
+.history {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+.history span {
+  margin-right: auto;
+}
+.message {
+  margin: 16px 0;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+}
+.message[data-role="user"] {
+  background: var(--bg-secondary);
+}
+.message header {
+  display: flex;
+  gap: 12px;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: 12px;
+}
+.prose {
+  white-space: pre-wrap;
+  line-height: 1.65;
+}
+.activity {
+  margin: 12px 0;
+  padding: 12px;
+  background: var(--bg-secondary);
+  border-left: 2px solid var(--border-color);
+  line-height: 1.5;
+}
+.activity small {
+  color: var(--text-secondary);
+}
+.failure {
+  margin: 12px 0;
+  padding: 12px;
+  border: 1px solid var(--error-color);
+  border-radius: var(--radius-lg);
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+.notice {
+  margin: 12px 0;
+}
+/* Doubled so the layout display outranks the shared button's inline-flex
+   regardless of stylesheet order. */
+.mobileToggle.mobileToggle {
+  display: none;
+}
+@media (width <= 640px) {
+  .topbar {
+    padding: 12px 16px;
+    gap: 8px;
+  }
+  .topbar h1 {
+    font-size: var(--font-size-xl);
+  }
+  .topbar .muted {
+    font-size: var(--font-size-caption);
+  }
+  .topbar .control {
+    flex-shrink: 0;
+  }
+  .mobileToggle.mobileToggle {
+    display: flex;
+    margin: 8px 12px;
+    flex-shrink: 0;
+  }
+  .workspace {
+    display: flex;
+    flex-direction: column;
+  }
+  .main {
+    flex: 1;
+  }
+  .sidebar {
+    display: none;
+    border-right: 0;
+    flex: 1;
+  }
+  .sidebar[data-open="true"] {
+    display: block;
+  }
+  .workspace:has(.sidebar[data-open="true"]) .main {
+    display: none;
+  }
+  .conversationHeader {
+    padding: 12px 16px;
+  }
+  .conversationHeader h2 {
+    font-size: var(--font-size-2xl);
+  }
+  .transcript {
+    padding: 12px 16px 24px;
+  }
+  .message {
+    padding: 12px;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=ConversationPreviewPage.module-Bc64egzZ.js.map

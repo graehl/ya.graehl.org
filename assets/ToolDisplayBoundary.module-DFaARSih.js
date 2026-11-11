@@ -1,0 +1,43 @@
+const r=`.row {
+  min-width: 0;
+  color: var(--text-primary);
+  margin-block: 0.5rem;
+  padding: 0.625rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+}
+
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.details {
+  margin-block-start: 0.375rem;
+  color: var(--text-secondary);
+}
+
+.output {
+  max-height: 18rem;
+  overflow: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: inherit;
+}
+
+.status {
+  color: var(--text-secondary);
+}
+
+.status[data-status="error"] {
+  color: var(--error-color);
+}
+
+.details > summary {
+  cursor: pointer;
+  padding-block: 0.375rem;
+}
+`;export{r as default};
+//# sourceMappingURL=ToolDisplayBoundary.module-DFaARSih.js.map

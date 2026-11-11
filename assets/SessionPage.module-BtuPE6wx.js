@@ -1,0 +1,188 @@
+const n=`.session-messages {
+  flex: 1;
+  overflow: auto;
+  scrollbar-gutter: stable;
+  padding: 1rem;
+  padding-inline-end: var(--turn-rail-content-padding-inline-end);
+  min-height: 0;
+  -webkit-overflow-scrolling: touch;
+  /* Softly fade the bottom few px of scrolling content into the composer,
+     so text doesn't hard-cut right above the connection bar. */
+  --session-messages-fade: 6px;
+  mask-image: linear-gradient(
+    to bottom,
+    black calc(100% - var(--session-messages-fade)),
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black calc(100% - var(--session-messages-fade)),
+    transparent
+  );
+}
+.session-split {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+@media (width >= 1100px) {
+  .session-split.session-split-with-aside {
+    display: grid;
+    grid-template:
+      "messages aside" minmax(0, 1fr)
+      "input    aside" auto
+      / minmax(0, 1fr) minmax(380px, 1fr);
+  }
+}
+
+@media (width >= 1100px) {
+  .session-split.session-split-with-aside.session-split-aside-collapsed {
+    grid-template-columns: minmax(0, 1fr) 28px;
+  }
+}
+
+@media (width >= 1100px) {
+  .session-split.session-split-with-aside > .session-messages {
+    grid-area: messages;
+    min-width: 0;
+    min-height: 0;
+    overflow-x: auto;
+  }
+}
+
+@media (width >= 1100px) {
+  .session-split.session-split-with-aside > [data-session-input] {
+    grid-area: input;
+    min-width: 0;
+  }
+}
+
+@media (width >= 1100px) {
+  .session-split.session-split-with-aside > [data-session-btw-pane],
+  .session-split.session-split-with-aside > [data-session-btw-pane-handle] {
+    grid-area: aside;
+  }
+}
+@media (width <= 600px) {
+  .session-messages {
+    padding: 0.5rem 0.375rem;
+    padding-inline-end: var(--turn-rail-content-padding-inline-end);
+    scrollbar-gutter: auto;
+    scrollbar-width: none;
+  }
+}
+@media (width <= 600px) {
+  .session-messages::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.workspace[data-main-content-constrained],
+.workspace[data-main-content-mobile-inner] {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+  overflow: hidden;
+}
+.sessionColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+.sessionSplit.session-split {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  grid-template:
+    "messages" minmax(0, 1fr)
+    "input" auto
+    / minmax(0, 1fr);
+}
+
+.messages {
+  grid-area: messages;
+  min-width: 0;
+  min-height: 0;
+}
+
+.viewerLayer {
+  position: relative;
+  z-index: 20;
+  grid-area: messages;
+  min-width: 0;
+  min-height: 0;
+  pointer-events: none;
+}
+
+.viewerLayer > * {
+  pointer-events: auto;
+}
+
+.input {
+  grid-area: input;
+  min-width: 0;
+}
+
+@media (width < 1100px) {
+  .workspace.rightPane .sessionColumn {
+    /* Keep all session controls below its sibling drawer and backdrop. */
+    isolation: isolate;
+  }
+}
+
+@media (width >= 1100px) {
+  .workspace .sessionColumn {
+    grid-column: 1;
+    /* Clip vertically only: composer popovers (context usage, menus) that
+       extend past the column's right edge draw over the docked right pane
+       instead of being cut off at the column boundary. */
+    overflow: visible clip;
+  }
+
+  .workspace[data-main-content-constrained] {
+    grid-template-columns: minmax(0, 1fr) 0;
+    transition: grid-template-columns var(--panel-slide-duration, 0.2s) ease;
+  }
+
+  .workspace:has([data-resizing="true"]) {
+    transition: none;
+  }
+
+  .workspace.rightPane[data-main-content-constrained] {
+    grid-template-columns: minmax(0, 1fr) min(
+        60%,
+        var(--session-right-pane-width, 480px)
+      );
+  }
+  .sessionSplit.session-split-with-aside {
+    grid-template:
+      "messages aside" minmax(0, 1fr)
+      "input aside" auto
+      / minmax(0, 1fr) minmax(380px, 1fr);
+  }
+
+  .sessionSplit[data-session-split-with-aside][data-session-split-aside-collapsed] {
+    grid-template-columns: minmax(0, 1fr) 28px;
+  }
+}
+
+.creationRecovery {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.notFoundSessionId {
+  font-size: var(--font-size-sm);
+  color: #888;
+  margin-top: 20px;
+}
+`;export{n as default};
+//# sourceMappingURL=SessionPage.module-BtuPE6wx.js.map

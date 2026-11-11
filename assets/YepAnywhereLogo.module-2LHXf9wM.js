@@ -1,0 +1,33 @@
+const n=`.root {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.text {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.login .icon {
+  width: 36px;
+  height: 36px;
+}
+.login .wordmark {
+  --brand-wordmark-size: 22px;
+}
+.monitor .icon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.monitor .text {
+  display: none;
+}
+`;export{n as default};
+//# sourceMappingURL=YepAnywhereLogo.module-2LHXf9wM.js.map

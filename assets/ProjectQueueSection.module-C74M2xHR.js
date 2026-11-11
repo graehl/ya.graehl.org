@@ -1,0 +1,398 @@
+const n=`.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0 0 var(--space-3);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.header h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  line-height: 1.25;
+}
+
+.header p {
+  margin: 0.2rem 0 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+}
+
+.headerActions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.count {
+  flex-shrink: 0;
+  min-width: max-content;
+  padding: 0.2rem 0.45rem;
+  border: 1px solid
+    color-mix(in srgb, var(--project-queue-action-bg) 38%, var(--border-subtle));
+  border-radius: var(--radius-full);
+  background: color-mix(
+    in srgb,
+    var(--project-queue-action-bg) 10%,
+    transparent
+  );
+  color: var(--project-queue-action-bg);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+/* Keeps Pause and Resume the same width as the label flips. */
+.dispatchButton {
+  min-width: 72px;
+}
+
+.recovered {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  border: 1px solid
+    color-mix(in srgb, var(--warning-color) 38%, var(--border-subtle));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--warning-color) 8%, transparent);
+}
+
+.recoveredHeader,
+.recoveredGroupHeader,
+.recoveredMessage,
+.recoveredMessageContent {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.recoveredHeader {
+  justify-content: space-between;
+}
+
+.recoveredHeader h3 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  line-height: 1.25;
+}
+
+.recoveredBadge {
+  flex-shrink: 0;
+}
+
+.recoveredGroups,
+.recoveredMessages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.recoveredGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-top: var(--space-1);
+  border-top: 1px solid
+    color-mix(in srgb, var(--warning-color) 22%, var(--border-subtle));
+}
+
+.recoveredGroup:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.recoveredProject,
+.recoveredSession,
+.recoveredAge {
+  min-width: 0;
+  font-size: var(--font-size-xs);
+}
+
+.recoveredProject {
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recoveredSession {
+  overflow: hidden;
+  color: var(--text-secondary);
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.recoveredSession:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+.recoveredMessages {
+  gap: 0.2rem;
+}
+
+.recoveredMessage {
+  align-items: flex-start;
+  padding-left: var(--space-2);
+}
+
+.recoveredMessageContent {
+  flex: 1;
+}
+
+.recoveredMessageActions {
+  display: flex;
+  flex-shrink: 0;
+  gap: var(--space-1);
+}
+
+.recoveredPreview {
+  display: -webkit-box;
+  overflow: hidden;
+  flex: 1;
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.recoveredAge {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.groups,
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.groups {
+  gap: var(--space-3);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.group + .group {
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.groupTitle {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.list {
+  gap: var(--space-2);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-3);
+  align-items: center;
+  padding: var(--space-2);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--project-queue-action-bg);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--bg-secondary) 72%, transparent);
+}
+
+.itemFailed {
+  border-left-color: var(--error-color);
+}
+
+.itemDispatching {
+  border-left-color: var(--project-queue-action-bg);
+}
+
+.itemHighlighted {
+  border-color: color-mix(
+    in srgb,
+    var(--project-queue-action-bg) 62%,
+    var(--border-subtle)
+  );
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--project-queue-action-bg) 18%, transparent);
+}
+
+.itemMain {
+  min-width: 0;
+}
+
+.itemMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.itemTarget,
+.itemAge {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.itemProvider {
+  flex-shrink: 0;
+}
+
+.itemTarget a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* A saved-session recovery action remains a practical touch target. */
+.savedSessionLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+}
+
+.itemTarget a:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+.itemPreview {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 0.25rem;
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.itemReadiness {
+  margin-top: 0.25rem;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.itemEdit {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-top: 0.35rem;
+}
+
+.itemEditAttachments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+}
+
+.itemEditActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-1);
+}
+
+.itemSide {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.itemStatus {
+  min-width: max-content;
+}
+
+.itemActions {
+  display: flex;
+  gap: var(--space-1);
+}
+
+@media (width <= 640px) {
+  .header {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .headerActions {
+    align-self: flex-start;
+  }
+
+  .item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .itemMeta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .itemSide {
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .itemActions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .recoveredHeader,
+  .recoveredGroupHeader,
+  .recoveredMessage,
+  .recoveredMessageContent {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .recoveredMessage {
+    align-items: stretch;
+    gap: var(--space-1);
+    padding-left: 0;
+  }
+
+  .recoveredMessageActions {
+    align-self: flex-end;
+    flex-wrap: wrap;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=ProjectQueueSection.module-C74M2xHR.js.map

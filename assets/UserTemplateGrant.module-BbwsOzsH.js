@@ -1,0 +1,26 @@
+const n=`.grant {
+  margin: var(--space-2) 0;
+  padding: var(--space-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  min-width: 0;
+}
+.template {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.template img {
+  flex: none;
+}
+.choices {
+  display: flex;
+  flex-direction: column;
+  margin-inline-start: var(--space-3);
+}
+.grant p {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+`;export{n as default};
+//# sourceMappingURL=UserTemplateGrant.module-BbwsOzsH.js.map

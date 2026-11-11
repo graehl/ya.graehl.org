@@ -1,0 +1,307 @@
+const n=`.panel {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font:
+    var(--font-size-lg) / 1.45 system-ui,
+    sans-serif;
+}
+.panel :where(:not(button)):focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px 4px 12px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+}
+.hosts {
+  flex: 1;
+  display: flex;
+  gap: 4px;
+  min-width: 0;
+  overflow: hidden;
+}
+.online,
+.offline {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background: var(--success-color);
+}
+.offline {
+  background: var(--text-dimmed);
+}
+.iconButton {
+  flex-shrink: 0;
+}
+.body {
+  flex: 1;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.context {
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+}
+.context h2 {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  line-height: 1.3;
+}
+.context p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+.contextKey {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  overflow-wrap: anywhere;
+}
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.row:disabled {
+  cursor: default;
+}
+.rowTop {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.rowTitle {
+  min-width: 0;
+  font-weight: 600;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+.age {
+  margin-left: auto;
+  flex-shrink: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+.rowMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 6px;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+.rowMeta > * {
+  margin: 0;
+}
+.activity {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+.mentions {
+  color: var(--text-dimmed);
+  font-size: var(--font-size-caption);
+}
+.list[hidden] {
+  display: none;
+}
+.newSession {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.newSession button {
+  flex: 1 1 auto;
+}
+/* "+ New session on {host}" must wrap in the narrow panel rather than
+   overflow; parent-scoped so it outranks the shared nowrap regardless of
+   stylesheet order. */
+.newSession .startSession {
+  padding-block: 4px;
+  overflow-wrap: anywhere;
+  text-align: center;
+  white-space: normal;
+}
+.groupHeading {
+  margin: 0 0 2px;
+}
+.groupToggle {
+  width: 100%;
+  min-height: 30px;
+  padding: 4px 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: var(--font-size-caption);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-align: left;
+  text-transform: uppercase;
+}
+.mergedGroup .groupToggle {
+  min-height: 44px;
+}
+.groupToggle:hover {
+  color: var(--text-secondary);
+}
+.groupHeading span {
+  color: var(--text-dimmed);
+}
+.chevron {
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+.groupHeading [aria-expanded="true"] .chevron,
+.siteAccess [aria-expanded="true"] .chevron {
+  transform: rotate(90deg);
+}
+.hint {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+.problems {
+  margin: 0;
+  padding: 8px 10px 8px 26px;
+  border-radius: var(--radius-md);
+  background: var(--warning-badge-bg);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+.siteAccess {
+  padding: 0;
+  gap: 0;
+}
+.siteAccessContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 0 12px 12px;
+}
+.siteAccessContent[hidden] {
+  display: none;
+}
+.siteAccessToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  text-align: left;
+  font-size: var(--font-size-sm);
+}
+.siteAccessToggle:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+.toolbarIllustration {
+  margin: 8px 0 4px;
+  padding: 16px 10px 22px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+}
+.browserToolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-muted);
+}
+.browserToolbar > svg {
+  flex-shrink: 0;
+}
+.addressBar {
+  flex: 1;
+  min-width: 0;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: var(--bg-surface);
+  color: var(--text-dimmed);
+  font-size: var(--font-size-sm);
+}
+.highlightedIcon {
+  position: relative;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
+  background: var(--bg-surface);
+}
+.iconPointer {
+  position: absolute;
+  right: -10px;
+  bottom: -17px;
+}
+.accessSteps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 4px 0 8px;
+  padding-left: 22px;
+  font-size: var(--font-size-sm);
+}
+.accessSteps li {
+  padding-left: 3px;
+}
+.accessSteps li::marker {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.accessSteps strong {
+  font-weight: 600;
+}
+.siteAccess .hiddenIconHint {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-subtle);
+}
+.hiddenIconHint svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+`;export{n as default};
+//# sourceMappingURL=SidePanel.module-D-y_z2Mk.js.map

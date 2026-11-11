@@ -1,0 +1,47 @@
+const n=`.cluster {
+  position: absolute;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.text {
+  font-size: var(--font-size-lg);
+}
+
+.quote {
+  font-size: var(--font-size-xl);
+}
+
+.source {
+  font-size: 8px;
+}
+
+.rich {
+  font-size: var(--font-size-xs);
+}
+
+.newSession {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.specimen {
+  flex: 0 0 auto;
+  pointer-events: none;
+}
+
+.mobile {
+  pointer-events: auto;
+}
+
+.docked {
+  position: relative;
+  flex-direction: column;
+  align-items: flex-end;
+  width: max-content;
+  margin: 0 10px 34px auto;
+}
+`;export{n as default};
+//# sourceMappingURL=SelectionActionCluster.module-zayJEB8H.js.map

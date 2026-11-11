@@ -1,0 +1,68 @@
+const n=`.releaseLink.releaseLink {
+  align-self: flex-start;
+  padding: 0;
+}
+
+.commandBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.command {
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-mono);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.outputBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.outputHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.outputTitle {
+  font-size: var(--font-size-sm);
+  color: var(--text-primary);
+}
+
+.outputCommand {
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-mono);
+  overflow-wrap: anywhere;
+}
+
+.output {
+  margin: 0;
+  padding: var(--space-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-family: var(--font-mono);
+  line-height: 1.45;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 16rem;
+  overflow: auto;
+}
+`;export{n as default};
+//# sourceMappingURL=CodexUpdatePrompt.module-CflzkZMi.js.map

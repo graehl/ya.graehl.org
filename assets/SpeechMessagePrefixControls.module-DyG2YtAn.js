@@ -1,0 +1,33 @@
+const n=`.root {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.75rem;
+  min-width: min(22rem, 100%);
+}
+
+.control {
+  display: grid;
+  gap: 0.35rem;
+}
+
+/* As wide as the custom-prefix box below it. */
+.select {
+  width: 100%;
+}
+
+.preview {
+  margin: 0;
+  overflow-wrap: anywhere;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+}
+
+.hint {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+}
+`;export{n as default};
+//# sourceMappingURL=SpeechMessagePrefixControls.module-DyG2YtAn.js.map

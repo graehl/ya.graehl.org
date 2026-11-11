@@ -1,0 +1,50 @@
+const n=`.root {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: baseline;
+  gap: 0.3em;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.commit {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.withAuthor {
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.author {
+  font-family: var(--font-sans);
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.commit:hover {
+  text-decoration: underline;
+}
+
+.age {
+  color: var(--text-muted);
+}
+
+.dirty {
+  color: var(--warning-color);
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
+
+.uncommitted {
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+}
+`;export{n as default};
+//# sourceMappingURL=FileRevisionLink.module-DsGd5gKn.js.map

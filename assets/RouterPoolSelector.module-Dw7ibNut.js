@@ -1,0 +1,72 @@
+const n=`.section {
+  min-width: 0;
+}
+
+.leftAlignedTrigger {
+  text-align: left;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+/* Dot tone is the row's state: selectable, selectable with a cached-quota
+   or access note, or unselectable. */
+.ready {
+  background: var(--success-color);
+}
+
+.advice {
+  background: var(--warning-color);
+}
+
+.blocked {
+  background: var(--text-dimmed);
+}
+
+.quota {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  font-size: var(--font-size-xs);
+  line-height: 1.3;
+  color: var(--text-muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.quotaWarning {
+  color: var(--warning-color);
+}
+
+.quotaDanger {
+  color: var(--error-color, var(--warning-color));
+}
+
+.quotaUnknown {
+  color: var(--text-dimmed);
+}
+
+.status {
+  margin-top: var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+}
+
+.message {
+  margin-top: var(--space-2);
+}
+
+.caption {
+  margin: var(--space-2) 0 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+}
+`;export{n as default};
+//# sourceMappingURL=RouterPoolSelector.module-Dw7ibNut.js.map
