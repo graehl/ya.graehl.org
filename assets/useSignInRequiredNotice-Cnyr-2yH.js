@@ -1,0 +1,2 @@
+import{u as s,e as t}from"./base-Dk5pk6_X.js";function i(e){return{signInRequired:e}}function r(){const{t:e}=s(),n=t().state;switch(n==null?void 0:n.signInRequired){case"auth_failed":return e("hostOfflineMessageResumeRejected");case"resume_incompatible":return e("hostOfflineMessageResumeIncompatible");default:return null}}export{i as s,r as u};
+//# sourceMappingURL=useSignInRequiredNotice-Cnyr-2yH.js.map
