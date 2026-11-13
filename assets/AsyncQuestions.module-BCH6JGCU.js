@@ -1,0 +1,156 @@
+const n=`.indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.overflowEntry {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  right: 0;
+  pointer-events: auto;
+}
+/* Layout of the questions panel; Popover owns its frame and placement. */
+.menu {
+  display: flex;
+  flex-direction: column;
+  width: min(520px, calc(100dvw - 16px));
+}
+.menuHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline-start: 6px;
+}
+.groupHeading {
+  padding: 10px 6px 2px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.questionList {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0;
+  overflow-y: auto;
+  min-block-size: 0;
+}
+.menuRow {
+  padding-block: 5px;
+  border-block-end: 1px solid var(--border-color);
+}
+.previewBox {
+  display: flex;
+  min-inline-size: 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+}
+.preview {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-inline-size: 0;
+  padding: 8px;
+  font-size: inherit;
+  text-align: start;
+}
+.previewText {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.age,
+.groupAge {
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  font-weight: normal;
+  white-space: nowrap;
+}
+.age {
+  margin-inline-start: auto;
+}
+.unseen {
+  flex: 0 0 5px;
+  block-size: 5px;
+  border-radius: var(--radius-full);
+  background: light-dark(#79551b, #d8b477);
+}
+.dismiss {
+  flex-shrink: 0;
+}
+.menuFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.inlineQuestion {
+  padding: 10px;
+  margin-block: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  scroll-margin-block: 12px;
+}
+.activeQuestion {
+  border-color: light-dark(#bca477, #77613f);
+}
+.questionTitle {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.hint {
+  margin-block: 4px;
+  color: var(--text-secondary);
+  font-size: var(--font-size-base);
+}
+.options {
+  display: grid;
+  gap: 6px;
+  list-style: none;
+  margin-block: 4px;
+  padding: 0;
+}
+.option {
+  display: flex;
+  align-items: baseline;
+  gap: 0.8em;
+  inline-size: 100%;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+.option:disabled {
+  cursor: default;
+}
+.replyForm {
+  margin-block-start: 8px;
+}
+.replyActions,
+.cardActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  margin-block-start: 4px;
+}
+.replyActions > :last-child {
+  margin-inline-start: auto;
+}
+.dismissedQuestion {
+  color: var(--text-secondary);
+}
+.sent {
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.sendFailure {
+  margin-top: var(--space-2);
+}
+@media (pointer: coarse) {
+  .preview {
+    min-block-size: 44px;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=AsyncQuestions.module-BCH6JGCU.js.map

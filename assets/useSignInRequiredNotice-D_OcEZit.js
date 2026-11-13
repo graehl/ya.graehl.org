@@ -1,0 +1,2 @@
+import{u as s,e as t}from"./base-j1WO9W6o.js";function i(e){return{signInRequired:e}}function r(){const{t:e}=s(),n=t().state;switch(n==null?void 0:n.signInRequired){case"auth_failed":return e("hostOfflineMessageResumeRejected");case"resume_incompatible":return e("hostOfflineMessageResumeIncompatible");default:return null}}export{i as s,r as u};
+//# sourceMappingURL=useSignInRequiredNotice-D_OcEZit.js.map
