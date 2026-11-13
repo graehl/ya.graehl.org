@@ -1,0 +1,858 @@
+const n=`/* biome-ignore-all lint/style/noExcessiveLinesPerFile: Preserve the existing new-session responsive cascade in this ownership-only move; control decomposition belongs to the composer pass. */
+.newSessionForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.newSessionForm textarea {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-lg);
+  color: inherit;
+  font-family: var(--font-ui);
+  font-size: var(--font-size-base);
+  resize: none;
+  box-sizing: border-box;
+}
+
+.newSessionForm > button {
+  align-self: flex-end;
+}
+.newSessionFormCompact {
+  margin-bottom: 1.5rem;
+}
+
+.newSessionFormTextarea {
+  width: 100%;
+  padding: 0.6rem 0.7rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-lg);
+  color: inherit;
+  font-family: var(--font-ui);
+  font-size: var(--font-size-base);
+  line-height: 1.35;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.newSessionFormTextarea:focus {
+  outline: none;
+  border-color: var(--app-yep-green);
+  box-shadow: 0 0 0 2px rgba(217, 119, 87, 0.15);
+}
+
+.newSessionFormToolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.35rem;
+  --composer-control-size: 30px;
+  --composer-primary-control-size: 36px;
+}
+
+.newSessionFormToolbarLeft {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.newSessionFormToolbarActions {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.newSessionContainer {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.newSessionHeader {
+  margin-bottom: 0.5rem;
+}
+
+.newSessionHeader h1 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.25rem;
+  color: var(--text-primary);
+}
+
+.newSessionSubtitle {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin: 0;
+  max-width: 34rem;
+}
+
+.newSessionTopLayout {
+  display: grid;
+  gap: 0.75rem;
+  align-items: start;
+  grid-template-areas:
+    "main"
+    "project"
+    "provider";
+}
+
+.newSessionMainStack {
+  grid-area: main;
+  min-width: 0;
+}
+
+.newSessionProjectSlot {
+  grid-area: project;
+  min-width: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.newSessionProjectChooser {
+  position: relative;
+  padding: 0.4rem;
+  background: color-mix(in srgb, var(--bg-code) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border-color) 94%, transparent);
+  border-radius: var(--radius-lg);
+}
+
+.newSessionProjectControls {
+  display: grid;
+  grid-template-columns: minmax(0, 145px) minmax(0, 1fr);
+  gap: var(--space-2);
+  align-items: stretch;
+}
+
+.newSessionProjectChooser.expanded .newSessionProjectControls {
+  grid-template-columns: 1fr;
+}
+
+.newSessionProjectSummary {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-2);
+  align-items: center;
+  container-type: inline-size;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 0.55rem 0.65rem;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.newSessionProjectSummaryBody {
+  min-width: 0;
+}
+
+.newSessionProjectSummaryTitle {
+  display: block;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.newSessionProjectSummaryPath {
+  display: block;
+  margin-top: 2px;
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.newSessionProjectSummaryPathShort {
+  display: none;
+}
+
+@container (max-width: 205px) {
+  .newSessionProjectSummaryPathLong {
+    display: none;
+  }
+}
+
+@container (max-width: 205px) {
+  .newSessionProjectSummaryPathShort {
+    display: inline;
+  }
+}
+
+.newSessionProjectSummaryChevron {
+  color: var(--text-muted);
+  transition: transform 0.15s ease;
+  place-self: center end;
+}
+
+.newSessionProjectChooser.expanded .newSessionProjectSummaryChevron {
+  transform: rotate(180deg);
+}
+
+.newSessionProjectInlineField {
+  min-width: 0;
+  position: relative;
+}
+
+.newSessionProjectInlineLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.newSessionProjectPanel {
+  position: absolute;
+  margin-top: var(--space-2);
+  top: calc(100% + var(--space-2));
+  inset-inline: 0;
+  z-index: 5;
+  padding: var(--space-2);
+  background: var(--bg-code);
+  border: 1px solid color-mix(in srgb, var(--border-color) 94%, transparent);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25);
+  max-height: min(28rem, 45vh);
+  overflow: hidden;
+  /* The list takes whatever height the hint leaves; a separate list cap
+     clipped its last rows whenever the hint wrapped. */
+  display: flex;
+  flex-direction: column;
+}
+
+.newSessionProjectPanel > :not(.newSessionProjectSuggestions) {
+  flex-shrink: 0;
+}
+
+.newSessionProjectSuggestions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.newSessionProjectInput {
+  width: 100%;
+  min-width: 0;
+  padding: 0.62rem 0.7rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+}
+
+.newSessionProjectInput:focus {
+  outline: none;
+  border-color: var(--app-yep-green);
+  box-shadow: 0 0 0 3px rgba(217, 119, 87, 0.14);
+}
+
+.newSessionProjectFieldHint {
+  margin: 0 0 var(--space-2);
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.newSessionProjectOption {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  width: 100%;
+  padding: 0.45rem 0.6rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+}
+
+.newSessionProjectOption:hover {
+  background: var(--bg-hover);
+  border-color: var(--text-dimmed);
+}
+
+.newSessionProjectOption.selected {
+  border-color: var(--app-yep-green);
+  background: rgba(217, 119, 87, 0.08);
+}
+
+.newSessionProjectOptionName {
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+}
+
+.newSessionProjectOptionPath {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  word-break: break-all;
+}
+
+.newSessionProjectEmpty {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.newSessionInputArea {
+  margin-bottom: 0;
+  container-type: inline-size;
+}
+
+.newSessionSubmitButton.newSessionSubmitButton {
+  width: var(--composer-primary-control-size);
+  height: var(--composer-primary-control-size);
+  border-radius: var(--radius-lg);
+}
+
+.newSessionProjectQueueButton.newSessionProjectQueueButton {
+  width: var(--composer-primary-control-size);
+  height: var(--composer-primary-control-size);
+  border-radius: var(--radius-lg);
+}
+
+.newSessionSubmitButton:disabled {
+  opacity: 1;
+  background: color-mix(in srgb, var(--app-yep-green) 46%, var(--bg-input));
+  color: color-mix(in srgb, white 76%, transparent);
+}
+
+.newSessionSubmitIcon.newSessionSubmitIcon {
+  width: 20px;
+  height: 20px;
+}
+
+@media (width <= 600px) {
+  .newSessionProjectSummary {
+    padding: 0.66rem 0.75rem;
+  }
+}
+
+@media (width <= 600px) {
+  .newSessionProjectSummaryPath {
+    display: none;
+  }
+}
+
+@media (width >= 900px) {
+  .newSessionTopLayout {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    grid-template-areas:
+      "main project"
+      "provider project";
+    gap: 1rem;
+  }
+}
+
+@media (width >= 900px) {
+  .newSessionProjectControls {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width <= 600px) {
+  .newSessionHeader h1 {
+    font-size: 1.05rem;
+  }
+}
+@media (width <= 600px) {
+  .newSessionSubtitle {
+    font-size: var(--font-size-sm);
+  }
+}
+
+/* A muted composer holds a draft the launch will not send — a fork copies the
+   provider transcript instead. It stays readable so it can still inform the
+   choice, but reads as inert and gives its height back to the options below. */
+.mutedComposer textarea {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.mutedComposer textarea:focus {
+  outline: none;
+}
+
+.fullPaneToggle[aria-pressed="true"] {
+  color: var(--app-yep-green);
+  border-color: color-mix(
+    in srgb,
+    var(--app-yep-green) 62%,
+    var(--border-input)
+  );
+  background: color-mix(in srgb, var(--app-yep-green) 10%, transparent);
+}
+
+.projectControlsSlot,
+.secondaryOptions {
+  display: grid;
+  align-content: start;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.secondaryOptions {
+  grid-area: secondary;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.secondaryOptions[hidden] {
+  display: none;
+}
+
+.advancedSection {
+  grid-area: advanced;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.65rem;
+}
+
+.advancedSummary {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  line-height: 1.35;
+}
+
+.selectedChoice {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-width: 0;
+  text-align: left;
+}
+
+.leftAlignedTrigger {
+  text-align: left;
+}
+
+.selectedChoice [data-mode-option-dot],
+.selectedChoice [data-model-switch-indicator-dot] {
+  width: 10px;
+  height: 10px;
+}
+
+.selectedChoiceText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.selectedChoiceText > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.choiceStatus {
+  color: var(--warning-color);
+  font-size: var(--font-size-xs);
+  line-height: 1.2;
+}
+
+.effortSection {
+  grid-column: auto;
+}
+
+.optionPlaceholder {
+  visibility: hidden;
+}
+
+/* Authentication state occupies a second line without resizing this control. */
+.providerTrigger {
+  min-block-size: calc(2lh + 2 * var(--space-2) + 2px);
+}
+
+.optionLayout [data-new-session-provider-slot] {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.optionLayout [data-new-session-provider-slot] .compactProviderSection {
+  grid-column: auto;
+}
+
+.secondaryOptions > * {
+  min-width: 0;
+}
+
+.secondaryOptions > [data-new-session-helper-section],
+.secondaryOptions > [data-new-session-mode-section] {
+  margin-bottom: 0;
+}
+
+.secondaryOptionsHidden {
+  visibility: hidden;
+}
+
+.templateProjectSlot {
+  grid-area: template;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+}
+.templateProjectSlot[hidden] {
+  display: none;
+}
+
+.projectSearchAnchor {
+  position: relative;
+}
+.newProject {
+  grid-area: newproject;
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-lg);
+  background: var(--bg-secondary);
+}
+/* The row spans the page; a path field that wide would be hard to scan. */
+.newProjectField,
+.newProjectTarget {
+  max-width: 36rem;
+}
+.newProjectField {
+  display: grid;
+  gap: 4px;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+}
+.newProjectField input {
+  min-width: 0;
+  min-height: 40px;
+  padding: 8px 10px;
+  color: var(--text-primary);
+  background: var(--bg-input);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-md);
+  font: inherit;
+  font-family: var(--font-mono);
+}
+.newProjectTarget {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+.newProjectGit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 32px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+.newProjectPlan {
+  margin: 0;
+  padding-left: 8px;
+  border-left: 2px solid var(--border-color);
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+@media (width < 900px) {
+  .optionLayout.optionLayout {
+    grid-template-areas:
+      "main"
+      "project"
+      "newproject"
+      "template"
+      "provider"
+      "advanced"
+      "secondary";
+  }
+
+  .optionLayoutWithoutProvider.optionLayoutWithoutProvider {
+    grid-template-areas:
+      "main"
+      "project"
+      "newproject"
+      "template"
+      "advanced"
+      "secondary";
+  }
+
+  .secondaryOptions {
+    grid-area: secondary;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  }
+}
+
+@media (width <= 600px) {
+  .optionLayout [data-new-session-provider-slot] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .secondaryOptions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .optionLayout.optionLayout {
+    grid-template-areas:
+      "main project"
+      "newproject newproject"
+      "template template"
+      "provider provider"
+      "advanced advanced"
+      "secondary secondary";
+  }
+
+  .optionLayoutWithoutProject.optionLayoutWithoutProject {
+    grid-template-areas:
+      "main main"
+      "provider provider"
+      "advanced advanced"
+      "secondary secondary";
+  }
+
+  /* A limited user's fixed launch can leave no provider picker in this slot. */
+  .optionLayoutWithoutProvider.optionLayoutWithoutProvider {
+    grid-template-areas:
+      "main project"
+      "newproject newproject"
+      "template template"
+      "advanced advanced"
+      "secondary secondary";
+  }
+
+  .optionLayoutWithoutProject.optionLayoutWithoutProvider {
+    grid-template-areas:
+      "main main"
+      "advanced advanced"
+      "secondary secondary";
+  }
+}
+
+.captionToggle {
+  margin-inline-start: auto;
+}
+
+.optionCaption {
+  margin: var(--space-2) 0 0;
+  color: var(--text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+/* A risk the selected option carries; shown whether or not captions are. */
+.optionWarning {
+  margin-top: var(--space-2);
+}
+
+.captionedRecapDuration.captionedRecapDuration {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.captionedRecapDuration [data-recap-after-seconds-label] {
+  white-space: normal;
+}
+
+/* The page or modal header remains visible. Everything below it yields to the
+   editing surface until this mode is restored. */
+[data-page-scroll-container]:has(.fullPane) {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+[data-page-content-inner]:has(.fullPane) {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  min-height: 0;
+  width: 100%;
+}
+
+/* Doubled so it outranks Dialog's size and phone card rules. */
+[data-modal-frame]:has(.fullPane.fullPane) {
+  height: calc(100dvh - 1.5rem);
+  max-height: calc(100dvh - 1.5rem);
+}
+
+[data-modal-frame]:has(.fullPane.fullPaneWide) {
+  width: min(1200px, 100%);
+  max-width: min(1200px, 100%);
+}
+
+/* The dialog body yields to the editor; the dialog's own Cancel stays. */
+[data-modal-content] > :has(.fullPane) {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+[data-modal-content] > :has(.fullPane) > :not(:has(.fullPane)) {
+  display: none;
+}
+
+[data-modal-content] > :has(.fullPane) > :has(.fullPane) {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: center;
+  min-height: 0;
+}
+
+.fullPane {
+  display: flex;
+  align-self: center;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.fullPane > .newSessionHeader,
+.fullPane .newSessionProjectSlot,
+.fullPane .newProject,
+.fullPane [data-new-session-provider-slot],
+.fullPane .advancedSection,
+.fullPane .secondaryOptions {
+  display: none;
+}
+
+.fullPane .newSessionTopLayout,
+.fullPane .newSessionMainStack {
+  display: block;
+  min-height: 0;
+  width: 100%;
+}
+
+.fullPane .newSessionInputArea {
+  min-height: 0;
+}
+
+.fullPane [data-speech-draft-field] textarea {
+  max-height: 100%;
+}
+
+.fullPaneWide {
+  width: 100%;
+  max-width: none;
+}
+
+[data-main-content-constrained]
+  [data-page-content-inner][data-new-session-page-shell]:has(.fullPaneWide) {
+  max-width: none;
+}
+
+@media (width <= 600px) {
+  [data-modal-overlay]:has(.fullPane.fullPane) {
+    padding: 0;
+  }
+
+  [data-modal-frame]:has(.fullPane.fullPane) {
+    height: 100dvh;
+    max-height: 100dvh;
+  }
+}
+
+.pendingFilesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+/* Model list provenance under the model picker: muted while the list is live
+   and current, warning-toned when it is the built-in fallback or a refresh
+   failed. */
+.catalogStatus,
+.catalogStatusMuted {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  line-height: 1.35;
+  color: var(--text-muted);
+  padding: 0.55rem 0.65rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+}
+
+.catalogStatus {
+  border-color: color-mix(
+    in srgb,
+    var(--warning-color) 38%,
+    var(--border-color)
+  );
+  background: color-mix(in srgb, var(--warning-color) 8%, var(--bg-code));
+}
+
+.catalogStatusMuted {
+  color: var(--text-dimmed);
+}
+
+/* Reserve the notice's wrapping height before its catalog arrives. */
+.catalogMessage {
+  display: grid;
+}
+
+.catalogMessage::before {
+  content: attr(data-sizing-text);
+  visibility: hidden;
+}
+
+.catalogMessage::before,
+.catalogMessage > span {
+  grid-area: 1 / 1;
+}
+
+.catalogAction {
+  flex: none;
+}
+
+.creationRecovery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+.toolbarActions {
+  position: relative;
+}
+`;export{n as default};
+//# sourceMappingURL=NewSessionForm.module-tY0pYq8G.js.map

@@ -1,0 +1,2 @@
+import{H as o,J as n,K as c,M as u}from"./base-CprzvkAM.js";function a(e){return n(`server:${e}`)}function S(e){return e.serverInstanceId?a(e.serverInstanceId):o(e.id)}function m(e){return u(s(e))}function s(e){const r=e.trim();try{const t=new URL(r);return t.hash="",t.toString()}catch{return r}}function y(e){return n(`remote:${c(e)}`)}export{y as a,m as b,S as r};
+//# sourceMappingURL=sourceIdentity-CMRdKI2Z.js.map
