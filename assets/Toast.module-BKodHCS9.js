@@ -1,0 +1,93 @@
+const n=`.container {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 56px);
+  right: max(var(--space-3), env(safe-area-inset-right, 0px));
+  max-width: min(
+    22rem,
+    calc(
+      100dvw -
+      max(var(--space-3), env(safe-area-inset-left, 0px)) -
+      max(var(--space-3), env(safe-area-inset-right, 0px))
+    )
+  );
+  z-index: 9;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-2);
+  pointer-events: none;
+}
+
+/* The fixed navigation shell owns a separate stacking context on phones. */
+:global(body):has([data-sidebar-overlay]) .routine {
+  opacity: 0;
+}
+
+.routine:empty {
+  position: absolute;
+}
+
+.toast {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+  font-size: var(--font-size-sm);
+}
+
+.error {
+  border-inline-start: 3px solid var(--error-color);
+}
+
+.check {
+  flex: none;
+  width: 1em;
+  height: 1em;
+  color: var(--success-color);
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin-inline-start: auto;
+  min-width: 0;
+}
+
+.controls > button {
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .toast {
+    animation: fadeOut var(--toast-fade-duration) linear forwards;
+  }
+}
+
+@keyframes fadeOut {
+  0%,
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+`;export{n as default};
+//# sourceMappingURL=Toast.module-BKodHCS9.js.map
