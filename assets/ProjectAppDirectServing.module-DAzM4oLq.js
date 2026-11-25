@@ -1,0 +1,73 @@
+const n=`.direct {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-block: 12px;
+}
+/* Edit shares the first row's text baseline. */
+.summary {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.fields {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 6px 16px;
+  margin: 0;
+  min-width: 0;
+}
+.fields dt {
+  color: var(--text-secondary);
+  margin: 0;
+}
+.fields dd {
+  margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.none {
+  color: var(--text-secondary);
+}
+.editor {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.actions {
+  display: flex;
+  gap: 8px;
+}
+.state {
+  margin: 4px 0 0;
+}
+.funnel h4 {
+  margin: 0 0 4px;
+  font-size: var(--font-size-sm);
+}
+.funnel p {
+  margin: 0 0 4px;
+}
+/* A command to copy whole: its own line, broken only where it must be. */
+.command {
+  display: block;
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+}
+.funnel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.funnel li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+`;export{n as default};
+//# sourceMappingURL=ProjectAppDirectServing.module-DAzM4oLq.js.map
