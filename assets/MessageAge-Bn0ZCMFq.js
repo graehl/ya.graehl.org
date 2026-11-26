@@ -1,0 +1,2 @@
+import{ac as u,ad as A,j as d}from"./base-BsilonxD.js";const i="_messageAge_14y3e_1",$={messageAge:i};function j({timestampMs:e,nowMs:g,className:o,prefix:t,suffix:n,formatLabel:s}){if(e==null)return null;const c=new Date(e),a=u(e,g),l=A(e),r=(s==null?void 0:s(a))??`${t?`${t} `:""}${a}${n?` ${n}`:""}`;return d.jsx("time",{className:o??$.messageAge,"data-message-age":!0,dateTime:c.toISOString(),title:l,children:r})}export{j as M};
+//# sourceMappingURL=MessageAge-Bn0ZCMFq.js.map
